@@ -52,8 +52,8 @@ public class Alohomora.HeaderBar: Gtk.HeaderBar {
         add_secret.valign = Gtk.Align.CENTER;
         add_secret.tooltip_text = _("Add New Login");
         add_secret.clicked.connect (() => {
-            var dialog = new Alohomora.NewSecret(window, secret);
-            dialog.run();
+            var dialog = new Alohomora.NewSecret (window, secret);
+            dialog.run ();
         });
 
         dark_mode = new Granite.ModeSwitch.from_icon_name ("display-brightness-symbolic", "weather-clear-night-symbolic");
@@ -65,8 +65,10 @@ public class Alohomora.HeaderBar: Gtk.HeaderBar {
 
         change_key = new Gtk.ModelButton ();
         change_key.text = _("Change Cipher Key");
-        //Show dialog to change cipher when clicked
-        change_key.clicked.connect (() => print("Change Cipher Key"));
+        change_key.clicked.connect (() => {
+            var dialog = new Alohomora.ChangeCipher (window, secret);
+            dialog.run ();
+        });
 
         quit = new Gtk.ModelButton ();
         quit.text = _("Quit");

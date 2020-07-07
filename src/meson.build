@@ -10,6 +10,7 @@ sources = files (
 
     'Widgets/Dialogs/NewSecret.vala',
     'Widgets/Dialogs/EditSecret.vala',
+    'Widgets/Dialogs/ChangeCipher.vala',
 
     'Helpers/SecretManager.vala',
     'Helpers/CipherManager.vala',
