@@ -19,20 +19,11 @@
 * Authored by: Taqmeel Zubeir <taqmeelzubeir.dev@gmail.com>
 */
 
-public class Alohomora.Window: Gtk.ApplicationWindow {
-    public Window(Application app) {
+public class Alohomora.HeaderBar: Gtk.HeaderBar {
+    public HeaderBar() {
         Object(
-            application: app,
-            default_height: 575,
-            default_width: 400,
-            resizable: false
+            title: "Alohomora",
+            show_close_button: true
         );
-    }
-
-    construct {
-        var header_bar = new Alohomora.HeaderBar();
-        set_titlebar(header_bar);
-
-        show_all();
     }
 }

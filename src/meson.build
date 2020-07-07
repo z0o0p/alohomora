@@ -3,5 +3,6 @@ sources = files (
     'Main.vala',
     'Application.vala',
 
-    'Widgets/Window.vala'
+    'Widgets/Window.vala',
+    'Widgets/HeaderBar.vala'
 )
