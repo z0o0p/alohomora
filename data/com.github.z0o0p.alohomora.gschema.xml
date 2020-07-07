@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+    <schema path="/com/github/z0o0p/alohomora/" id="com.github.z0o0p.alohomora">
+        <key name="new-user" type="b">
+            <default>true</default>
+            <summary>New User</summary>
+            <description>Whether the user is new to this application.</description>
+        </key>
+        <key name="window-pos" type="(ii)">
+            <default>(-1, -1)</default>
+            <summary>Window Position</summary>
+            <description>The window position on the screen.</description>
+        </key>
+    </schema>
+</schemalist>

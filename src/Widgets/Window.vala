@@ -20,6 +20,8 @@
 */
 
 public class Alohomora.Window: Gtk.ApplicationWindow {
+    private GLib.Settings settings;
+
     public Window (Application app) {
         Object (
             application: app,
@@ -30,11 +32,25 @@ public class Alohomora.Window: Gtk.ApplicationWindow {
     }
 
     construct {
+        settings = new GLib.Settings ("com.github.z0o0p.alohomora");
         get_style_context ().add_class ("rounded");
+        int window_x,window_y;
+        settings.get ("window-pos", "(ii)", out window_x, out window_y);
+        if (window_x != -1 && window_y != -1)
+            move (window_x, window_y);
+        else
+            window_position = Gtk.WindowPosition.CENTER;
 
         var header_bar = new Alohomora.HeaderBar ();
         set_titlebar (header_bar);
 
         show_all ();
+
+        delete_event.connect (e => {
+            int x,y;
+            get_position(out x, out y);
+            settings.set("window-pos", "(ii)", x, y);
+            return false;
+        });
     }
 }
