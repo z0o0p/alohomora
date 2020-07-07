@@ -51,6 +51,7 @@ public class Alohomora.HeaderBar: Gtk.HeaderBar {
         add_secret.image = new Gtk.Image.from_icon_name ("add-icon", Gtk.IconSize.LARGE_TOOLBAR);
         add_secret.valign = Gtk.Align.CENTER;
         add_secret.tooltip_text = _("Add New Login");
+        add_secret.sensitive = false;
         add_secret.clicked.connect (() => {
             var dialog = new Alohomora.NewSecret (window, secret);
             dialog.run ();
@@ -65,6 +66,7 @@ public class Alohomora.HeaderBar: Gtk.HeaderBar {
 
         change_key = new Gtk.ModelButton ();
         change_key.text = _("Change Cipher Key");
+        change_key.sensitive = false;
         change_key.clicked.connect (() => {
             var dialog = new Alohomora.ChangeCipher (window, secret);
             dialog.run ();
@@ -92,5 +94,10 @@ public class Alohomora.HeaderBar: Gtk.HeaderBar {
         pack_start (add_secret);
         pack_end (help);
         pack_end (dark_mode);
+
+        secret.key_validated.connect ((is_validated) => {
+            add_secret.sensitive = is_validated;
+            change_key.sensitive = is_validated;
+        });
     }
 }
