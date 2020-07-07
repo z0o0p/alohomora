@@ -107,9 +107,9 @@ public class Alohomora.NewSecret: Gtk.Dialog {
                 if (stack.visible_child_name == "Existing" && credential_name.text != "" && username.text != "" && pass.text != "") {
                     secret.new_secret.begin (credential_name.text, username.text, pass.text);
                 }
-            }
-            else if (stack.visible_child_name == "Generate" && credential_name.text != "" && username.text != "") {
-                secret.new_secret.begin (credential_name.text, username.text, Alohomora.PasswordGenerator.generate());
+                else if (stack.visible_child_name == "Generate" && credential_name.text != "" && username.text != "") {
+                    secret.new_secret.begin (credential_name.text, username.text, Alohomora.PasswordGenerator.generate());
+                }
             }
         });
 
