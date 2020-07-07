@@ -11,5 +11,10 @@
       <summary>Window Position</summary>
       <description>The window position on the screen.</description>
     </key>
+    <key name="dark-mode" type="b">
+      <default>false</default>
+      <summary>Dark Mode</summary>
+      <description>Whether to implement dark mode or not.</description>
+    </key>
   </schema>
 </schemalist>

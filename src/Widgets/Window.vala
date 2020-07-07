@@ -34,6 +34,7 @@ public class Alohomora.Window: Gtk.ApplicationWindow {
 
     construct {
         settings = new GLib.Settings ("com.github.z0o0p.alohomora");
+        Gtk.Settings.get_default().gtk_application_prefer_dark_theme = settings.get_boolean("dark-mode");
         get_style_context ().add_class ("rounded");
         int window_x,window_y;
         settings.get ("window-pos", "(ii)", out window_x, out window_y);
@@ -51,6 +52,7 @@ public class Alohomora.Window: Gtk.ApplicationWindow {
             int x,y;
             get_position(out x, out y);
             settings.set("window-pos", "(ii)", x, y);
+            settings.set_boolean("dark-mode", Gtk.Settings.get_default().gtk_application_prefer_dark_theme);
             return false;
         });
     }
