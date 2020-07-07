@@ -23,7 +23,9 @@ public class Alohomora.Window: Gtk.ApplicationWindow {
     private Alohomora.SecretManager secret;
     private GLib.Settings settings;
     private Alohomora.HeaderBar header_bar;
+    private Gtk.Stack stack;
     private Alohomora.ValidateScreen validate_screen;
+    private Alohomora.MainScreen main_screen;
 
     public Window (Application app) {
         Object (
@@ -51,8 +53,14 @@ public class Alohomora.Window: Gtk.ApplicationWindow {
         set_titlebar (header_bar);
 
         validate_screen = new Alohomora.ValidateScreen ();
+        main_screen = new Alohomora.MainScreen ();
 
-        add (validate_screen);
+        stack = new Gtk.Stack ();
+        stack.add_named (validate_screen, "ValidateScreen");
+        stack.add_named (main_screen, "MainScreen");
+        stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
+
+        add (stack);
         show_all ();
 
         validate_screen.try_validating.connect ((name, key) => {
@@ -64,7 +72,19 @@ public class Alohomora.Window: Gtk.ApplicationWindow {
             }
         });
 
-        secret.key_validated.connect ((success) => print(success.to_string()));
+        secret.key_validated.connect ((is_validated) => {
+            if (is_validated) {
+                stack.visible_child_name = "MainScreen";
+                settings.set_boolean ("new-user", false);
+            }
+            else {
+                message_dialog (
+                    _("Incorrect Key!"),
+                    _("The cipher key entered is wrong. Check and try again."),
+                    _("dialog-error")
+                );
+            }
+        });
 
         delete_event.connect (e => {
             int x,y;
@@ -73,5 +93,17 @@ public class Alohomora.Window: Gtk.ApplicationWindow {
             settings.set_boolean ("dark-mode", Gtk.Settings.get_default ().gtk_application_prefer_dark_theme);
             return false;
         });
+    }
+
+    private void message_dialog (string title, string subtitle, string icon) {
+        var dialog = new Granite.MessageDialog.with_image_from_icon_name (
+            title,
+            subtitle,
+            icon,
+            Gtk.ButtonsType.CLOSE
+        );
+        dialog.set_transient_for (this);
+        dialog.run ();
+        dialog.destroy ();
     }
 }

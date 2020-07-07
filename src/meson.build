@@ -6,6 +6,7 @@ sources = files (
     'Widgets/Window.vala',
     'Widgets/HeaderBar.vala',
     'Widgets/ValidateScreen.vala',
+    'Widgets/MainScreen.vala',
 
     'Helpers/SecretManager.vala'
 )
