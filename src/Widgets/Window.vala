@@ -21,6 +21,7 @@
 
 public class Alohomora.Window: Gtk.ApplicationWindow {
     private GLib.Settings settings;
+    private Alohomora.HeaderBar header_bar;
 
     public Window (Application app) {
         Object (
@@ -41,7 +42,7 @@ public class Alohomora.Window: Gtk.ApplicationWindow {
         else
             window_position = Gtk.WindowPosition.CENTER;
 
-        var header_bar = new Alohomora.HeaderBar ();
+        header_bar = new Alohomora.HeaderBar (this);
         set_titlebar (header_bar);
 
         show_all ();
