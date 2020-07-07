@@ -32,6 +32,8 @@ public class Alohomora.ValidateScreen: Gtk.Box {
     private Gtk.Entry key_entry;
     private Gtk.Button submit;
 
+    public signal void try_validating(string name, string key);
+
     public ValidateScreen () {
         Object (
             orientation: Gtk.Orientation.VERTICAL,
@@ -74,13 +76,13 @@ public class Alohomora.ValidateScreen: Gtk.Box {
         key_entry.secondary_icon_name = "image-red-eye-symbolic";
         key_entry.secondary_icon_tooltip_text = _("Show Cipher Key");
         key_entry.icon_press.connect (() => key_entry.visibility = !key_entry.visibility);
-        key_entry.activate.connect (() => print("Validating..."));
+        key_entry.activate.connect (() => try_validating(username.label, key_entry.text));
         cipher = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
         cipher.pack_start (key_label, false, false, 0);
         cipher.pack_start (key_entry, false, false, 0);
 
         submit = new Gtk.Button.with_label (_("Submit"));
-        submit.clicked.connect(() => print("Validating..."));
+        submit.clicked.connect(() => try_validating(username.label, key_entry.text));
 
         pack_start(wizard_art, false, false, 20);
         pack_start(message, false, false, 0);

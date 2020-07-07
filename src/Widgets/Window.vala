@@ -20,6 +20,7 @@
 */
 
 public class Alohomora.Window: Gtk.ApplicationWindow {
+    private Alohomora.SecretManager secret;
     private GLib.Settings settings;
     private Alohomora.HeaderBar header_bar;
     private Alohomora.ValidateScreen validate_screen;
@@ -44,19 +45,32 @@ public class Alohomora.Window: Gtk.ApplicationWindow {
         else
             window_position = Gtk.WindowPosition.CENTER;
 
+        secret = new Alohomora.SecretManager ();
+
         header_bar = new Alohomora.HeaderBar (this);
         set_titlebar (header_bar);
 
         validate_screen = new Alohomora.ValidateScreen ();
 
-        add(validate_screen);
+        add (validate_screen);
         show_all ();
+
+        validate_screen.try_validating.connect ((name, key) => {
+            if (key != "") {
+                if(settings.get_boolean ("new-user"))
+                    secret.create_cipher_key.begin (name, key);
+                else
+                    secret.lookup_cipher_key.begin (name, key);
+            }
+        });
+
+        secret.key_validated.connect ((success) => print(success.to_string()));
 
         delete_event.connect (e => {
             int x,y;
-            get_position(out x, out y);
-            settings.set("window-pos", "(ii)", x, y);
-            settings.set_boolean("dark-mode", Gtk.Settings.get_default().gtk_application_prefer_dark_theme);
+            get_position (out x, out y);
+            settings.set ("window-pos", "(ii)", x, y);
+            settings.set_boolean ("dark-mode", Gtk.Settings.get_default ().gtk_application_prefer_dark_theme);
             return false;
         });
     }
