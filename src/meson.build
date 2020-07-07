@@ -4,5 +4,6 @@ sources = files (
     'Application.vala',
 
     'Widgets/Window.vala',
-    'Widgets/HeaderBar.vala'
+    'Widgets/HeaderBar.vala',
+    'Widgets/ValidateScreen.vala'
 )

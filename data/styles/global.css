@@ -1,3 +1,34 @@
 @define-color colorPrimary #0F4C81;
 @define-color colorAccent #197FFC;
 @define-color textColorPrimary #FFFFFF;
+
+.message {
+   font-size: 15px;
+   font-weight: 600;
+}
+
+.message-name {
+   color: #197FFC;
+   font-size: 25px;
+   font-weight: 700;
+}
+
+.message-warning {
+    color: #D52D2D;
+    font-weight: 700;
+}
+
+.header-text {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.suggested-button {
+    color: #FFFFFF;
+    background-color: #0F4C81;
+}
+
+.discouraged-button {
+    color: #FFFFFF;
+    background-color: #D52D2D;
+}

@@ -22,6 +22,7 @@
 public class Alohomora.Window: Gtk.ApplicationWindow {
     private GLib.Settings settings;
     private Alohomora.HeaderBar header_bar;
+    private Alohomora.ValidateScreen validate_screen;
 
     public Window (Application app) {
         Object (
@@ -46,6 +47,9 @@ public class Alohomora.Window: Gtk.ApplicationWindow {
         header_bar = new Alohomora.HeaderBar (this);
         set_titlebar (header_bar);
 
+        validate_screen = new Alohomora.ValidateScreen ();
+
+        add(validate_screen);
         show_all ();
 
         delete_event.connect (e => {
