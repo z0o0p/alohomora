@@ -47,22 +47,22 @@ public class Alohomora.HeaderBar: Gtk.HeaderBar {
         add_secret = new Gtk.Button ();
         add_secret.image = new Gtk.Image.from_icon_name ("add-icon", Gtk.IconSize.LARGE_TOOLBAR);
         add_secret.valign = Gtk.Align.CENTER;
-        add_secret.tooltip_text = "Add New Login";
+        add_secret.tooltip_text = _("Add New Login");
         add_secret.clicked.connect (() => print("Add New Login"));
 
         dark_mode = new Granite.ModeSwitch.from_icon_name ("display-brightness-symbolic", "weather-clear-night-symbolic");
         dark_mode.active = settings.gtk_application_prefer_dark_theme;
-        dark_mode.primary_icon_tooltip_text = "Light Theme";
-        dark_mode.secondary_icon_tooltip_text = "Dark Theme";
+        dark_mode.primary_icon_tooltip_text = _("Light Theme");
+        dark_mode.secondary_icon_tooltip_text = _("Dark Theme");
         dark_mode.valign = Gtk.Align.CENTER;
         dark_mode.bind_property ("active", settings, "gtk_application_prefer_dark_theme");
 
         change_key = new Gtk.ModelButton ();
-        change_key.text = "Change Cipher Key";
+        change_key.text = _("Change Cipher Key");
         change_key.clicked.connect (() => print("Change Cipher Key"));
 
         quit = new Gtk.ModelButton ();
-        quit.text = "Quit";
+        quit.text = _("Quit");
         quit.clicked.connect (() => window.close());
 
         help_menu = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
@@ -75,9 +75,9 @@ public class Alohomora.HeaderBar: Gtk.HeaderBar {
 
         help = new Gtk.MenuButton ();
         help.popover = popover;
-        help.image = new Gtk.Image.from_icon_name ("help-icon", Gtk.IconSize.SMALL_TOOLBAR);
+        help.image = new Gtk.Image.from_icon_name ("help-icon", Gtk.IconSize.BUTTON);
         help.valign = Gtk.Align.CENTER;
-        help.tooltip_text = "Help";
+        help.tooltip_text = _("Help");
         help.clicked.connect (() => popover.show_all());
 
         pack_start (add_secret);
