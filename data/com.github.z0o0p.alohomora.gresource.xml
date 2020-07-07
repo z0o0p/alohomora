@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+    <gresource prefix="/com/github/z0o0p/alohomora">
+        <file alias="styles/global.css">styles/global.css</file>
+    </gresource>
+</gresources>

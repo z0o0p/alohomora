@@ -19,8 +19,8 @@
 * Authored by: Taqmeel Zubeir <taqmeelzubeir.dev@gmail.com>
 */
 
-public static int main(string[] args) {
-    Application app = new Application();
+public static int main (string[] args) {
+    Application app = new Application ();
 
-    return app.run();
+    return app.run ();
 }

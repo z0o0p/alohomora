@@ -20,8 +20,8 @@
 */
 
 public class Alohomora.HeaderBar: Gtk.HeaderBar {
-    public HeaderBar() {
-        Object(
+    public HeaderBar () {
+        Object (
             title: "Alohomora",
             show_close_button: true
         );

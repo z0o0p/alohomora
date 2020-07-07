@@ -20,8 +20,8 @@
 */
 
 public class Alohomora.Window: Gtk.ApplicationWindow {
-    public Window(Application app) {
-        Object(
+    public Window (Application app) {
+        Object (
             application: app,
             default_height: 575,
             default_width: 400,
@@ -30,9 +30,11 @@ public class Alohomora.Window: Gtk.ApplicationWindow {
     }
 
     construct {
-        var header_bar = new Alohomora.HeaderBar();
-        set_titlebar(header_bar);
+        get_style_context ().add_class ("rounded");
 
-        show_all();
+        var header_bar = new Alohomora.HeaderBar ();
+        set_titlebar (header_bar);
+
+        show_all ();
     }
 }

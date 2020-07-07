@@ -20,15 +20,24 @@
 */
 
 public class Application: Gtk.Application {
-    public Application() {
-        Object(
+    public Application () {
+        Object (
           application_id: "com.github.z0o0p.alohomora",
           flags: ApplicationFlags.FLAGS_NONE
         );
     }
 
-    protected override void activate() {
-        var window = new Alohomora.Window(this);
-        add_window(window);
+    protected override void activate () {
+        var provider = new Gtk.CssProvider ();
+        provider.load_from_resource ("/com/github/z0o0p/alohomora/styles/global.css");
+        Gtk.StyleContext.add_provider_for_screen (
+            Gdk.Screen.get_default (),
+            provider,
+            Gtk.STYLE_PROVIDER_PRIORITY_SETTINGS
+        );
+
+        var window = new Alohomora.Window (this);
+
+        add_window (window);
     }
 }
