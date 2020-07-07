@@ -21,21 +21,24 @@
 
 public class Alohomora.HeaderBar: Gtk.HeaderBar {
     public Alohomora.Window window {get; construct;}
-    private Gtk.Settings settings;
-    private weak Gtk.IconTheme icon_theme;
-    private Gtk.Button add_secret;
+    public Alohomora.SecretManager secret {get; construct;}
+
     private Granite.ModeSwitch dark_mode;
-    private Gtk.PopoverMenu popover;
+    private Gtk.Button add_secret;
     private Gtk.Box help_menu;
     private Gtk.ModelButton change_key;
     private Gtk.ModelButton quit;
+    private Gtk.PopoverMenu popover;
     private Gtk.MenuButton help;
+    private Gtk.Settings settings;
+    private weak Gtk.IconTheme icon_theme;
 
-    public HeaderBar (Alohomora.Window app_window) {
+    public HeaderBar (Alohomora.Window app_window, Alohomora.SecretManager secret_manager) {
         Object (
+            title: _("Alohomora"),
+            show_close_button: true,
             window: app_window,
-            title: "Alohomora",
-            show_close_button: true
+            secret: secret_manager
         );
     }
 
@@ -48,7 +51,10 @@ public class Alohomora.HeaderBar: Gtk.HeaderBar {
         add_secret.image = new Gtk.Image.from_icon_name ("add-icon", Gtk.IconSize.LARGE_TOOLBAR);
         add_secret.valign = Gtk.Align.CENTER;
         add_secret.tooltip_text = _("Add New Login");
-        add_secret.clicked.connect (() => print("Add New Login"));
+        add_secret.clicked.connect (() => {
+            var dialog = new Alohomora.NewSecret(window, secret);
+            dialog.run();
+        });
 
         dark_mode = new Granite.ModeSwitch.from_icon_name ("display-brightness-symbolic", "weather-clear-night-symbolic");
         dark_mode.active = settings.gtk_application_prefer_dark_theme;
@@ -59,6 +65,7 @@ public class Alohomora.HeaderBar: Gtk.HeaderBar {
 
         change_key = new Gtk.ModelButton ();
         change_key.text = _("Change Cipher Key");
+        //Show dialog to change cipher when clicked
         change_key.clicked.connect (() => print("Change Cipher Key"));
 
         quit = new Gtk.ModelButton ();
@@ -67,7 +74,7 @@ public class Alohomora.HeaderBar: Gtk.HeaderBar {
 
         help_menu = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
         help_menu.pack_start (change_key, false, false, 2);
-        help_menu.pack_start (new Gtk.Separator(Gtk.Orientation.HORIZONTAL));
+        help_menu.pack_start (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
         help_menu.pack_start (quit, false, false, 2);
 
         popover = new Gtk.PopoverMenu ();

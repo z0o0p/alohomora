@@ -20,12 +20,12 @@
 */
 
 public class Alohomora.Window: Gtk.ApplicationWindow {
-    private Alohomora.SecretManager secret;
     private GLib.Settings settings;
+    private Alohomora.SecretManager secret;
     private Alohomora.HeaderBar header_bar;
-    private Gtk.Stack stack;
     private Alohomora.ValidateScreen validate_screen;
     private Alohomora.MainScreen main_screen;
+    private Gtk.Stack stack;
 
     public Window (Application app) {
         Object (
@@ -49,11 +49,11 @@ public class Alohomora.Window: Gtk.ApplicationWindow {
 
         secret = new Alohomora.SecretManager ();
 
-        header_bar = new Alohomora.HeaderBar (this);
+        header_bar = new Alohomora.HeaderBar (this, secret);
         set_titlebar (header_bar);
 
         validate_screen = new Alohomora.ValidateScreen (secret);
-        main_screen = new Alohomora.MainScreen ();
+        main_screen = new Alohomora.MainScreen (this, secret);
 
         stack = new Gtk.Stack ();
         stack.add_named (validate_screen, "ValidateScreen");

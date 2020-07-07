@@ -30,20 +30,20 @@ public class Alohomora.CipherManager {
             if (j == key_len) {
                 j = 0;
             }
-            modified_key = modified_key.concat (key[j].to_string());
+            modified_key = modified_key.concat (key[j].to_string ());
         }
         for (int i = 0; i < len; i++) {
-            if (secret[i].isalpha()) {
-                character = ((secret[i].toupper() + modified_key[i].toupper()) % 26) + 'A';
-                if (secret[i].islower()) {
-                    cipher += character.tolower().to_string();
+            if (secret[i].isalpha ()) {
+                character = ((secret[i].toupper () + modified_key[i].toupper ()) % 26) + 'A';
+                if (secret[i].islower ()) {
+                    cipher += character.tolower ().to_string ();
                 }
                 else {
-                    cipher += character.to_string();
+                    cipher += character.to_string ();
                 }
             }
             else {
-                cipher += secret[i].to_string();
+                cipher += secret[i].to_string ();
             }
         }
         return cipher;
@@ -59,20 +59,20 @@ public class Alohomora.CipherManager {
             if (j == key_len) {
                 j = 0;
             }
-            modified_key = modified_key.concat (key[j].to_string());
+            modified_key = modified_key.concat (key[j].to_string ());
         }
         for (int i = 0; i < len; i++) {
-            if (cipher[i].isalpha()) {
-                character = (((cipher[i].toupper() - modified_key[i].toupper()) + 26) % 26) + 'A';
-                if(cipher[i].islower()) {
-                    secret += character.tolower().to_string();
+            if (cipher[i].isalpha ()) {
+                character = (((cipher[i].toupper () - modified_key[i].toupper ()) + 26) % 26) + 'A';
+                if(cipher[i].islower ()) {
+                    secret += character.tolower ().to_string ();
                 }
                 else {
-                    secret += character.to_string();
+                    secret += character.to_string ();
                 }
             }
             else {
-                secret += cipher[i].to_string();
+                secret += cipher[i].to_string ();
             }
         }
         return secret;
