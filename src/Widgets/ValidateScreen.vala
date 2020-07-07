@@ -20,6 +20,7 @@
 */
 
 public class Alohomora.ValidateScreen: Gtk.Box {
+    public Alohomora.SecretManager secret {get; construct;}
     private bool newuser;
     private Gtk.Image wizard_art;
     private Gtk.Box message;
@@ -32,14 +33,13 @@ public class Alohomora.ValidateScreen: Gtk.Box {
     private Gtk.Entry key_entry;
     private Gtk.Button submit;
 
-    public signal void try_validating(string name, string key);
-
-    public ValidateScreen () {
+    public ValidateScreen (Alohomora.SecretManager secret_manager) {
         Object (
             orientation: Gtk.Orientation.VERTICAL,
             spacing: 0,
             margin_start: 40,
-            margin_end: 40
+            margin_end: 40,
+            secret: secret_manager
         );
     }
 
@@ -76,17 +76,28 @@ public class Alohomora.ValidateScreen: Gtk.Box {
         key_entry.secondary_icon_name = "image-red-eye-symbolic";
         key_entry.secondary_icon_tooltip_text = _("Show Cipher Key");
         key_entry.icon_press.connect (() => key_entry.visibility = !key_entry.visibility);
-        key_entry.activate.connect (() => try_validating(username.label, key_entry.text));
+        key_entry.activate.connect (() => try_validating(username.label, key_entry.text, newuser));
         cipher = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
         cipher.pack_start (key_label, false, false, 0);
         cipher.pack_start (key_entry, false, false, 0);
 
         submit = new Gtk.Button.with_label (_("Submit"));
-        submit.clicked.connect(() => try_validating(username.label, key_entry.text));
+        submit.clicked.connect(() => try_validating(username.label, key_entry.text, newuser));
 
         pack_start(wizard_art, false, false, 20);
         pack_start(message, false, false, 0);
         pack_start(cipher, true, false, 0);
         pack_start(submit, true, false, 5);
+    }
+
+    private void try_validating(string username, string key, bool newuser) {
+        if (key != "") {
+            if (newuser) {
+                secret.create_cipher_key.begin (username, key);
+            }
+            else {
+                secret.lookup_cipher_key.begin (username, key);
+            }
+        }
     }
 }

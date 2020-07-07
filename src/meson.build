@@ -8,5 +8,7 @@ sources = files (
     'Widgets/ValidateScreen.vala',
     'Widgets/MainScreen.vala',
 
-    'Helpers/SecretManager.vala'
+    'Helpers/SecretManager.vala',
+    'Helpers/CipherManager.vala',
+    'Helpers/PasswordGenerator.vala'
 )

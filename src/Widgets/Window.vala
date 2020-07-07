@@ -52,7 +52,7 @@ public class Alohomora.Window: Gtk.ApplicationWindow {
         header_bar = new Alohomora.HeaderBar (this);
         set_titlebar (header_bar);
 
-        validate_screen = new Alohomora.ValidateScreen ();
+        validate_screen = new Alohomora.ValidateScreen (secret);
         main_screen = new Alohomora.MainScreen ();
 
         stack = new Gtk.Stack ();
@@ -62,15 +62,6 @@ public class Alohomora.Window: Gtk.ApplicationWindow {
 
         add (stack);
         show_all ();
-
-        validate_screen.try_validating.connect ((name, key) => {
-            if (key != "") {
-                if(settings.get_boolean ("new-user"))
-                    secret.create_cipher_key.begin (name, key);
-                else
-                    secret.lookup_cipher_key.begin (name, key);
-            }
-        });
 
         secret.key_validated.connect ((is_validated) => {
             if (is_validated) {
