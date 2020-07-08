@@ -197,6 +197,7 @@ public class Alohomora.SecretManager: GLib.Object {
                 "user-name", user_name,
                 null
             );
+            key = cipher_key;
             key_validated (res);
         }
         catch (Error err) {
