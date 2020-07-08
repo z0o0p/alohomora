@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Alohomora
+GenericName=Password Manager
+Comment=Store and manage passwords securely
+Categories=Utility;
+Exec=com.github.z0o0p.alohomora
+Icon=com.github.z0o0p.alohomora
+Terminal=false
+Type=Application
+Keywords=Password;Manager;Security;
