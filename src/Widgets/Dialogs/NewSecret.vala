@@ -69,6 +69,7 @@ public class Alohomora.NewSecret: Gtk.Dialog {
         pass_label.halign = Gtk.Align.END;
         pass = new Gtk.Entry ();
         pass.visibility = false;
+        pass.caps_lock_warning = false;
         pass.secondary_icon_name = "image-red-eye-symbolic";
         pass.secondary_icon_tooltip_text = _("Show Password");
         pass.icon_press.connect (() => pass.visibility = !pass.visibility);

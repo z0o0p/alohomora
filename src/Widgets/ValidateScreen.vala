@@ -73,6 +73,7 @@ public class Alohomora.ValidateScreen: Gtk.Box {
         key_label.halign = Gtk.Align.START;
         key_entry = new Gtk.Entry ();
         key_entry.visibility = false;
+        key_entry.caps_lock_warning = false;
         key_entry.secondary_icon_name = "image-red-eye-symbolic";
         key_entry.secondary_icon_tooltip_text = _("Show Cipher Key");
         key_entry.icon_press.connect (() => key_entry.visibility = !key_entry.visibility);

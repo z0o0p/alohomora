@@ -49,6 +49,7 @@ public class Alohomora.ChangeCipher: Gtk.Dialog {
         old_key_label.halign = Gtk.Align.START;
         old_key = new Gtk.Entry ();
         old_key.visibility = false;
+        old_key.caps_lock_warning = false;
         old_key.secondary_icon_name = "image-red-eye-symbolic";
         old_key.secondary_icon_tooltip_text = _("Show Old Cipher Key");
         old_key.icon_press.connect (() => old_key.visibility = !old_key.visibility);
@@ -56,6 +57,7 @@ public class Alohomora.ChangeCipher: Gtk.Dialog {
         new_key_label.halign = Gtk.Align.START;
         new_key = new Gtk.Entry();
         new_key.visibility = false;
+        new_key.caps_lock_warning = false;
         new_key.secondary_icon_name = "image-red-eye-symbolic";
         new_key.secondary_icon_tooltip_text = _("Show New Cipher Key");
         new_key.icon_press.connect (() => new_key.visibility = !new_key.visibility);
