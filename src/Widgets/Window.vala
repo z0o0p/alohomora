@@ -42,10 +42,13 @@ public class Alohomora.Window: Gtk.ApplicationWindow {
         get_style_context ().add_class ("rounded");
         int window_x,window_y;
         settings.get ("window-pos", "(ii)", out window_x, out window_y);
-        if (window_x != -1 && window_y != -1)
+        if (window_x != -1 && window_y != -1) {
             move (window_x, window_y);
-        else
+        }
+        else {
+            gravity = Gdk.Gravity.CENTER;
             window_position = Gtk.WindowPosition.CENTER;
+        }
 
         secret = new Alohomora.SecretManager ();
 
