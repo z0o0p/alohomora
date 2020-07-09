@@ -92,15 +92,9 @@ public class Alohomora.SecretManager: GLib.Object {
                     null
                 );
             }
-            // var collections = service.get_collections ();
-            // foreach(var c in collections) {
-            //     if(c.label == "Default keyring" || c.label == "Login") {
-            //         collection = c;
-            //         yield load_secrets ();
-            //         initialized ();
-            //         return;
-            //     }
-            // }
+            else {
+                yield load_secrets();
+            }
             initialized ();
         }
         catch (Error err) {

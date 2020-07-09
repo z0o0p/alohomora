@@ -39,6 +39,7 @@ public class Alohomora.MainScreen: Gtk.ScrolledWindow {
         screen = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
         welcome = new Granite.Widgets.Welcome (_("No Passwords Found"), _("Add a new credential."));
         welcome.append ("list-add", _("Add Password"), _("Stores a new password securely."));
+        welcome.get_button_from_index (0).can_focus = false;
 
         secret.initialized.connect (() => {
             var secrets = secret.get_secrets ();
