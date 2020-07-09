@@ -77,22 +77,30 @@ public class Alohomora.SecretManager: GLib.Object {
     public async void initialize_secrets () {
         try{
             var service = yield Secret.Service.get (Secret.ServiceFlags.LOAD_COLLECTIONS, null);
-            var collections = service.get_collections ();
-            foreach(var c in collections) {
-                if(c.label == "Login" || c.label == "Alohomora") {
-                    collection = c;
-                    yield load_secrets ();
-                    initialized ();
-                    return;
-                }
-            }
-            collection = yield Secret.Collection.create (
+            collection = yield Secret.Collection.for_alias (
                 service,
-                "Alohomora",
-                null,
-                0,
+                "default",
+                Secret.CollectionFlags.LOAD_ITEMS,
                 null
             );
+            if (collection == null) {
+                collection = yield Secret.Collection.create (
+                    service,
+                    "Login",
+                    "default",
+                    0,
+                    null
+                );
+            }
+            // var collections = service.get_collections ();
+            // foreach(var c in collections) {
+            //     if(c.label == "Default keyring" || c.label == "Login") {
+            //         collection = c;
+            //         yield load_secrets ();
+            //         initialized ();
+            //         return;
+            //     }
+            // }
             initialized ();
         }
         catch (Error err) {
