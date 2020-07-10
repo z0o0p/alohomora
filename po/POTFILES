@@ -1,1 +1,8 @@
-src/Application.vala
+src/Widgets/Window.vala
+src/Widgets/HeaderBar.vala
+src/Widgets/ValidateScreen.vala
+src/Widgets/MainScreen.vala
+src/Widgets/SecretBox.vala
+src/Widgets/Dialogs/NewSecret.vala
+src/Widgets/Dialogs/EditSecret.vala
+src/Widgets/Dialogs/ChangeCipher.vala
