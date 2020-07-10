@@ -55,17 +55,9 @@ public class Alohomora.NewSecret: Gtk.Dialog {
         username_label.halign = Gtk.Align.END;
         username = new Gtk.Entry ();
 
-        grid = new Gtk.Grid ();
-        grid.row_spacing = 5;
-        grid.column_spacing = 5;
-        grid.halign = Gtk.Align.CENTER;
-        grid.margin_top = 20;
-        grid.attach (credential_name_label,     0, 0, 1, 1);
-        grid.attach (credential_name,           1, 0, 1, 1);
-        grid.attach (username_label, 0, 1 ,1, 1);
-        grid.attach (username,       1, 1, 1, 1);
+        generate_message = new Gtk.Label (_("Your Password Will Be Auto-Generated"));
 
-        pass_label = new Gtk.Label (_(" Password :"));
+        pass_label = new Gtk.Label (_("Password :"));
         pass_label.halign = Gtk.Align.END;
         pass = new Gtk.Entry ();
         pass.visibility = false;
@@ -76,24 +68,32 @@ public class Alohomora.NewSecret: Gtk.Dialog {
         pass_grid = new Gtk.Grid ();
         pass_grid.row_spacing = 5;
         pass_grid.column_spacing = 5;
+        pass_grid.halign = Gtk.Align.END;
         pass_grid.attach (pass_label, 0, 0, 1, 1);
         pass_grid.attach (pass,       1, 0, 1, 1);
 
-        generate_message = new Gtk.Label (_("Your Password Will Be Auto-Generated"));
-
         stack = new Gtk.Stack ();
-        stack.halign = Gtk.Align.CENTER;
         stack.margin_bottom = 20;
         stack.add_titled (generate_message, "Generate", _("Generate New Password"));
         stack.add_titled (pass_grid, "Existing", _("Use Existing Password"));
         stack_switcher = new Gtk.StackSwitcher ();
         stack_switcher.stack = stack;
 
+        grid = new Gtk.Grid ();
+        grid.row_spacing = 5;
+        grid.column_spacing = 5;
+        grid.halign = Gtk.Align.CENTER;
+        grid.margin_top = 20;
+        grid.attach (credential_name_label, 0, 0, 1, 1);
+        grid.attach (credential_name,       1, 0, 1, 1);
+        grid.attach (username_label,        0, 1 ,1, 1);
+        grid.attach (username,              1, 1, 1, 1);
+        grid.attach (stack,                 0, 2, 2, 1);
+
         var dialog_content = get_content_area ();
         dialog_content.spacing = 5;
         dialog_content.pack_start (stack_switcher);
         dialog_content.pack_start (grid);
-        dialog_content.pack_start (stack);
         dialog_content.show_all ();
 
         add_button (_("Cancel"), Gtk.ResponseType.CLOSE);
