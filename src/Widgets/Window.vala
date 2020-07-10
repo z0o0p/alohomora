@@ -115,6 +115,6 @@ public class Alohomora.Window: Gtk.ApplicationWindow {
         dialog.set_transient_for (this);
         dialog.add_button (_("Close"), Gtk.ResponseType.CLOSE);
         dialog.run ();
-        dialog.close ();
+        dialog.destroy ();
     }
 }
