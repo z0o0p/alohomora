@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.z0o0p.alohomora\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-10 21:49+0530\n"
+"POT-Creation-Date: 2020-07-10 23:11+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -138,23 +138,23 @@ msgstr ""
 msgid "Username :"
 msgstr ""
 
-#: src/Widgets/Dialogs/NewSecret.vala:68
-msgid " Password :"
-msgstr ""
-
-#: src/Widgets/Dialogs/NewSecret.vala:74 src/Widgets/Dialogs/EditSecret.vala:67
-msgid "Show Password"
-msgstr ""
-
-#: src/Widgets/Dialogs/NewSecret.vala:82
+#: src/Widgets/Dialogs/NewSecret.vala:58
 msgid "Your Password Will Be Auto-Generated"
 msgstr ""
 
-#: src/Widgets/Dialogs/NewSecret.vala:87
+#: src/Widgets/Dialogs/NewSecret.vala:60 src/Widgets/Dialogs/EditSecret.vala:61
+msgid "Password :"
+msgstr ""
+
+#: src/Widgets/Dialogs/NewSecret.vala:66 src/Widgets/Dialogs/EditSecret.vala:67
+msgid "Show Password"
+msgstr ""
+
+#: src/Widgets/Dialogs/NewSecret.vala:77
 msgid "Generate New Password"
 msgstr ""
 
-#: src/Widgets/Dialogs/NewSecret.vala:88
+#: src/Widgets/Dialogs/NewSecret.vala:78
 msgid "Use Existing Password"
 msgstr ""
 
@@ -165,10 +165,6 @@ msgstr ""
 
 #: src/Widgets/Dialogs/NewSecret.vala:100
 msgid "Add Secret"
-msgstr ""
-
-#: src/Widgets/Dialogs/EditSecret.vala:61
-msgid "Password :"
 msgstr ""
 
 #: src/Widgets/Dialogs/ChangeCipher.vala:45
