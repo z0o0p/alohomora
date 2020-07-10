@@ -1,0 +1,196 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the com.github.z0o0p.alohomora package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: com.github.z0o0p.alohomora\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-10 21:49+0530\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/Widgets/Window.vala:76 src/Widgets/Window.vala:92
+msgid "Incorrect Key!"
+msgstr ""
+
+#: src/Widgets/Window.vala:77 src/Widgets/Window.vala:93
+msgid "The cipher key entered is wrong. Check and try again."
+msgstr ""
+
+#: src/Widgets/Window.vala:86
+msgid "Successful Change"
+msgstr ""
+
+#: src/Widgets/Window.vala:87
+msgid "Cipher key was successfully changed. Existing secrets are unusable now."
+msgstr ""
+
+#: src/Widgets/Window.vala:116
+msgid "Close"
+msgstr ""
+
+#: src/Widgets/HeaderBar.vala:38
+msgid "Alohomora"
+msgstr ""
+
+#: src/Widgets/HeaderBar.vala:53
+msgid "Add New Login"
+msgstr ""
+
+#: src/Widgets/HeaderBar.vala:62
+msgid "Light Theme"
+msgstr ""
+
+#: src/Widgets/HeaderBar.vala:63
+msgid "Dark Theme"
+msgstr ""
+
+#: src/Widgets/HeaderBar.vala:68 src/Widgets/Dialogs/ChangeCipher.vala:34
+msgid "Change Cipher Key"
+msgstr ""
+
+#: src/Widgets/HeaderBar.vala:76
+msgid "Quit"
+msgstr ""
+
+#: src/Widgets/HeaderBar.vala:91
+msgid "Help"
+msgstr ""
+
+#: src/Widgets/ValidateScreen.vala:52
+msgid "Welcome"
+msgstr ""
+
+#: src/Widgets/ValidateScreen.vala:56
+msgid "Let's Get You Started"
+msgstr ""
+
+#: src/Widgets/ValidateScreen.vala:56
+msgid "I Need To Decipher Your Passwords First"
+msgstr ""
+
+#: src/Widgets/ValidateScreen.vala:58
+msgid "Your new cipher key will be used to encipher all your saved passwords"
+msgstr ""
+
+#: src/Widgets/ValidateScreen.vala:72
+msgid "Enter Cipher Key:"
+msgstr ""
+
+#: src/Widgets/ValidateScreen.vala:78
+msgid "Show Cipher Key"
+msgstr ""
+
+#: src/Widgets/ValidateScreen.vala:85
+msgid "Submit"
+msgstr ""
+
+#: src/Widgets/MainScreen.vala:40
+msgid "No Passwords Found"
+msgstr ""
+
+#: src/Widgets/MainScreen.vala:40
+msgid "Add a new credential."
+msgstr ""
+
+#: src/Widgets/MainScreen.vala:41
+msgid "Add Password"
+msgstr ""
+
+#: src/Widgets/MainScreen.vala:41
+msgid "Stores a new password securely."
+msgstr ""
+
+#: src/Widgets/SecretBox.vala:59 src/Widgets/Dialogs/EditSecret.vala:36
+#: src/Widgets/Dialogs/EditSecret.vala:95
+msgid "Edit Secret"
+msgstr ""
+
+#: src/Widgets/SecretBox.vala:65
+msgid "Delete Secret"
+msgstr ""
+
+#: src/Widgets/SecretBox.vala:85
+msgid "Copy Password"
+msgstr ""
+
+#: src/Widgets/Dialogs/NewSecret.vala:39
+msgid "Add New Secret"
+msgstr ""
+
+#: src/Widgets/Dialogs/NewSecret.vala:50 src/Widgets/Dialogs/EditSecret.vala:53
+msgid "Name :"
+msgstr ""
+
+#: src/Widgets/Dialogs/NewSecret.vala:53
+msgid "Eg. Github, Facebook, etc."
+msgstr ""
+
+#: src/Widgets/Dialogs/NewSecret.vala:54 src/Widgets/Dialogs/EditSecret.vala:57
+msgid "Username :"
+msgstr ""
+
+#: src/Widgets/Dialogs/NewSecret.vala:68
+msgid " Password :"
+msgstr ""
+
+#: src/Widgets/Dialogs/NewSecret.vala:74 src/Widgets/Dialogs/EditSecret.vala:67
+msgid "Show Password"
+msgstr ""
+
+#: src/Widgets/Dialogs/NewSecret.vala:82
+msgid "Your Password Will Be Auto-Generated"
+msgstr ""
+
+#: src/Widgets/Dialogs/NewSecret.vala:87
+msgid "Generate New Password"
+msgstr ""
+
+#: src/Widgets/Dialogs/NewSecret.vala:88
+msgid "Use Existing Password"
+msgstr ""
+
+#: src/Widgets/Dialogs/NewSecret.vala:99 src/Widgets/Dialogs/EditSecret.vala:94
+#: src/Widgets/Dialogs/ChangeCipher.vala:79
+msgid "Cancel"
+msgstr ""
+
+#: src/Widgets/Dialogs/NewSecret.vala:100
+msgid "Add Secret"
+msgstr ""
+
+#: src/Widgets/Dialogs/EditSecret.vala:61
+msgid "Password :"
+msgstr ""
+
+#: src/Widgets/Dialogs/ChangeCipher.vala:45
+msgid "CHANGING THE CIPHER KEY WILL MAKE THE EXISTING SECRETS UNUSABLE"
+msgstr ""
+
+#: src/Widgets/Dialogs/ChangeCipher.vala:48
+msgid "Old Cipher Key:"
+msgstr ""
+
+#: src/Widgets/Dialogs/ChangeCipher.vala:54
+msgid "Show Old Cipher Key"
+msgstr ""
+
+#: src/Widgets/Dialogs/ChangeCipher.vala:56
+msgid "New Cipher Key:"
+msgstr ""
+
+#: src/Widgets/Dialogs/ChangeCipher.vala:62
+msgid "Show New Cipher Key"
+msgstr ""
+
+#: src/Widgets/Dialogs/ChangeCipher.vala:80
+msgid "Change Key"
+msgstr ""

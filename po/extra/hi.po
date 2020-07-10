@@ -1,0 +1,76 @@
+# Hindi translations for extra package.
+# Copyright (C) 2020 THE extra'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the extra package.
+# Automatically generated, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: extra\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-10 21:47+0530\n"
+"PO-Revision-Date: 2020-07-10 22:10+0530\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: hi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+
+#: data/com.github.z0o0p.alohomora.desktop.in:3
+#: data/com.github.z0o0p.alohomora.appdata.xml.in:7
+msgid "Alohomora"
+msgstr "अलोहोमोरा"
+
+#: data/com.github.z0o0p.alohomora.desktop.in:4
+msgid "Password Manager"
+msgstr "पासवर्ड प्रबंधक"
+
+#: data/com.github.z0o0p.alohomora.desktop.in:5
+#: data/com.github.z0o0p.alohomora.appdata.xml.in:8
+msgid "Store and manage passwords securely"
+msgstr "पासवर्ड सुरक्षित रूप से संचित और प्रबंधित करें"
+
+#: data/com.github.z0o0p.alohomora.desktop.in:8
+msgid "com.github.z0o0p.alohomora"
+msgstr "com.github.z0o0p.alohomora"
+
+#: data/com.github.z0o0p.alohomora.desktop.in:11
+msgid "Password;Manager;Security;"
+msgstr "पासवर्ड;प्रबंधक;सुरक्षा;"
+
+#: data/com.github.z0o0p.alohomora.appdata.xml.in:10
+msgid ""
+"A clean and easy-to-use password manager that securely stores all your "
+"passwords in your device."
+msgstr ""
+"एक साफ और आसानी से उपयोग होने वाला पासवर्ड प्रबंधक जो आपके सभी पासवर्ड को आपके "
+"डिवाइस में सुरक्षित रखता है।"
+
+#: data/com.github.z0o0p.alohomora.appdata.xml.in:11
+msgid ""
+"You can now forget about having to remember a unique, long, complex password "
+"for every one of your online accounts."
+msgstr ""
+"अब आप अपने प्रत्येक ऑनलाइन खाते के लिए एक अद्वितीय, लंबे, जटिल पासवर्ड को याद रखने के "
+"बारे में भूल सकते हैं।"
+
+#: data/com.github.z0o0p.alohomora.appdata.xml.in:12
+msgid "Features:"
+msgstr "विशेषताएं:"
+
+#: data/com.github.z0o0p.alohomora.appdata.xml.in:14
+msgid "In-built password generator"
+msgstr "अंत: निर्मित पासवर्ड जनरेटर"
+
+#: data/com.github.z0o0p.alohomora.appdata.xml.in:15
+msgid "Enciphers stored secrets"
+msgstr "संचित रहस्य को येनसैफर है"
+
+#: data/com.github.z0o0p.alohomora.appdata.xml.in:16
+msgid "Copy passwords to your clipboard"
+msgstr "पासवर्ड को आपके क्लिपबोर्ड पर कॉपी करें"
+
+#: data/com.github.z0o0p.alohomora.appdata.xml.in:22
+msgid "Taqmeel Zubeir"
+msgstr "तकमील ज़ुबैर"
