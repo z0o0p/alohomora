@@ -10,17 +10,23 @@ Alohomora leverages the libsecret-1 library package to store passwords securely 
 
 ![](data/screenshots/alohomora-screenshot.png)
 
+## Get it from elementary OS AppCenter!
+
+[![Get it on AppCenter](https://appcenter.elementary.io/badge.svg)](https://appcenter.elementary.io/com.github.z0o0p.alohomora)
+
+This app is available on the elementary OS AppCenter. Head over there to download and install Alohomora.
+
 ## Building and Installation
 
 You can build and install Alohomora from the source. Ensure that you have the required dependencies installed.
 
 ### Required Dependencies
 
-* gtk+-3.0
-* granite
-* libsecret-1
-* valac
 * meson
+* valac 
+* libgtk-3-dev
+* libgranite-dev
+* libsecret-1-dev
 
 ### Build, install and run
 
