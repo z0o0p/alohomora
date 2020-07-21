@@ -93,6 +93,12 @@ public class Alohomora.SecretManager: GLib.Object {
                 );
             }
             else {
+                if(collection.get_locked ()) {
+                    var objects = new GLib.List<GLib.DBusProxy>();
+		            objects.prepend(collection);
+		            GLib.List<GLib.DBusProxy> unlocked;
+		            yield service.unlock (objects, null, out unlocked);
+                }
                 yield load_secrets();
             }
             initialized ();
