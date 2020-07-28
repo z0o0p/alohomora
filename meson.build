@@ -1,5 +1,5 @@
 #Project name, Languages used and Version
-project ('com.github.z0o0p.alohomora', 'vala', 'c', version: '1.0.0')
+project ('com.github.z0o0p.alohomora', 'vala', 'c', version: '1.0.1')
 
 # Translation module
 i18n = import ('i18n')

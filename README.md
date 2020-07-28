@@ -1,6 +1,6 @@
 # Alohomora
 
-[![License](https://img.shields.io/badge/license-GPL%203.0-blue)](https://github.com/z0o0p/alohomora/blob/master/COPYING)
+[![License](https://img.shields.io/badge/license-GPL%20v3.0-blue)](https://github.com/z0o0p/alohomora/blob/master/COPYING)
 [![Build Status](https://travis-ci.com/z0o0p/alohomora.svg?branch=master)](https://travis-ci.com/z0o0p/alohomora)
 [![Open Issues](https://img.shields.io/github/issues/z0o0p/alohomora)](https://github.com/z0o0p/alohomora/issues)
 
@@ -46,4 +46,4 @@ ninja && sudo ninja install
 ```
 
 ## Contributions <3
-Anyone willing to contribute to this project is most welcome. Just [fork](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo) this repository to your profile, work on your changes, and then create a [pull request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request) when satisfied with your work.
+Anyone willing to contribute to this project is most welcome. Please refer to the [contributing guidelines](https://github.com/z0o0p/alohomora/blob/master/CONTRIBUTING.md) to get started.
