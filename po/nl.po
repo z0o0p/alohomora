@@ -1,0 +1,193 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the com.github.z0o0p.alohomora package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: com.github.z0o0p.alohomora\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-10 23:11+0530\n"
+"PO-Revision-Date: 2020-08-17 13:04+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.1\n"
+"Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: nl\n"
+
+#: src/Widgets/Window.vala:76 src/Widgets/Window.vala:92
+msgid "Incorrect Key!"
+msgstr "Onjuiste sleutel!"
+
+#: src/Widgets/Window.vala:77 src/Widgets/Window.vala:93
+msgid "The cipher key entered is wrong. Check and try again."
+msgstr "De toegangssleutel is onjuist. Controleer deze en probeer het opnieuw."
+
+#: src/Widgets/Window.vala:86
+msgid "Successful Change"
+msgstr "Gewijzigd"
+
+#: src/Widgets/Window.vala:87
+msgid "Cipher key was successfully changed. Existing secrets are unusable now."
+msgstr "De toegangssleutel is gewijzigd. Reeds opgeslagen items zijn nu onbruikbaar."
+
+#: src/Widgets/Window.vala:116
+msgid "Close"
+msgstr "Sluiten"
+
+#: src/Widgets/HeaderBar.vala:38
+msgid "Alohomora"
+msgstr "Alohomora"
+
+#: src/Widgets/HeaderBar.vala:53
+msgid "Add New Login"
+msgstr "Item toevoegen"
+
+#: src/Widgets/HeaderBar.vala:62
+msgid "Light Theme"
+msgstr "Licht thema"
+
+#: src/Widgets/HeaderBar.vala:63
+msgid "Dark Theme"
+msgstr "Donker thema"
+
+#: src/Widgets/HeaderBar.vala:68 src/Widgets/Dialogs/ChangeCipher.vala:34
+msgid "Change Cipher Key"
+msgstr "Toegangssleutel wijzigen"
+
+#: src/Widgets/HeaderBar.vala:76
+msgid "Quit"
+msgstr "Afsluiten"
+
+#: src/Widgets/HeaderBar.vala:91
+msgid "Help"
+msgstr "Hulp"
+
+#: src/Widgets/ValidateScreen.vala:52
+msgid "Welcome"
+msgstr "Welkom"
+
+#: src/Widgets/ValidateScreen.vala:56
+msgid "Let's Get You Started"
+msgstr "Aan de slag"
+
+#: src/Widgets/ValidateScreen.vala:56
+msgid "I Need To Decipher Your Passwords First"
+msgstr "Je wachtwoorden moeten worden ontcijferd"
+
+#: src/Widgets/ValidateScreen.vala:58
+msgid "Your new cipher key will be used to encipher all your saved passwords"
+msgstr "Je nieuwe toegangssleutel wordt gebruikt om al je opgeslagen wachtwoorden te ontcijferen"
+
+#: src/Widgets/ValidateScreen.vala:72
+msgid "Enter Cipher Key:"
+msgstr "Toegangssleutel:"
+
+#: src/Widgets/ValidateScreen.vala:78
+msgid "Show Cipher Key"
+msgstr "Toegangssleutel tonen"
+
+#: src/Widgets/ValidateScreen.vala:85
+msgid "Submit"
+msgstr "Versturen"
+
+#: src/Widgets/MainScreen.vala:40
+msgid "No Passwords Found"
+msgstr "Geen wachtwoorden"
+
+#: src/Widgets/MainScreen.vala:40
+msgid "Add a new credential."
+msgstr "Voeg een item toe."
+
+#: src/Widgets/MainScreen.vala:41
+msgid "Add Password"
+msgstr "Wachtwoord toevoegen"
+
+#: src/Widgets/MainScreen.vala:41
+msgid "Stores a new password securely."
+msgstr "Sla een wachtwoord veilig op."
+
+#: src/Widgets/SecretBox.vala:59 src/Widgets/Dialogs/EditSecret.vala:36
+#: src/Widgets/Dialogs/EditSecret.vala:95
+msgid "Edit Secret"
+msgstr "Item bewerken"
+
+#: src/Widgets/SecretBox.vala:65
+msgid "Delete Secret"
+msgstr "Item verwijderen"
+
+#: src/Widgets/SecretBox.vala:85
+msgid "Copy Password"
+msgstr "Wachtwoord kopiëren"
+
+#: src/Widgets/Dialogs/NewSecret.vala:39
+msgid "Add New Secret"
+msgstr "Item toevoegen"
+
+#: src/Widgets/Dialogs/NewSecret.vala:50 src/Widgets/Dialogs/EditSecret.vala:53
+msgid "Name :"
+msgstr "Naam:"
+
+#: src/Widgets/Dialogs/NewSecret.vala:53
+msgid "Eg. Github, Facebook, etc."
+msgstr "Bijv. GitHub, Facebook, etc."
+
+#: src/Widgets/Dialogs/NewSecret.vala:54 src/Widgets/Dialogs/EditSecret.vala:57
+msgid "Username :"
+msgstr "Gebruikersnaam:"
+
+#: src/Widgets/Dialogs/NewSecret.vala:58
+msgid "Your Password Will Be Auto-Generated"
+msgstr "Je wachtwoord wordt automatisch gegenereerd"
+
+#: src/Widgets/Dialogs/NewSecret.vala:60 src/Widgets/Dialogs/EditSecret.vala:61
+msgid "Password :"
+msgstr "Wachtwoord:"
+
+#: src/Widgets/Dialogs/NewSecret.vala:66 src/Widgets/Dialogs/EditSecret.vala:67
+msgid "Show Password"
+msgstr "Wachtwoord tonen"
+
+#: src/Widgets/Dialogs/NewSecret.vala:77
+msgid "Generate New Password"
+msgstr "Wachtwoord genereren"
+
+#: src/Widgets/Dialogs/NewSecret.vala:78
+msgid "Use Existing Password"
+msgstr "Bestaand wachtwoord gebruiken"
+
+#: src/Widgets/Dialogs/NewSecret.vala:99 src/Widgets/Dialogs/EditSecret.vala:94
+#: src/Widgets/Dialogs/ChangeCipher.vala:79
+msgid "Cancel"
+msgstr "Annuleren"
+
+#: src/Widgets/Dialogs/NewSecret.vala:100
+msgid "Add Secret"
+msgstr "Item toevoegen"
+
+#: src/Widgets/Dialogs/ChangeCipher.vala:45
+msgid "CHANGING THE CIPHER KEY WILL MAKE THE EXISTING SECRETS UNUSABLE"
+msgstr "ALS JE DE TOEGANGSSLEUTEL WIJZIGT, WORDEN REEDS OPGESLAGEN ITEMS ONBRUIKBAAR"
+
+#: src/Widgets/Dialogs/ChangeCipher.vala:48
+msgid "Old Cipher Key:"
+msgstr "Oude toegangssleutel:"
+
+#: src/Widgets/Dialogs/ChangeCipher.vala:54
+msgid "Show Old Cipher Key"
+msgstr "Oude toegangssleutel tonen"
+
+#: src/Widgets/Dialogs/ChangeCipher.vala:56
+msgid "New Cipher Key:"
+msgstr "Nieuwe toegangssleutel:"
+
+#: src/Widgets/Dialogs/ChangeCipher.vala:62
+msgid "Show New Cipher Key"
+msgstr "Nieuwe toegangssleutel tonen"
+
+#: src/Widgets/Dialogs/ChangeCipher.vala:80
+msgid "Change Key"
+msgstr "Sleutel wijzigen"
