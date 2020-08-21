@@ -1,22 +1,21 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# French translations for extra package.
+# Copyright (C) 2020 THE extra'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the extra package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Nathan Bonnemains (@NathanBnm), 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-21 15:16+0200\n"
-"PO-Revision-Date: 2020-08-17 13:06+0200\n"
-"Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
-"Language-Team: \n"
-"Language: nl\n"
+"PO-Revision-Date: 2020-08-21 14:59+0200\n"
+"Last-Translator: Nathan Bonnemains (@NathanBnm)\n"
+"Language-Team: none\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.1\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: data/com.github.z0o0p.alohomora.desktop.in:3
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:7
@@ -25,12 +24,12 @@ msgstr "Alohomora"
 
 #: data/com.github.z0o0p.alohomora.desktop.in:4
 msgid "Password Manager"
-msgstr "Wachtwoordbeheerder"
+msgstr "Gestionnaire de mots de passe"
 
 #: data/com.github.z0o0p.alohomora.desktop.in:5
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:8
 msgid "Store and manage passwords securely"
-msgstr "Sla wachtwoorden veilig op en beheer ze"
+msgstr "Stockez et gérez vos mots de passe de façon sécrurisée"
 
 #: data/com.github.z0o0p.alohomora.desktop.in:8
 msgid "com.github.z0o0p.alohomora"
@@ -38,39 +37,39 @@ msgstr "com.github.z0o0p.alohomora"
 
 #: data/com.github.z0o0p.alohomora.desktop.in:11
 msgid "Password;Manager;Security;"
-msgstr "Wachtwoord;Beheer;Beveiliging;"
+msgstr "Mot de passe;Gestionnaire;Sécurité;"
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:10
 msgid ""
 "A clean and easy-to-use password manager that securely stores all your "
 "passwords in your device."
 msgstr ""
-"Een eenvoudige, makkelijk te gebruiken wachtwoordbeheerder die al je "
-"wachtwoorden veilig opslaat op je apparaat."
+"Un gestionnaire de mots de passe simple et facile à utiliser qui stocke de "
+"façon sécurisée tous vos mots de passe dans votre appareil."
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:11
 msgid ""
 "You can now forget about having to remember a unique, long, complex password "
 "for every one of your online accounts."
 msgstr ""
-"Vanaf nu hoef je nooit meer een uniek, lang of moeilijk wachtwoord te "
-"onthouden."
+"Vous pouvez désormais vous passer de devoir retenir un mot de passe unique, "
+"long et complexe pour chacun de vos comptes en ligne."
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:12
 msgid "Features:"
-msgstr "Kenmerken:"
+msgstr "Fonctionnalités :"
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:14
 msgid "Built-in password generator"
-msgstr "Ingebouwde wachtwoordgenerator"
+msgstr "Générateur de mots de passe intégré"
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:15
 msgid "Enciphers stored secrets"
-msgstr "Opgeslagen items worden vercijferd"
+msgstr "Chiffrement des clés secrètes stockées"
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:16
 msgid "Copy passwords to your clipboard"
-msgstr "Kopieer wachtwoorden naar het klembord"
+msgstr "Copiez les mots de passe dans votre presse-papiers"
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:22
 msgid "Taqmeel Zubeir"
@@ -78,12 +77,12 @@ msgstr "Taqmeel Zubeir"
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:76
 msgid "Minor bug fixes"
-msgstr ""
+msgstr "Corrections de bug mineures"
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:77
 msgid "Improved app icons"
-msgstr ""
+msgstr "Amélioration des icônes de l'application"
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:82
 msgid "Initial Release"
-msgstr ""
+msgstr "Version initiale"

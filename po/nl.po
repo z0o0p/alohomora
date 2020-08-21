@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.z0o0p.alohomora\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-10 23:11+0530\n"
+"POT-Creation-Date: 2020-08-21 15:16+0200\n"
 "PO-Revision-Date: 2020-08-17 13:04+0200\n"
+"Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Language-Team: \n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.4.1\n"
-"Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: nl\n"
 
 #: src/Widgets/Window.vala:76 src/Widgets/Window.vala:92
 msgid "Incorrect Key!"
@@ -32,7 +32,8 @@ msgstr "Gewijzigd"
 
 #: src/Widgets/Window.vala:87
 msgid "Cipher key was successfully changed. Existing secrets are unusable now."
-msgstr "De toegangssleutel is gewijzigd. Reeds opgeslagen items zijn nu onbruikbaar."
+msgstr ""
+"De toegangssleutel is gewijzigd. Reeds opgeslagen items zijn nu onbruikbaar."
 
 #: src/Widgets/Window.vala:116
 msgid "Close"
@@ -80,7 +81,9 @@ msgstr "Je wachtwoorden moeten worden ontcijferd"
 
 #: src/Widgets/ValidateScreen.vala:58
 msgid "Your new cipher key will be used to encipher all your saved passwords"
-msgstr "Je nieuwe toegangssleutel wordt gebruikt om al je opgeslagen wachtwoorden te ontcijferen"
+msgstr ""
+"Je nieuwe toegangssleutel wordt gebruikt om al je opgeslagen wachtwoorden te "
+"ontcijferen"
 
 #: src/Widgets/ValidateScreen.vala:72
 msgid "Enter Cipher Key:"
@@ -132,7 +135,7 @@ msgid "Name :"
 msgstr "Naam:"
 
 #: src/Widgets/Dialogs/NewSecret.vala:53
-msgid "Eg. Github, Facebook, etc."
+msgid "Eg. GitHub, Facebook, etc."
 msgstr "Bijv. GitHub, Facebook, etc."
 
 #: src/Widgets/Dialogs/NewSecret.vala:54 src/Widgets/Dialogs/EditSecret.vala:57
@@ -170,7 +173,8 @@ msgstr "Item toevoegen"
 
 #: src/Widgets/Dialogs/ChangeCipher.vala:45
 msgid "CHANGING THE CIPHER KEY WILL MAKE THE EXISTING SECRETS UNUSABLE"
-msgstr "ALS JE DE TOEGANGSSLEUTEL WIJZIGT, WORDEN REEDS OPGESLAGEN ITEMS ONBRUIKBAAR"
+msgstr ""
+"ALS JE DE TOEGANGSSLEUTEL WIJZIGT, WORDEN REEDS OPGESLAGEN ITEMS ONBRUIKBAAR"
 
 #: src/Widgets/Dialogs/ChangeCipher.vala:48
 msgid "Old Cipher Key:"
