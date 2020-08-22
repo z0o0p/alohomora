@@ -50,7 +50,7 @@ public class Alohomora.NewSecret: Gtk.Dialog {
         credential_name_label = new Gtk.Label (_("Name :"));
         credential_name_label.halign = Gtk.Align.END;
         credential_name = new Gtk.Entry();
-        credential_name.placeholder_text = _("Eg. Github, Facebook, etc.");
+        credential_name.placeholder_text = _("Eg. GitHub, Facebook, etc.");
         username_label = new Gtk.Label (_("Username :"));
         username_label.halign = Gtk.Align.END;
         username = new Gtk.Entry ();

@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.z0o0p.alohomora\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-10 23:11+0530\n"
+"POT-Creation-Date: 2020-08-21 15:16+0200\n"
 "PO-Revision-Date: 2020-08-16 23:12+0100\n"
+"Last-Translator: André Barata <andretiagob@protonmail.com>\n"
 "Language-Team: Portuguese <pt@li.org>\n"
+"Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.4.1\n"
-"Last-Translator: André Barata <andretiagob@protonmail.com>\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"Language: pt\n"
 
 #: src/Widgets/Window.vala:76 src/Widgets/Window.vala:92
 msgid "Incorrect Key!"
@@ -24,7 +24,8 @@ msgstr "Chave incorreta!"
 
 #: src/Widgets/Window.vala:77 src/Widgets/Window.vala:93
 msgid "The cipher key entered is wrong. Check and try again."
-msgstr "A chave de codificação inserida está incorreta. Verifique e tente novamente."
+msgstr ""
+"A chave de codificação inserida está incorreta. Verifique e tente novamente."
 
 #: src/Widgets/Window.vala:86
 msgid "Successful Change"
@@ -32,7 +33,9 @@ msgstr "Alteração com sucesso"
 
 #: src/Widgets/Window.vala:87
 msgid "Cipher key was successfully changed. Existing secrets are unusable now."
-msgstr "A chave de codificação foi alterada com sucesso. Os segredos existentes são agora inutilizáveis."
+msgstr ""
+"A chave de codificação foi alterada com sucesso. Os segredos existentes são "
+"agora inutilizáveis."
 
 #: src/Widgets/Window.vala:116
 msgid "Close"
@@ -80,7 +83,9 @@ msgstr "Eu Preciso de Descodificar Primeiro as Suas Senhas"
 
 #: src/Widgets/ValidateScreen.vala:58
 msgid "Your new cipher key will be used to encipher all your saved passwords"
-msgstr "A sua nova chave de codificação vai ser usada para codificar todas as suas senhas"
+msgstr ""
+"A sua nova chave de codificação vai ser usada para codificar todas as suas "
+"senhas"
 
 #: src/Widgets/ValidateScreen.vala:72
 msgid "Enter Cipher Key:"
@@ -132,7 +137,7 @@ msgid "Name :"
 msgstr "Nome :"
 
 #: src/Widgets/Dialogs/NewSecret.vala:53
-msgid "Eg. Github, Facebook, etc."
+msgid "Eg. GitHub, Facebook, etc."
 msgstr "Ex. Github, Facebook, etc."
 
 #: src/Widgets/Dialogs/NewSecret.vala:54 src/Widgets/Dialogs/EditSecret.vala:57
@@ -170,7 +175,9 @@ msgstr "Adicionar Segredo"
 
 #: src/Widgets/Dialogs/ChangeCipher.vala:45
 msgid "CHANGING THE CIPHER KEY WILL MAKE THE EXISTING SECRETS UNUSABLE"
-msgstr "ALTERAR A CHAVE DE CODIFICAÇÃO VAI FAZER COM QUE OS SEGREDOS EXISTENTES FIQUEM INUTILIZÁVEIS"
+msgstr ""
+"ALTERAR A CHAVE DE CODIFICAÇÃO VAI FAZER COM QUE OS SEGREDOS EXISTENTES "
+"FIQUEM INUTILIZÁVEIS"
 
 #: src/Widgets/Dialogs/ChangeCipher.vala:48
 msgid "Old Cipher Key:"

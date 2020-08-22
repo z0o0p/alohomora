@@ -1,196 +1,197 @@
-# Hindi translations for com.github.z0o0p.alohomora package.
+# French translations for com.github.z0o0p.alohomora package.
 # Copyright (C) 2020 THE com.github.z0o0p.alohomora'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the com.github.z0o0p.alohomora package.
-# Automatically generated, 2020.
+# Nathan Bonnemains (@NathanBnm), 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: com.github.z0o0p.alohomora\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-21 15:16+0200\n"
-"PO-Revision-Date: 2020-07-10 22:02+0530\n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2020-08-21 14:59+0200\n"
+"Last-Translator: Nathan Bonnemains (@NathanBnm)\n"
 "Language-Team: none\n"
-"Language: hi\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.6\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: src/Widgets/Window.vala:76 src/Widgets/Window.vala:92
 msgid "Incorrect Key!"
-msgstr "गलत चाबी है !"
+msgstr "Clé incorrecte !"
 
 #: src/Widgets/Window.vala:77 src/Widgets/Window.vala:93
 msgid "The cipher key entered is wrong. Check and try again."
-msgstr "दर्ज की गई सैफर चाबी गलत है। जाँच करें और पुनः कोशिश करें।"
+msgstr ""
+"La clé de chiffrement saisie est incorrecte. Veuillez vérifier et réessayer."
 
 #: src/Widgets/Window.vala:86
 msgid "Successful Change"
-msgstr "बदलाव सफल रहा"
+msgstr "Modification effectuée"
 
 #: src/Widgets/Window.vala:87
 msgid "Cipher key was successfully changed. Existing secrets are unusable now."
-msgstr "सैफर चाबी को सफलतापूर्वक बदल दिया है। मौजूदा रहस्य अब दुरुपयोग हैं।"
+msgstr ""
+"La clé de chiffrement a bien été modifiée. Les clés existantes ne sont "
+"désormais plus utilisables."
 
 #: src/Widgets/Window.vala:116
 msgid "Close"
-msgstr "बंद"
+msgstr "Fermer"
 
 #: src/Widgets/HeaderBar.vala:38
 msgid "Alohomora"
-msgstr "अलोहोमोरा"
+msgstr "Alohomora"
 
 #: src/Widgets/HeaderBar.vala:53
 msgid "Add New Login"
-msgstr "नई लॉगिन जोड़ें"
+msgstr "Ajouter un nouveau mot de passe"
 
 #: src/Widgets/HeaderBar.vala:62
 msgid "Light Theme"
-msgstr "लाइट थीम"
+msgstr "Thème clair"
 
 #: src/Widgets/HeaderBar.vala:63
 msgid "Dark Theme"
-msgstr "डार्क थीम"
+msgstr "Thème sombre"
 
 #: src/Widgets/HeaderBar.vala:68 src/Widgets/Dialogs/ChangeCipher.vala:34
 msgid "Change Cipher Key"
-msgstr "सैफर चाबी बदलें"
+msgstr "Modifier la clé de chiffrement"
 
 #: src/Widgets/HeaderBar.vala:76
 msgid "Quit"
-msgstr "छोड़ें"
+msgstr "Quitter"
 
 #: src/Widgets/HeaderBar.vala:91
 msgid "Help"
-msgstr "मदद"
+msgstr "Aide"
 
 #: src/Widgets/ValidateScreen.vala:52
 msgid "Welcome"
-msgstr "स्वागत हे"
+msgstr "Bienvenue"
 
 #: src/Widgets/ValidateScreen.vala:56
 msgid "Let's Get You Started"
-msgstr "चलिए शुरू करते है"
+msgstr "Commençons"
 
 #: src/Widgets/ValidateScreen.vala:56
 msgid "I Need To Decipher Your Passwords First"
-msgstr "पहले आपके पासवर्ड को दीसैफर करने की जरूरत है"
+msgstr "J'ai d'abord besoin de déchiffrer vos mots de passe"
 
 #: src/Widgets/ValidateScreen.vala:58
 msgid "Your new cipher key will be used to encipher all your saved passwords"
 msgstr ""
-"आपकी नई सैफर चाबी का उपयोग आपके सभी पासवर्ड को येनसैफर करने के लिए उपयोग किया जाएगा"
+"Votre nouvelle clé de chiffrement sera utilisée pour chiffrer tous vos mots "
+"de passe enregistrés"
 
 #: src/Widgets/ValidateScreen.vala:72
 msgid "Enter Cipher Key:"
-msgstr "सैफर चाबी दर्ज करें :"
+msgstr "Saisissez la clé de chiffrement :"
 
 #: src/Widgets/ValidateScreen.vala:78
 msgid "Show Cipher Key"
-msgstr "सैफर चाबी दिखाओ"
+msgstr "Afficher la clé de chiffrement"
 
 #: src/Widgets/ValidateScreen.vala:85
 msgid "Submit"
-msgstr "आगे बड़े"
+msgstr "Valider"
 
 #: src/Widgets/MainScreen.vala:40
 msgid "No Passwords Found"
-msgstr "कोई पासवर्ड नहीं मिला"
+msgstr "Aucun mot de passe"
 
 #: src/Widgets/MainScreen.vala:40
 msgid "Add a new credential."
-msgstr "एक नया पासवर्ड जोड़े।"
+msgstr "Ajoutez un nouvel identifiant."
 
 #: src/Widgets/MainScreen.vala:41
 msgid "Add Password"
-msgstr "पासवर्ड जोड़ें"
+msgstr "Ajouter un mot de passe"
 
 #: src/Widgets/MainScreen.vala:41
 msgid "Stores a new password securely."
-msgstr "एक नया पासवर्ड सुरक्षित रूप से संचित करता है।"
+msgstr "Stocke un nouveau mot de passe de façon sécurisée."
 
 #: src/Widgets/SecretBox.vala:59 src/Widgets/Dialogs/EditSecret.vala:36
 #: src/Widgets/Dialogs/EditSecret.vala:95
 msgid "Edit Secret"
-msgstr "गुप्त बदलें"
+msgstr "Modifier le mot de passe"
 
 #: src/Widgets/SecretBox.vala:65
 msgid "Delete Secret"
-msgstr "गुप्त मिटाएं"
+msgstr "Supprimer le mot de passe"
 
 #: src/Widgets/SecretBox.vala:85
 msgid "Copy Password"
-msgstr "पासवर्ड कॉपी करें"
+msgstr "Copier le mot de passe"
 
 #: src/Widgets/Dialogs/NewSecret.vala:39
 msgid "Add New Secret"
-msgstr "नया रहस्य जोड़ें"
+msgstr "Ajouter une nouvelle clé"
 
 #: src/Widgets/Dialogs/NewSecret.vala:50 src/Widgets/Dialogs/EditSecret.vala:53
 msgid "Name :"
-msgstr "नाम :"
+msgstr "Nom :"
 
 #: src/Widgets/Dialogs/NewSecret.vala:53
 msgid "Eg. GitHub, Facebook, etc."
-msgstr "जैसे गिटहब, फेसबुक और आदि।"
+msgstr "Par ex. GitHub, Facebook, etc."
 
 #: src/Widgets/Dialogs/NewSecret.vala:54 src/Widgets/Dialogs/EditSecret.vala:57
 msgid "Username :"
-msgstr "उपयोगकर्ता नाम :"
+msgstr "Nom d'utilisateur :"
 
 #: src/Widgets/Dialogs/NewSecret.vala:58
 msgid "Your Password Will Be Auto-Generated"
-msgstr "आपका पासवर्ड अप्प उत्पादन करेगा"
+msgstr "Votre mot de passe sera généré automatiquement"
 
 #: src/Widgets/Dialogs/NewSecret.vala:60 src/Widgets/Dialogs/EditSecret.vala:61
 msgid "Password :"
-msgstr "पासवर्ड :"
+msgstr "Mot de passe :"
 
 #: src/Widgets/Dialogs/NewSecret.vala:66 src/Widgets/Dialogs/EditSecret.vala:67
 msgid "Show Password"
-msgstr "पासवर्ड दिखाओ"
+msgstr "Afficher le mot de passe"
 
 #: src/Widgets/Dialogs/NewSecret.vala:77
 msgid "Generate New Password"
-msgstr "नया पासवर्ड उत्पादन करें"
+msgstr "Générer un nouveau mot de passe"
 
 #: src/Widgets/Dialogs/NewSecret.vala:78
 msgid "Use Existing Password"
-msgstr "मौजूदा पासवर्ड का उपयोग करें"
+msgstr "Utiliser un mot de passe existant"
 
 #: src/Widgets/Dialogs/NewSecret.vala:99 src/Widgets/Dialogs/EditSecret.vala:94
 #: src/Widgets/Dialogs/ChangeCipher.vala:79
 msgid "Cancel"
-msgstr "रद्द करें"
+msgstr "Annuler"
 
 #: src/Widgets/Dialogs/NewSecret.vala:100
 msgid "Add Secret"
-msgstr "रहस्य जोड़ें"
+msgstr "Ajouter le mot de passe"
 
 #: src/Widgets/Dialogs/ChangeCipher.vala:45
 msgid "CHANGING THE CIPHER KEY WILL MAKE THE EXISTING SECRETS UNUSABLE"
-msgstr "सैफर चाबी को बदलने से मौजूदा रहस्य व्यर्थ हो जाएंगे"
+msgstr "MODIFIER LA CLÉ RENDRA LES CLÉS EXISTANTES INUTILISABLES"
 
 #: src/Widgets/Dialogs/ChangeCipher.vala:48
 msgid "Old Cipher Key:"
-msgstr "पुरानी सैफर चाबी :"
+msgstr "Ancienne clé de chiffrement :"
 
 #: src/Widgets/Dialogs/ChangeCipher.vala:54
 msgid "Show Old Cipher Key"
-msgstr "पुरानी सैफर चाबी दिखाओ"
+msgstr "Afficher l'ancienne clé de chiffrement"
 
 #: src/Widgets/Dialogs/ChangeCipher.vala:56
 msgid "New Cipher Key:"
-msgstr "नया सैफर चाबी :"
+msgstr "Nouvelle clé de chiffrement :"
 
 #: src/Widgets/Dialogs/ChangeCipher.vala:62
 msgid "Show New Cipher Key"
-msgstr "नया सैफर चाबी दिखाओ"
+msgstr "Afficher la nouvelle clé de chiffrement"
 
 #: src/Widgets/Dialogs/ChangeCipher.vala:80
 msgid "Change Key"
-msgstr "चाबी बदलें"
-
-#~ msgid " Password :"
-#~ msgstr "पासवर्ड :"
+msgstr "Modifier la clé"
