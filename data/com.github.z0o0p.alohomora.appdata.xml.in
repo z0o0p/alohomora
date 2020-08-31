@@ -70,6 +70,16 @@
     <content_attribute id="money-gambling">none</content_attribute>
   </content_rating>
   <releases>
+    <release version="1.1.0" date="2020-08-30">
+      <description>
+        New Translations
+        <ul>
+          <li>Portuguese Translations by @rottenpants466</li>
+          <li>Dutch Translations by @Vistaus (Heimen Stoffels)</li>
+          <li>French Translations by @NathanBnm (Nathan Bonnemains)</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.0.1" date="2020-07-28">
       <description>
         <ul>
