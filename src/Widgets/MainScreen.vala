@@ -24,6 +24,7 @@ public class Alohomora.MainScreen: Gtk.ScrolledWindow {
     public Alohomora.SecretManager secret {get; construct;}
 
     private Gtk.Box screen;
+    private List<Secret.Item> secrets;
     private Granite.Widgets.Welcome welcome;
 
     public MainScreen (Alohomora.Window app_window, Alohomora.SecretManager secret_manager) {
@@ -42,7 +43,7 @@ public class Alohomora.MainScreen: Gtk.ScrolledWindow {
         welcome.get_button_from_index (0).can_focus = false;
 
         secret.initialized.connect (() => {
-            var secrets = secret.get_secrets ();
+            secrets = secret.get_secrets ();
             if (secrets.length() != 0) {
                 secrets.foreach ((secret_item) => screen.add (new Alohomora.SecretBox (window, secret, secret_item)));
             }
@@ -55,13 +56,23 @@ public class Alohomora.MainScreen: Gtk.ScrolledWindow {
 
         secret.changed.connect (() => {
             screen.foreach ((widget) => screen.remove (widget));
-            var secrets = secret.get_secrets ();
+            secrets = secret.get_secrets ();
             if (secrets.length () != 0) {
                 secrets.foreach ((secret_item) => screen.add (new Alohomora.SecretBox (window, secret, secret_item)));
             }
             else {
                 screen.add (welcome);
             }
+            screen.show_all ();
+        });
+
+        secret.order.connect ((is_ascending) => {
+            secrets.sort (secret.compare_secrets);
+            if (!is_ascending) {
+                secrets.reverse ();
+            }
+            screen.foreach ((widget) => screen.remove (widget));
+            secrets.foreach ((secret_item) => screen.add (new Alohomora.SecretBox (window, secret, secret_item)));
             screen.show_all ();
         });
 

@@ -28,6 +28,7 @@ public class Alohomora.SecretManager: GLib.Object {
     public signal void changed ();
     public signal void key_validated (bool is_validated);
     public signal void key_changed (bool is_changed);
+    public signal void order (bool is_ascending);
 
     construct {
         initialize_secrets.begin ();
@@ -49,12 +50,6 @@ public class Alohomora.SecretManager: GLib.Object {
         );
         return schema;
     }
-
-    private CompareFunc<Secret.Item> secret_compare = (secret1, secret2) => {
-        var attribute1 = secret1.get_attributes();
-        var attribute2 = secret2.get_attributes();
-        return strcmp(attribute1["credential-name"].up(), attribute2["credential-name"].up());
-    };
 
     private async void load_secrets () {
         secrets.foreach ((secret_item) => secrets.remove(secret_item));
@@ -196,14 +191,15 @@ public class Alohomora.SecretManager: GLib.Object {
         }
     }
 
-    public List<Secret.Item> get_secrets(bool is_alphabetical = true) {
-        var s = secrets.copy();
-        s.sort(secret_compare);
-        if(!is_alphabetical) {
-            s.reverse();
-        }
-        return s;
+    public List<Secret.Item> get_secrets () {
+        return secrets.copy ();
     }
+
+    public CompareFunc<Secret.Item> compare_secrets = (secret1, secret2) => {
+        var attribute1 = secret1.get_attributes ();
+        var attribute2 = secret2.get_attributes ();
+        return strcmp (attribute1["credential-name"].up (), attribute2["credential-name"].up ());
+    };
 
     public async void create_cipher_key (string user_name, string cipher_key) {
         try {
