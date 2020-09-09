@@ -44,6 +44,7 @@ public class Alohomora.MainScreen: Gtk.ScrolledWindow {
 
         secret.initialized.connect (() => {
             secrets = secret.get_secrets ();
+            secrets.sort (secret.compare_secrets);
             if (secrets.length() != 0) {
                 secrets.foreach ((secret_item) => screen.add (new Alohomora.SecretBox (window, secret, secret_item)));
             }
@@ -57,6 +58,7 @@ public class Alohomora.MainScreen: Gtk.ScrolledWindow {
         secret.changed.connect (() => {
             screen.foreach ((widget) => screen.remove (widget));
             secrets = secret.get_secrets ();
+            secrets.sort (secret.compare_secrets);
             if (secrets.length () != 0) {
                 secrets.foreach ((secret_item) => screen.add (new Alohomora.SecretBox (window, secret, secret_item)));
             }
