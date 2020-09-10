@@ -23,6 +23,7 @@ public class Alohomora.MainScreen: Gtk.ScrolledWindow {
     public Alohomora.Window window {get; construct;}
     public Alohomora.SecretManager secret {get; construct;}
 
+    private Settings settings;
     private Gtk.Box screen;
     private List<Secret.Item> secrets;
     private Granite.Widgets.Welcome welcome;
@@ -37,6 +38,7 @@ public class Alohomora.MainScreen: Gtk.ScrolledWindow {
     }
 
     construct {
+        settings = new Settings ("com.github.z0o0p.alohomora");
         screen = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
         welcome = new Granite.Widgets.Welcome (_("No Passwords Found"), _("Add a new credential."));
         welcome.append ("list-add", _("Add Password"), _("Stores a new password securely."));
@@ -45,6 +47,9 @@ public class Alohomora.MainScreen: Gtk.ScrolledWindow {
         secret.initialized.connect (() => {
             secrets = secret.get_secrets ();
             secrets.sort (secret.compare_secrets);
+            if (!settings.get_boolean ("sort-ascending")) {
+                secrets.reverse ();
+            }
             if (secrets.length() != 0) {
                 secrets.foreach ((secret_item) => screen.add (new Alohomora.SecretBox (window, secret, secret_item)));
             }
@@ -59,6 +64,9 @@ public class Alohomora.MainScreen: Gtk.ScrolledWindow {
             screen.foreach ((widget) => screen.remove (widget));
             secrets = secret.get_secrets ();
             secrets.sort (secret.compare_secrets);
+            if (!settings.get_boolean ("sort-ascending")) {
+                secrets.reverse ();
+            }
             if (secrets.length () != 0) {
                 secrets.foreach ((secret_item) => screen.add (new Alohomora.SecretBox (window, secret, secret_item)));
             }
@@ -68,9 +76,9 @@ public class Alohomora.MainScreen: Gtk.ScrolledWindow {
             screen.show_all ();
         });
 
-        secret.order.connect ((is_ascending) => {
+        secret.ordering_changed.connect (() => {
             secrets.sort (secret.compare_secrets);
-            if (!is_ascending) {
+            if (!settings.get_boolean ("sort-ascending")) {
                 secrets.reverse ();
             }
             screen.foreach ((widget) => screen.remove (widget));

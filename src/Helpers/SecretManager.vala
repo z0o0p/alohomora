@@ -28,7 +28,7 @@ public class Alohomora.SecretManager: GLib.Object {
     public signal void changed ();
     public signal void key_validated (bool is_validated);
     public signal void key_changed (bool is_changed);
-    public signal void order (bool is_ascending);
+    public signal void ordering_changed ();
 
     construct {
         initialize_secrets.begin ();

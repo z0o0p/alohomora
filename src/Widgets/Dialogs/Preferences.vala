@@ -22,6 +22,7 @@
 public class Alohomora.Preferences: Gtk.Dialog {
     public Alohomora.SecretManager secret {get; construct;}
 
+    private Settings settings;
     private Gtk.Grid grid;
     private Gtk.Label sort_label;
     private Gtk.RadioButton ascending;
@@ -40,10 +41,11 @@ public class Alohomora.Preferences: Gtk.Dialog {
     }
 
     construct {
+        settings = new Settings ("com.github.z0o0p.alohomora");
         sort_label = new Gtk.Label (_("Sorting Order: "));
         ascending = new Gtk.RadioButton.with_label_from_widget (null, _("Ascending"));
         descending = new Gtk.RadioButton.with_label_from_widget (ascending, _("Descending"));
-        descending.set_active (false);
+        descending.set_active (!settings.get_boolean ("sort-ascending"));
 
         grid = new Gtk.Grid ();
         grid.row_spacing = 5;
@@ -65,7 +67,8 @@ public class Alohomora.Preferences: Gtk.Dialog {
 
         response.connect (id => {
             if (id == Gtk.ResponseType.APPLY) {
-                secret.order (ascending.active);
+                settings.set_boolean ("sort-ascending", ascending.active);
+                secret.ordering_changed ();
             }
             destroy ();
         });
