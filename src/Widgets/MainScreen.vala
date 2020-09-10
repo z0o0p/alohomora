@@ -23,7 +23,9 @@ public class Alohomora.MainScreen: Gtk.ScrolledWindow {
     public Alohomora.Window window {get; construct;}
     public Alohomora.SecretManager secret {get; construct;}
 
+    private Settings settings;
     private Gtk.Box screen;
+    private List<Secret.Item> secrets;
     private Granite.Widgets.Welcome welcome;
 
     public MainScreen (Alohomora.Window app_window, Alohomora.SecretManager secret_manager) {
@@ -36,13 +38,18 @@ public class Alohomora.MainScreen: Gtk.ScrolledWindow {
     }
 
     construct {
+        settings = new Settings ("com.github.z0o0p.alohomora");
         screen = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
         welcome = new Granite.Widgets.Welcome (_("No Passwords Found"), _("Add a new credential."));
         welcome.append ("list-add", _("Add Password"), _("Stores a new password securely."));
         welcome.get_button_from_index (0).can_focus = false;
 
         secret.initialized.connect (() => {
-            var secrets = secret.get_secrets ();
+            secrets = secret.get_secrets ();
+            secrets.sort (secret.compare_secrets);
+            if (!settings.get_boolean ("sort-ascending")) {
+                secrets.reverse ();
+            }
             if (secrets.length() != 0) {
                 secrets.foreach ((secret_item) => screen.add (new Alohomora.SecretBox (window, secret, secret_item)));
             }
@@ -55,13 +62,27 @@ public class Alohomora.MainScreen: Gtk.ScrolledWindow {
 
         secret.changed.connect (() => {
             screen.foreach ((widget) => screen.remove (widget));
-            var secrets = secret.get_secrets ();
+            secrets = secret.get_secrets ();
+            secrets.sort (secret.compare_secrets);
+            if (!settings.get_boolean ("sort-ascending")) {
+                secrets.reverse ();
+            }
             if (secrets.length () != 0) {
                 secrets.foreach ((secret_item) => screen.add (new Alohomora.SecretBox (window, secret, secret_item)));
             }
             else {
                 screen.add (welcome);
             }
+            screen.show_all ();
+        });
+
+        secret.ordering_changed.connect (() => {
+            secrets.sort (secret.compare_secrets);
+            if (!settings.get_boolean ("sort-ascending")) {
+                secrets.reverse ();
+            }
+            screen.foreach ((widget) => screen.remove (widget));
+            secrets.foreach ((secret_item) => screen.add (new Alohomora.SecretBox (window, secret, secret_item)));
             screen.show_all ();
         });
 

@@ -17,5 +17,10 @@
       <summary>Dark Mode</summary>
       <description>Whether to implement dark mode or not.</description>
     </key>
+    <key name="sort-ascending" type="b">
+      <default>true</default>
+      <summary>Ascending Order Sorting</summary>
+      <description>Whether to display secrets in ascending order or not.</description>
+    </key>
   </schema>
 </schemalist>
