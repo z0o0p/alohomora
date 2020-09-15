@@ -22,5 +22,10 @@
       <summary>Ascending Order Sorting</summary>
       <description>Whether to display secrets in ascending order or not.</description>
     </key>
+    <key name="gen-pass-length" type="i">
+      <default>16</default>
+      <summary>Generated Password Length</summary>
+      <description>Length of the auto-generated password.</description>
+    </key>
   </schema>
 </schemalist>

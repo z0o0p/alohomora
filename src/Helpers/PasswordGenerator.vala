@@ -26,7 +26,8 @@ public class Alohomora.PasswordGenerator {
         const string DIGIT = "1234567890";
         const string SPECIAL_CHARACTER = "!@#%^&*?";
         var password = new StringBuilder ();
-        while (password.len < 16) {
+        var settings = new Settings ("com.github.z0o0p.alohomora");
+        while (password.len < settings.get_int ("gen-pass-length")) {
             switch (GLib.Random.int_range (0, 4)) {
                 case 0:
                     password.append (LOWER_CASE[GLib.Random.int_range (0, 26)].to_string ());
