@@ -25,6 +25,10 @@ public class Alohomora.MainScreen: Gtk.ScrolledWindow {
 
     private Settings settings;
     private Gtk.Box screen;
+    private Gtk.Box search_box;
+    private Gtk.SearchBar search_bar;
+    private Gtk.SearchEntry search_entry;
+    private Gtk.Button search_button;
     private List<Secret.Item> secrets;
     private Granite.Widgets.Welcome welcome;
 
@@ -43,6 +47,22 @@ public class Alohomora.MainScreen: Gtk.ScrolledWindow {
         welcome = new Granite.Widgets.Welcome (_("No Passwords Found"), _("Add a new credential."));
         welcome.append ("list-add", _("Add Password"), _("Stores a new password securely."));
         welcome.get_button_from_index (0).can_focus = false;
+
+        search_entry = new Gtk.SearchEntry ();
+        search_entry.activate.connect (search_secret);
+        search_button = new Gtk.Button.with_label (_("Search"));
+        search_button.clicked.connect (search_secret);
+
+        search_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 5);
+        search_box.add (search_entry);
+        search_box.add (search_button);
+
+        search_bar = new Gtk.SearchBar ();
+        search_bar.show_close_button = true;
+        search_bar.connect_entry (search_entry);
+        search_bar.add (search_box);
+
+        screen.add (search_bar);
 
         secret.initialized.connect (() => {
             secrets = secret.get_secrets ();
@@ -92,5 +112,15 @@ public class Alohomora.MainScreen: Gtk.ScrolledWindow {
                 dialog.run ();
             }
         });
+
+        window.key_press_event.connect ((event) => {
+            if (window.user_validated()) {
+                return search_bar.handle_event (event);
+            }
+        });
+    }
+
+    private void search_secret () {
+        print("Searching for secret - %s", search_entry.text);
     }
 }
