@@ -25,6 +25,7 @@ public class Alohomora.MainScreen: Gtk.ScrolledWindow {
 
     private Settings settings;
     private Gtk.Box screen;
+    private Gtk.Box sub_screen;
     private Gtk.Box search_box;
     private Gtk.SearchBar search_bar;
     private Gtk.SearchEntry search_entry;
@@ -64,6 +65,8 @@ public class Alohomora.MainScreen: Gtk.ScrolledWindow {
 
         screen.add (search_bar);
 
+        sub_screen = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+
         secret.initialized.connect (() => {
             secrets = secret.get_secrets ();
             secrets.sort (secret.compare_secrets);
@@ -71,27 +74,28 @@ public class Alohomora.MainScreen: Gtk.ScrolledWindow {
                 secrets.reverse ();
             }
             if (secrets.length() != 0) {
-                secrets.foreach ((secret_item) => screen.add (new Alohomora.SecretBox (window, secret, secret_item)));
+                secrets.foreach ((secret_item) => sub_screen.add (new Alohomora.SecretBox (window, secret, secret_item)));
             }
             else {
-                screen.add (welcome);
+                sub_screen.add (welcome);
             }
+            screen.add (sub_screen);
             screen.show_all ();
             add (screen);
         });
 
         secret.changed.connect (() => {
-            screen.foreach ((widget) => screen.remove (widget));
+            sub_screen.foreach ((widget) => sub_screen.remove (widget));
             secrets = secret.get_secrets ();
             secrets.sort (secret.compare_secrets);
             if (!settings.get_boolean ("sort-ascending")) {
                 secrets.reverse ();
             }
             if (secrets.length () != 0) {
-                secrets.foreach ((secret_item) => screen.add (new Alohomora.SecretBox (window, secret, secret_item)));
+                secrets.foreach ((secret_item) => sub_screen.add (new Alohomora.SecretBox (window, secret, secret_item)));
             }
             else {
-                screen.add (welcome);
+                sub_screen.add (welcome);
             }
             screen.show_all ();
         });
@@ -101,8 +105,8 @@ public class Alohomora.MainScreen: Gtk.ScrolledWindow {
             if (!settings.get_boolean ("sort-ascending")) {
                 secrets.reverse ();
             }
-            screen.foreach ((widget) => screen.remove (widget));
-            secrets.foreach ((secret_item) => screen.add (new Alohomora.SecretBox (window, secret, secret_item)));
+            sub_screen.foreach ((widget) => sub_screen.remove (widget));
+            secrets.foreach ((secret_item) => sub_screen.add (new Alohomora.SecretBox (window, secret, secret_item)));
             screen.show_all ();
         });
 
@@ -118,9 +122,23 @@ public class Alohomora.MainScreen: Gtk.ScrolledWindow {
                 return search_bar.handle_event (event);
             }
         });
+
+        search_entry.focus_out_event.connect(() => {
+            sub_screen.foreach ((widget) => sub_screen.remove (widget));
+            secrets.foreach ((secret_item) => sub_screen.add (new Alohomora.SecretBox (window, secret, secret_item)));
+            screen.show_all ();
+            return false;
+        });
     }
 
     private void search_secret () {
-        print("Searching for secret - %s", search_entry.text);
+        sub_screen.foreach ((widget) => sub_screen.remove (widget));
+        secrets.foreach ((secret_item) => {
+            var attribute = secret_item.get_attributes ();
+            if (attribute["credential-name"].up ().contains (search_entry.text.up ())) {
+                sub_screen.add (new Alohomora.SecretBox (window, secret, secret_item));
+            }
+        });
+        screen.show_all ();
     }
 }
