@@ -117,4 +117,8 @@ public class Alohomora.Window: Gtk.ApplicationWindow {
         dialog.run ();
         dialog.destroy ();
     }
+
+    public bool user_validated () {
+        return stack.visible_child_name == "MainScreen";
+    }
 }

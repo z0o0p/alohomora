@@ -25,6 +25,11 @@ public class Alohomora.MainScreen: Gtk.ScrolledWindow {
 
     private Settings settings;
     private Gtk.Box screen;
+    private Gtk.Box sub_screen;
+    private Gtk.Box search_box;
+    private Gtk.SearchBar search_bar;
+    private Gtk.SearchEntry search_entry;
+    private Gtk.Button search_button;
     private List<Secret.Item> secrets;
     private Granite.Widgets.Welcome welcome;
 
@@ -44,46 +49,52 @@ public class Alohomora.MainScreen: Gtk.ScrolledWindow {
         welcome.append ("list-add", _("Add Password"), _("Stores a new password securely."));
         welcome.get_button_from_index (0).can_focus = false;
 
+        search_entry = new Gtk.SearchEntry ();
+        search_entry.activate.connect (search_secret);
+        search_button = new Gtk.Button.with_label (_("Search"));
+        search_button.clicked.connect (search_secret);
+
+        search_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 5);
+        search_box.add (search_entry);
+        search_box.add (search_button);
+
+        search_bar = new Gtk.SearchBar ();
+        search_bar.show_close_button = true;
+        search_bar.connect_entry (search_entry);
+        search_bar.add (search_box);
+
+        sub_screen = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+
+        screen.add (search_bar);
+        screen.add (sub_screen);
+
         secret.initialized.connect (() => {
             secrets = secret.get_secrets ();
-            secrets.sort (secret.compare_secrets);
-            if (!settings.get_boolean ("sort-ascending")) {
-                secrets.reverse ();
-            }
-            if (secrets.length() != 0) {
-                secrets.foreach ((secret_item) => screen.add (new Alohomora.SecretBox (window, secret, secret_item)));
-            }
-            else {
-                screen.add (welcome);
-            }
-            screen.show_all ();
+            populate_sub_screen ();
             add (screen);
         });
 
         secret.changed.connect (() => {
-            screen.foreach ((widget) => screen.remove (widget));
             secrets = secret.get_secrets ();
-            secrets.sort (secret.compare_secrets);
-            if (!settings.get_boolean ("sort-ascending")) {
-                secrets.reverse ();
-            }
-            if (secrets.length () != 0) {
-                secrets.foreach ((secret_item) => screen.add (new Alohomora.SecretBox (window, secret, secret_item)));
-            }
-            else {
-                screen.add (welcome);
-            }
-            screen.show_all ();
+            clear_sub_screen ();
+            populate_sub_screen ();
         });
 
         secret.ordering_changed.connect (() => {
-            secrets.sort (secret.compare_secrets);
-            if (!settings.get_boolean ("sort-ascending")) {
-                secrets.reverse ();
+            clear_sub_screen ();
+            populate_sub_screen ();
+        });
+
+        window.key_press_event.connect ((event) => {
+            if (window.user_validated ()) {
+                return search_bar.handle_event (event);
             }
-            screen.foreach ((widget) => screen.remove (widget));
-            secrets.foreach ((secret_item) => screen.add (new Alohomora.SecretBox (window, secret, secret_item)));
-            screen.show_all ();
+        });
+
+        search_entry.focus_out_event.connect (() => {
+            clear_sub_screen ();
+            populate_sub_screen ();
+            return false;
         });
 
         welcome.activated.connect ((index) => {
@@ -92,5 +103,34 @@ public class Alohomora.MainScreen: Gtk.ScrolledWindow {
                 dialog.run ();
             }
         });
+    }
+
+    private void populate_sub_screen () {
+        secrets.sort (secret.compare_secrets);
+        if (!settings.get_boolean ("sort-ascending")) {
+            secrets.reverse ();
+        }
+        if (secrets.length () != 0) {
+            secrets.foreach ((secret_item) => sub_screen.add (new Alohomora.SecretBox (window, secret, secret_item)));
+        }
+        else {
+            sub_screen.add (welcome);
+        }
+        screen.show_all ();
+    }
+
+    private void clear_sub_screen () {
+        sub_screen.foreach ((widget) => sub_screen.remove (widget));
+    }
+
+    private void search_secret () {
+        sub_screen.foreach ((widget) => sub_screen.remove (widget));
+        secrets.foreach ((secret_item) => {
+            var attribute = secret_item.get_attributes ();
+            if (attribute["credential-name"].up ().contains (search_entry.text.up ())) {
+                sub_screen.add (new Alohomora.SecretBox (window, secret, secret_item));
+            }
+        });
+        screen.show_all ();
     }
 }
