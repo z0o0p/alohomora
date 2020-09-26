@@ -63,51 +63,38 @@ public class Alohomora.MainScreen: Gtk.ScrolledWindow {
         search_bar.connect_entry (search_entry);
         search_bar.add (search_box);
 
-        screen.add (search_bar);
-
         sub_screen = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+
+        screen.add (search_bar);
+        screen.add (sub_screen);
 
         secret.initialized.connect (() => {
             secrets = secret.get_secrets ();
-            secrets.sort (secret.compare_secrets);
-            if (!settings.get_boolean ("sort-ascending")) {
-                secrets.reverse ();
-            }
-            if (secrets.length() != 0) {
-                secrets.foreach ((secret_item) => sub_screen.add (new Alohomora.SecretBox (window, secret, secret_item)));
-            }
-            else {
-                sub_screen.add (welcome);
-            }
-            screen.add (sub_screen);
-            screen.show_all ();
+            populate_sub_screen ();
             add (screen);
         });
 
         secret.changed.connect (() => {
-            sub_screen.foreach ((widget) => sub_screen.remove (widget));
             secrets = secret.get_secrets ();
-            secrets.sort (secret.compare_secrets);
-            if (!settings.get_boolean ("sort-ascending")) {
-                secrets.reverse ();
-            }
-            if (secrets.length () != 0) {
-                secrets.foreach ((secret_item) => sub_screen.add (new Alohomora.SecretBox (window, secret, secret_item)));
-            }
-            else {
-                sub_screen.add (welcome);
-            }
-            screen.show_all ();
+            clear_sub_screen ();
+            populate_sub_screen ();
         });
 
         secret.ordering_changed.connect (() => {
-            secrets.sort (secret.compare_secrets);
-            if (!settings.get_boolean ("sort-ascending")) {
-                secrets.reverse ();
+            clear_sub_screen ();
+            populate_sub_screen ();
+        });
+
+        window.key_press_event.connect ((event) => {
+            if (window.user_validated ()) {
+                return search_bar.handle_event (event);
             }
-            sub_screen.foreach ((widget) => sub_screen.remove (widget));
-            secrets.foreach ((secret_item) => sub_screen.add (new Alohomora.SecretBox (window, secret, secret_item)));
-            screen.show_all ();
+        });
+
+        search_entry.focus_out_event.connect (() => {
+            clear_sub_screen ();
+            populate_sub_screen ();
+            return false;
         });
 
         welcome.activated.connect ((index) => {
@@ -116,19 +103,24 @@ public class Alohomora.MainScreen: Gtk.ScrolledWindow {
                 dialog.run ();
             }
         });
+    }
 
-        window.key_press_event.connect ((event) => {
-            if (window.user_validated()) {
-                return search_bar.handle_event (event);
-            }
-        });
-
-        search_entry.focus_out_event.connect(() => {
-            sub_screen.foreach ((widget) => sub_screen.remove (widget));
+    private void populate_sub_screen () {
+        secrets.sort (secret.compare_secrets);
+        if (!settings.get_boolean ("sort-ascending")) {
+            secrets.reverse ();
+        }
+        if (secrets.length () != 0) {
             secrets.foreach ((secret_item) => sub_screen.add (new Alohomora.SecretBox (window, secret, secret_item)));
-            screen.show_all ();
-            return false;
-        });
+        }
+        else {
+            sub_screen.add (welcome);
+        }
+        screen.show_all ();
+    }
+
+    private void clear_sub_screen () {
+        sub_screen.foreach ((widget) => sub_screen.remove (widget));
     }
 
     private void search_secret () {
