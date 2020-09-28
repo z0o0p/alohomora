@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-21 15:16+0200\n"
+"POT-Creation-Date: 2020-09-28 09:52+0530\n"
 "PO-Revision-Date: 2020-07-10 22:10+0530\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -56,7 +56,8 @@ msgstr ""
 "बारे में भूल सकते हैं।"
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:12
-msgid "Features:"
+#, fuzzy
+msgid "<em>Features:</em>"
 msgstr "विशेषताएं:"
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:14
@@ -75,14 +76,46 @@ msgstr "पासवर्ड को आपके क्लिपबोर्ड
 msgid "Taqmeel Zubeir"
 msgstr "तकमील ज़ुबैर"
 
-#: data/com.github.z0o0p.alohomora.appdata.xml.in:76
-msgid "Minor bug fixes"
+#: data/com.github.z0o0p.alohomora.appdata.xml.in:75
+msgid "Improved Usability"
 msgstr ""
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:77
-msgid "Improved app icons"
+msgid "Search for secrets by just typing the credential name."
 msgstr ""
 
-#: data/com.github.z0o0p.alohomora.appdata.xml.in:82
+#: data/com.github.z0o0p.alohomora.appdata.xml.in:78
+msgid "Your secrets now can be sorted by accessing the preferences section."
+msgstr ""
+
+#: data/com.github.z0o0p.alohomora.appdata.xml.in:84
+msgid "New Translations"
+msgstr ""
+
+#: data/com.github.z0o0p.alohomora.appdata.xml.in:86
+msgid "Dutch Translations by @Vistaus (Heimen Stoffels)."
+msgstr ""
+
+#: data/com.github.z0o0p.alohomora.appdata.xml.in:87
+msgid "French Translations by @NathanBnm (Nathan Bonnemains)."
+msgstr ""
+
+#: data/com.github.z0o0p.alohomora.appdata.xml.in:88
+msgid "Portuguese Translations by @rottenpants466."
+msgstr ""
+
+#: data/com.github.z0o0p.alohomora.appdata.xml.in:94
+msgid "Minor Patch"
+msgstr ""
+
+#: data/com.github.z0o0p.alohomora.appdata.xml.in:96
+msgid "Fixed issue regarding locked secrets."
+msgstr ""
+
+#: data/com.github.z0o0p.alohomora.appdata.xml.in:97
+msgid "Improved app icons."
+msgstr ""
+
+#: data/com.github.z0o0p.alohomora.appdata.xml.in:103
 msgid "Initial Release"
 msgstr ""

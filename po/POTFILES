@@ -6,3 +6,4 @@ src/Widgets/SecretBox.vala
 src/Widgets/Dialogs/NewSecret.vala
 src/Widgets/Dialogs/EditSecret.vala
 src/Widgets/Dialogs/ChangeCipher.vala
+src/Widgets/Dialogs/Preferences.vala
