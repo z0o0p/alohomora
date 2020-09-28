@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.z0o0p.alohomora\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-28 09:52+0530\n"
+"POT-Creation-Date: 2020-09-28 11:27+0200\n"
 "PO-Revision-Date: 2020-08-21 14:59+0200\n"
 "Last-Translator: Nathan Bonnemains (@NathanBnm)\n"
 "Language-Team: none\n"
@@ -58,7 +58,7 @@ msgstr "Thème sombre"
 
 #: src/Widgets/HeaderBar.vala:69 src/Widgets/Dialogs/Preferences.vala:35
 msgid "Preferences"
-msgstr ""
+msgstr "Préférences"
 
 #: src/Widgets/HeaderBar.vala:77 src/Widgets/Dialogs/ChangeCipher.vala:34
 msgid "Change Cipher Key"
@@ -120,7 +120,7 @@ msgstr "Stocke un nouveau mot de passe de façon sécurisée."
 
 #: src/Widgets/MainScreen.vala:54
 msgid "Search"
-msgstr ""
+msgstr "Rechercher"
 
 #: src/Widgets/SecretBox.vala:59 src/Widgets/Dialogs/EditSecret.vala:36
 #: src/Widgets/Dialogs/EditSecret.vala:95
@@ -206,21 +206,20 @@ msgstr "Modifier la clé"
 
 #: src/Widgets/Dialogs/Preferences.vala:48
 msgid "Sorting Order: "
-msgstr ""
+msgstr "Ordre de tri : "
 
 #: src/Widgets/Dialogs/Preferences.vala:50
 msgid "Ascending"
-msgstr ""
+msgstr "Ascendant"
 
 #: src/Widgets/Dialogs/Preferences.vala:51
 msgid "Descending"
-msgstr ""
+msgstr "Descendant"
 
 #: src/Widgets/Dialogs/Preferences.vala:54
-#, fuzzy
 msgid "Generated Password Length: "
-msgstr "Générer un nouveau mot de passe"
+msgstr "Longueur du mot de passe généré : "
 
 #: src/Widgets/Dialogs/Preferences.vala:76
 msgid "Apply"
-msgstr ""
+msgstr "Appliquer"
