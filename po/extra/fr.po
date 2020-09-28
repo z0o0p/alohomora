@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-28 09:52+0530\n"
+"POT-Creation-Date: 2020-09-28 11:27+0200\n"
 "PO-Revision-Date: 2020-08-21 14:59+0200\n"
 "Last-Translator: Nathan Bonnemains (@NathanBnm)\n"
 "Language-Team: none\n"
@@ -56,9 +56,8 @@ msgstr ""
 "long et complexe pour chacun de vos comptes en ligne."
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:12
-#, fuzzy
 msgid "<em>Features:</em>"
-msgstr "Fonctionnalités :"
+msgstr "<em>Fonctionnalités :</em>"
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:14
 msgid "Built-in password generator"
@@ -77,50 +76,45 @@ msgid "Taqmeel Zubeir"
 msgstr "Taqmeel Zubeir"
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:75
-#, fuzzy
 msgid "Improved Usability"
-msgstr "Amélioration des icônes de l'application"
+msgstr "Amélioration de l'utilisabilité"
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:77
 msgid "Search for secrets by just typing the credential name."
-msgstr ""
+msgstr "Recherchez des mots de passe en tapant le nom de l'identifiant."
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:78
 msgid "Your secrets now can be sorted by accessing the preferences section."
-msgstr ""
+msgstr "Vos mots de passe peuvent désormais être triés depuis les préférences."
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:84
 msgid "New Translations"
-msgstr ""
+msgstr "Nouvelles traductions"
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:86
 msgid "Dutch Translations by @Vistaus (Heimen Stoffels)."
-msgstr ""
+msgstr "Traduction en néerlandais par @Vistaus (Heimen Stoffels)."
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:87
 msgid "French Translations by @NathanBnm (Nathan Bonnemains)."
-msgstr ""
+msgstr "Traduction en français par @NathanBnm (Nathan Bonnemains)."
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:88
 msgid "Portuguese Translations by @rottenpants466."
-msgstr ""
+msgstr "Traduction en portugais par @rottenpants466."
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:94
 msgid "Minor Patch"
-msgstr ""
+msgstr "Correction mineure"
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:96
 msgid "Fixed issue regarding locked secrets."
-msgstr ""
+msgstr "Correction d'un problème avec les mots de passe verrouillés."
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:97
-#, fuzzy
 msgid "Improved app icons."
 msgstr "Amélioration des icônes de l'application"
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:103
 msgid "Initial Release"
 msgstr "Version initiale"
-
-#~ msgid "Minor bug fixes"
-#~ msgstr "Corrections de bug mineures"
