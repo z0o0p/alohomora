@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.z0o0p.alohomora\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-28 11:27+0200\n"
+"POT-Creation-Date: 2021-01-03 15:18+0530\n"
 "PO-Revision-Date: 2020-08-21 14:59+0200\n"
 "Last-Translator: Nathan Bonnemains (@NathanBnm)\n"
 "Language-Team: none\n"
@@ -17,58 +17,63 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: src/Widgets/Window.vala:76 src/Widgets/Window.vala:92
+#: src/Widgets/Window.vala:78 src/Widgets/Window.vala:94
 msgid "Incorrect Key!"
 msgstr "Clé incorrecte !"
 
-#: src/Widgets/Window.vala:77 src/Widgets/Window.vala:93
+#: src/Widgets/Window.vala:79 src/Widgets/Window.vala:95
 msgid "The cipher key entered is wrong. Check and try again."
 msgstr ""
 "La clé de chiffrement saisie est incorrecte. Veuillez vérifier et réessayer."
 
-#: src/Widgets/Window.vala:86
+#: src/Widgets/Window.vala:88
 msgid "Successful Change"
 msgstr "Modification effectuée"
 
-#: src/Widgets/Window.vala:87
+#: src/Widgets/Window.vala:89
 msgid "Cipher key was successfully changed. Existing secrets are unusable now."
 msgstr ""
 "La clé de chiffrement a bien été modifiée. Les clés existantes ne sont "
 "désormais plus utilisables."
 
-#: src/Widgets/Window.vala:116 src/Widgets/Dialogs/Preferences.vala:75
+#: src/Widgets/Window.vala:118 src/Widgets/MainScreen.vala:57
+#: src/Widgets/Dialogs/Preferences.vala:75
 msgid "Close"
 msgstr "Fermer"
 
-#: src/Widgets/HeaderBar.vala:39
+#: src/Widgets/HeaderBar.vala:40
 msgid "Alohomora"
 msgstr "Alohomora"
 
-#: src/Widgets/HeaderBar.vala:54
+#: src/Widgets/HeaderBar.vala:55
 msgid "Add New Login"
 msgstr "Ajouter un nouveau mot de passe"
 
-#: src/Widgets/HeaderBar.vala:63
+#: src/Widgets/HeaderBar.vala:64
 msgid "Light Theme"
 msgstr "Thème clair"
 
-#: src/Widgets/HeaderBar.vala:64
+#: src/Widgets/HeaderBar.vala:65
 msgid "Dark Theme"
 msgstr "Thème sombre"
 
-#: src/Widgets/HeaderBar.vala:69 src/Widgets/Dialogs/Preferences.vala:35
+#: src/Widgets/HeaderBar.vala:70 src/Widgets/MainScreen.vala:55
+msgid "Search"
+msgstr "Rechercher"
+
+#: src/Widgets/HeaderBar.vala:75 src/Widgets/Dialogs/Preferences.vala:35
 msgid "Preferences"
 msgstr "Préférences"
 
-#: src/Widgets/HeaderBar.vala:77 src/Widgets/Dialogs/ChangeCipher.vala:34
+#: src/Widgets/HeaderBar.vala:83 src/Widgets/Dialogs/ChangeCipher.vala:34
 msgid "Change Cipher Key"
 msgstr "Modifier la clé de chiffrement"
 
-#: src/Widgets/HeaderBar.vala:85
+#: src/Widgets/HeaderBar.vala:91
 msgid "Quit"
 msgstr "Quitter"
 
-#: src/Widgets/HeaderBar.vala:101
+#: src/Widgets/HeaderBar.vala:108
 msgid "Help"
 msgstr "Aide"
 
@@ -102,36 +107,36 @@ msgstr "Afficher la clé de chiffrement"
 msgid "Submit"
 msgstr "Valider"
 
-#: src/Widgets/MainScreen.vala:48
+#: src/Widgets/MainScreen.vala:49
 msgid "No Passwords Found"
 msgstr "Aucun mot de passe"
 
-#: src/Widgets/MainScreen.vala:48
+#: src/Widgets/MainScreen.vala:49
 msgid "Add a new credential."
 msgstr "Ajoutez un nouvel identifiant."
 
-#: src/Widgets/MainScreen.vala:49
+#: src/Widgets/MainScreen.vala:50
 msgid "Add Password"
 msgstr "Ajouter un mot de passe"
 
-#: src/Widgets/MainScreen.vala:49
+#: src/Widgets/MainScreen.vala:50
 msgid "Stores a new password securely."
 msgstr "Stocke un nouveau mot de passe de façon sécurisée."
 
-#: src/Widgets/MainScreen.vala:54
-msgid "Search"
-msgstr "Rechercher"
+#: src/Widgets/MainScreen.vala:139
+msgid "No matches found"
+msgstr ""
 
-#: src/Widgets/SecretBox.vala:59 src/Widgets/Dialogs/EditSecret.vala:36
+#: src/Widgets/SecretBox.vala:61 src/Widgets/Dialogs/EditSecret.vala:36
 #: src/Widgets/Dialogs/EditSecret.vala:95
 msgid "Edit Secret"
 msgstr "Modifier le mot de passe"
 
-#: src/Widgets/SecretBox.vala:65
+#: src/Widgets/SecretBox.vala:67
 msgid "Delete Secret"
 msgstr "Supprimer le mot de passe"
 
-#: src/Widgets/SecretBox.vala:85
+#: src/Widgets/SecretBox.vala:87
 msgid "Copy Password"
 msgstr "Copier le mot de passe"
 
