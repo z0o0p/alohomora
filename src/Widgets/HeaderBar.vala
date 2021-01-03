@@ -26,6 +26,7 @@ public class Alohomora.HeaderBar: Gtk.HeaderBar {
     private Granite.ModeSwitch dark_mode;
     private Gtk.Button add_secret;
     private Gtk.Box help_menu;
+    private Gtk.ModelButton search;
     private Gtk.ModelButton preferences;
     private Gtk.ModelButton change_key;
     private Gtk.ModelButton quit;
@@ -65,6 +66,11 @@ public class Alohomora.HeaderBar: Gtk.HeaderBar {
         dark_mode.valign = Gtk.Align.CENTER;
         dark_mode.bind_property ("active", settings, "gtk_application_prefer_dark_theme");
 
+        search = new Gtk.ModelButton ();
+        search.text = _("Search");
+        search.sensitive = false;
+        search.clicked.connect (() => window.search_secret ());
+
         preferences = new Gtk.ModelButton ();
         preferences.text = _("Preferences");
         preferences.sensitive = false;
@@ -83,9 +89,10 @@ public class Alohomora.HeaderBar: Gtk.HeaderBar {
 
         quit = new Gtk.ModelButton ();
         quit.text = _("Quit");
-        quit.clicked.connect (() => window.close());
+        quit.clicked.connect (() => window.close ());
 
         help_menu = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+        help_menu.pack_start (search, false, false, 2);
         help_menu.pack_start (preferences, false, false, 2);
         help_menu.pack_start (change_key, false, false, 2);
         help_menu.pack_start (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
@@ -99,16 +106,14 @@ public class Alohomora.HeaderBar: Gtk.HeaderBar {
         help.image = new Gtk.Image.from_icon_name ("help-icon", Gtk.IconSize.BUTTON);
         help.valign = Gtk.Align.CENTER;
         help.tooltip_text = _("Help");
-        help.clicked.connect (() => popover.show_all());
+        help.clicked.connect (() => popover.show_all ());
 
         pack_start (add_secret);
         pack_end (help);
         pack_end (dark_mode);
 
         secret.key_validated.connect ((is_validated) => {
-            add_secret.sensitive = is_validated;
-            change_key.sensitive = is_validated;
-            preferences.sensitive = is_validated;
+            add_secret.sensitive = search.sensitive = preferences.sensitive = change_key.sensitive = is_validated;
         });
     }
 }

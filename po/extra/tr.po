@@ -1,79 +1,84 @@
-# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the extra package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
+# Safak <bjksafak45@gmail.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-03 15:18+0530\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2020-09-26 21:19+0300\n"
+"Last-Translator: Safak <bjksafak45@gmail.com>\n"
+"Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
+"Language: tr_TR\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 2.0\n"
 
 #: data/com.github.z0o0p.alohomora.desktop.in:3
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:7
 msgid "Alohomora"
-msgstr ""
+msgstr "Alohomora"
 
 #: data/com.github.z0o0p.alohomora.desktop.in:4
 msgid "Password Manager"
-msgstr ""
+msgstr "Parola Yöneticisi"
 
 #: data/com.github.z0o0p.alohomora.desktop.in:5
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:8
 msgid "Store and manage passwords securely"
-msgstr ""
+msgstr "Parolaları güvenli bir şekilde saklayın ve yönetin"
 
 #: data/com.github.z0o0p.alohomora.desktop.in:8
 msgid "com.github.z0o0p.alohomora"
-msgstr ""
+msgstr "com.github.z0o0p.alohomora"
 
 #: data/com.github.z0o0p.alohomora.desktop.in:11
 msgid "Password;Manager;Security;"
-msgstr ""
+msgstr "Şifre; Yönetici; Güvenlik;"
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:10
 msgid ""
 "A clean and easy-to-use password manager that securely stores all your "
 "passwords in your device."
 msgstr ""
+"Tüm bilgilerinizi güvenli bir şekilde depolayan temiz ve kullanımı kolay bir "
+"parola yöneticisi:"
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:11
 msgid ""
 "You can now forget about having to remember a unique, long, complex password "
 "for every one of your online accounts."
 msgstr ""
+"Artık benzersiz, uzun, karmaşık bir şifreyi hatırlamak zorunda kalmayı "
+"unutabilirsinizçevrimiçi hesaplarınızın her biri için."
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:12
 msgid "Features:"
-msgstr ""
+msgstr "Özellikleri:"
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:14
 msgid "Built-in password generator"
-msgstr ""
+msgstr "Yerleşik şifre üreticisi"
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:15
 msgid "Enciphers stored secrets"
-msgstr ""
+msgstr "Şifreli gizli anahtarlar"
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:16
 msgid "Copy passwords to your clipboard"
-msgstr ""
+msgstr "Parolaları panonuza kopyalayın"
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:22
 msgid "Taqmeel Zubeir"
-msgstr ""
+msgstr "Taqmeel Zubeir"
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:75
+#, fuzzy
 msgid "Improved Usability"
-msgstr ""
+msgstr "Geliştirilmiş uygulama simgeleri"
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:77
 msgid "Search for secrets by just typing the credential name."
@@ -112,9 +117,13 @@ msgid "Fixed issue regarding locked secrets."
 msgstr ""
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:98
+#, fuzzy
 msgid "Improved app icons."
-msgstr ""
+msgstr "Geliştirilmiş uygulama simgeleri"
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:104
 msgid "Initial Release"
-msgstr ""
+msgstr "İlk sürüm"
+
+#~ msgid "Minor bug fixes"
+#~ msgstr "Küçük hata düzeltmeleri"

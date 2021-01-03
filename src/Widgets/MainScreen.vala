@@ -30,7 +30,8 @@ public class Alohomora.MainScreen: Gtk.ScrolledWindow {
     private Gtk.SearchBar search_bar;
     private Gtk.SearchEntry search_entry;
     private Gtk.Button search_button;
-    private List<Secret.Item> secrets;
+    private Gtk.Button close_button;
+    private List<unowned Secret.Item> secrets;
     private Granite.Widgets.Welcome welcome;
 
     public MainScreen (Alohomora.Window app_window, Alohomora.SecretManager secret_manager) {
@@ -53,13 +54,17 @@ public class Alohomora.MainScreen: Gtk.ScrolledWindow {
         search_entry.activate.connect (search_secret);
         search_button = new Gtk.Button.with_label (_("Search"));
         search_button.clicked.connect (search_secret);
-
+        close_button = new Gtk.Button.with_label (_("Close"));
+        close_button.clicked.connect (() => {
+            refresh_sub_screen ();
+            search_bar.set_search_mode (false);
+        });
         search_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 5);
         search_box.add (search_entry);
         search_box.add (search_button);
+        search_box.add (close_button);
 
         search_bar = new Gtk.SearchBar ();
-        search_bar.show_close_button = true;
         search_bar.connect_entry (search_entry);
         search_bar.add (search_box);
 
@@ -70,31 +75,31 @@ public class Alohomora.MainScreen: Gtk.ScrolledWindow {
 
         secret.initialized.connect (() => {
             secrets = secret.get_secrets ();
-            populate_sub_screen ();
+            refresh_sub_screen ();
             add (screen);
         });
 
         secret.changed.connect (() => {
             secrets = secret.get_secrets ();
-            clear_sub_screen ();
-            populate_sub_screen ();
+            refresh_sub_screen ();
         });
 
-        secret.ordering_changed.connect (() => {
-            clear_sub_screen ();
-            populate_sub_screen ();
-        });
+        secret.ordering_changed.connect (refresh_sub_screen);
 
         window.key_press_event.connect ((event) => {
             if (window.user_validated ()) {
-                return search_bar.handle_event (event);
+                if (Gdk.keyval_name (event.keyval) == "Escape") {
+                    refresh_sub_screen ();
+                }
+                else {
+                    return search_bar.handle_event (event);
+                }
             }
+            return false;
         });
 
-        search_entry.focus_out_event.connect (() => {
-            clear_sub_screen ();
-            populate_sub_screen ();
-            return false;
+        window.search_secret.connect (() => {
+            search_bar.set_search_mode (true);
         });
 
         welcome.activated.connect ((index) => {
@@ -105,7 +110,8 @@ public class Alohomora.MainScreen: Gtk.ScrolledWindow {
         });
     }
 
-    private void populate_sub_screen () {
+    private void refresh_sub_screen () {
+        sub_screen.foreach ((widget) => sub_screen.remove (widget));
         secrets.sort (secret.compare_secrets);
         if (!settings.get_boolean ("sort-ascending")) {
             secrets.reverse ();
@@ -119,18 +125,21 @@ public class Alohomora.MainScreen: Gtk.ScrolledWindow {
         screen.show_all ();
     }
 
-    private void clear_sub_screen () {
-        sub_screen.foreach ((widget) => sub_screen.remove (widget));
-    }
-
     private void search_secret () {
+        var search_found = false;
         sub_screen.foreach ((widget) => sub_screen.remove (widget));
         secrets.foreach ((secret_item) => {
             var attribute = secret_item.get_attributes ();
             if (attribute["credential-name"].up ().contains (search_entry.text.up ())) {
+                search_found = true;
                 sub_screen.add (new Alohomora.SecretBox (window, secret, secret_item));
             }
         });
+        if (!search_found) {
+            var result_label = new Gtk.Label(_("No matches found"));
+            result_label.ypad = 10;
+            sub_screen.add (result_label);
+        }
         screen.show_all ();
     }
 }
