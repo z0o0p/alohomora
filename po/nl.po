@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: com.github.z0o0p.alohomora\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-03 15:18+0530\n"
-"PO-Revision-Date: 2020-08-17 13:04+0200\n"
+"PO-Revision-Date: 2021-01-03 18:26+0100\n"
 "Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.1\n"
+"X-Generator: Poedit 2.4.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/Widgets/Window.vala:78 src/Widgets/Window.vala:94
@@ -24,7 +24,8 @@ msgstr "Onjuiste sleutel!"
 
 #: src/Widgets/Window.vala:79 src/Widgets/Window.vala:95
 msgid "The cipher key entered is wrong. Check and try again."
-msgstr "De toegangssleutel is onjuist. Controleer deze en probeer het opnieuw."
+msgstr ""
+"De toegangssleutel is onjuist. Controleer de sleutel en probeer het opnieuw."
 
 #: src/Widgets/Window.vala:88
 msgid "Successful Change"
@@ -58,11 +59,11 @@ msgstr "Donker thema"
 
 #: src/Widgets/HeaderBar.vala:70 src/Widgets/MainScreen.vala:55
 msgid "Search"
-msgstr ""
+msgstr "Zoeken"
 
 #: src/Widgets/HeaderBar.vala:75 src/Widgets/Dialogs/Preferences.vala:35
 msgid "Preferences"
-msgstr ""
+msgstr "Voorkeuren"
 
 #: src/Widgets/HeaderBar.vala:83 src/Widgets/Dialogs/ChangeCipher.vala:34
 msgid "Change Cipher Key"
@@ -124,7 +125,7 @@ msgstr "Sla een wachtwoord veilig op."
 
 #: src/Widgets/MainScreen.vala:139
 msgid "No matches found"
-msgstr ""
+msgstr "Geen overeenkomsten"
 
 #: src/Widgets/SecretBox.vala:61 src/Widgets/Dialogs/EditSecret.vala:36
 #: src/Widgets/Dialogs/EditSecret.vala:95
@@ -149,7 +150,7 @@ msgstr "Naam:"
 
 #: src/Widgets/Dialogs/NewSecret.vala:53
 msgid "Eg. GitHub, Facebook, etc."
-msgstr "Bijv. GitHub, Facebook, etc."
+msgstr "Bijv. GitHub of Facebook"
 
 #: src/Widgets/Dialogs/NewSecret.vala:54 src/Widgets/Dialogs/EditSecret.vala:57
 msgid "Username :"
@@ -211,21 +212,20 @@ msgstr "Sleutel wijzigen"
 
 #: src/Widgets/Dialogs/Preferences.vala:48
 msgid "Sorting Order: "
-msgstr ""
+msgstr "Sorteervolgorde: "
 
 #: src/Widgets/Dialogs/Preferences.vala:50
 msgid "Ascending"
-msgstr ""
+msgstr "Oplopend"
 
 #: src/Widgets/Dialogs/Preferences.vala:51
 msgid "Descending"
-msgstr ""
+msgstr "Aflopend"
 
 #: src/Widgets/Dialogs/Preferences.vala:54
-#, fuzzy
 msgid "Generated Password Length: "
-msgstr "Wachtwoord genereren"
+msgstr "Lengte van gegenereerd wachtwoord: "
 
 #: src/Widgets/Dialogs/Preferences.vala:76
 msgid "Apply"
-msgstr ""
+msgstr "Toepassen"
