@@ -31,7 +31,7 @@ public class Alohomora.MainScreen: Gtk.ScrolledWindow {
     private Gtk.SearchEntry search_entry;
     private Gtk.Button search_button;
     private Gtk.Button close_button;
-    private List<Secret.Item> secrets;
+    private List<unowned Secret.Item> secrets;
     private Granite.Widgets.Welcome welcome;
 
     public MainScreen (Alohomora.Window app_window, Alohomora.SecretManager secret_manager) {

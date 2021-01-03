@@ -191,7 +191,7 @@ public class Alohomora.SecretManager: GLib.Object {
         }
     }
 
-    public List<Secret.Item> get_secrets () {
+    public List<unowned Secret.Item> get_secrets () {
         return secrets.copy ();
     }
 
