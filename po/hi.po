@@ -8,18 +8,18 @@ msgstr ""
 "Project-Id-Version: com.github.z0o0p.alohomora\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-03 15:18+0530\n"
-"PO-Revision-Date: 2020-07-10 22:02+0530\n"
+"PO-Revision-Date: 2021-01-03 15:40+0530\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.4.2\n"
 
 #: src/Widgets/Window.vala:78 src/Widgets/Window.vala:94
 msgid "Incorrect Key!"
-msgstr "गलत चाबी है !"
+msgstr "गलत चाबी है!"
 
 #: src/Widgets/Window.vala:79 src/Widgets/Window.vala:95
 msgid "The cipher key entered is wrong. Check and try again."
@@ -56,11 +56,11 @@ msgstr "डार्क थीम"
 
 #: src/Widgets/HeaderBar.vala:70 src/Widgets/MainScreen.vala:55
 msgid "Search"
-msgstr ""
+msgstr "ढूढें"
 
 #: src/Widgets/HeaderBar.vala:75 src/Widgets/Dialogs/Preferences.vala:35
 msgid "Preferences"
-msgstr ""
+msgstr "सेटिंग्स"
 
 #: src/Widgets/HeaderBar.vala:83 src/Widgets/Dialogs/ChangeCipher.vala:34
 msgid "Change Cipher Key"
@@ -88,8 +88,7 @@ msgstr "पहले आपके पासवर्ड को दीसैफ�
 
 #: src/Widgets/ValidateScreen.vala:58
 msgid "Your new cipher key will be used to encipher all your saved passwords"
-msgstr ""
-"आपकी नई सैफर चाबी का उपयोग आपके सभी पासवर्ड को येनसैफर करने के लिए उपयोग किया जाएगा"
+msgstr "आपकी नई सैफर चाबी का उपयोग आपके सभी पासवर्ड को येनसैफर करने के लिए उपयोग किया जाएगा"
 
 #: src/Widgets/ValidateScreen.vala:72
 msgid "Enter Cipher Key:"
@@ -121,7 +120,7 @@ msgstr "एक नया पासवर्ड सुरक्षित रू�
 
 #: src/Widgets/MainScreen.vala:139
 msgid "No matches found"
-msgstr ""
+msgstr "कोई मेल नहीं मिले"
 
 #: src/Widgets/SecretBox.vala:61 src/Widgets/Dialogs/EditSecret.vala:36
 #: src/Widgets/Dialogs/EditSecret.vala:95
@@ -187,7 +186,7 @@ msgstr "सैफर चाबी को बदलने से मौजूद�
 
 #: src/Widgets/Dialogs/ChangeCipher.vala:48
 msgid "Old Cipher Key:"
-msgstr "पुरानी सैफर चाबी :"
+msgstr "पुरानी सैफर चाबी:"
 
 #: src/Widgets/Dialogs/ChangeCipher.vala:54
 msgid "Show Old Cipher Key"
@@ -195,7 +194,7 @@ msgstr "पुरानी सैफर चाबी दिखाओ"
 
 #: src/Widgets/Dialogs/ChangeCipher.vala:56
 msgid "New Cipher Key:"
-msgstr "नया सैफर चाबी :"
+msgstr "नया सैफर चाबी:"
 
 #: src/Widgets/Dialogs/ChangeCipher.vala:62
 msgid "Show New Cipher Key"
@@ -207,24 +206,23 @@ msgstr "चाबी बदलें"
 
 #: src/Widgets/Dialogs/Preferences.vala:48
 msgid "Sorting Order: "
-msgstr ""
+msgstr "सॉर्टिंग क्रम:"
 
 #: src/Widgets/Dialogs/Preferences.vala:50
 msgid "Ascending"
-msgstr ""
+msgstr "आरोही"
 
 #: src/Widgets/Dialogs/Preferences.vala:51
 msgid "Descending"
-msgstr ""
+msgstr "अवरोही"
 
 #: src/Widgets/Dialogs/Preferences.vala:54
-#, fuzzy
 msgid "Generated Password Length: "
-msgstr "नया पासवर्ड उत्पादन करें"
+msgstr "पासवर्ड की लंबाई: "
 
 #: src/Widgets/Dialogs/Preferences.vala:76
 msgid "Apply"
-msgstr ""
+msgstr "लागू करें "
 
 #~ msgid " Password :"
 #~ msgstr "पासवर्ड :"
