@@ -26,6 +26,7 @@ public class Alohomora.SecretBox : Gtk.Frame {
 
     private string credentials_name;
     private string user_name;
+    private string user_pass;
     private Gtk.Box secret_box;
     private Gtk.Box data_box;
     private Gtk.Box copy_box;
@@ -52,6 +53,7 @@ public class Alohomora.SecretBox : Gtk.Frame {
         var secret_attributes = secret_item.get_attributes ();
         credentials_name = secret_attributes.get ("credential-name");
         user_name = secret_attributes.get ("user-name");
+        load_user_pass ();
 
         popover = new Gtk.PopoverMenu ();
         more_menu = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
@@ -85,16 +87,9 @@ public class Alohomora.SecretBox : Gtk.Frame {
         copy = new Gtk.Button.with_label (_("Copy Password"));
         copy.can_focus = false;
         copy.clicked.connect (() => {
-            secret.load_secret_value.begin (
-                secret_item,
-                (obj, res) => {
-                    string user_pass;
-                    secret.load_secret_value.end (res, out user_pass);
-                    var clipboard = Gtk.Clipboard.get_default (Gdk.Display.get_default());
-                    clipboard.clear ();
-                    clipboard.set_text (user_pass, user_pass.length);
-                }
-            );
+            var clipboard = Gtk.Clipboard.get_default (Gdk.Display.get_default());
+            clipboard.clear ();
+            clipboard.set_text (user_pass, user_pass.length);
         });
 
         data_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
@@ -113,5 +108,15 @@ public class Alohomora.SecretBox : Gtk.Frame {
         secret_box.pack_end (copy_box, false, false, 0);
 
         add (secret_box);
+    }
+
+    private void load_user_pass () {
+        secret.load_secret_value.begin (
+            secret_item,
+            (obj, res) => {
+                secret.load_secret_value.end (res, out user_pass);
+                copy.tooltip_text = user_pass;
+            }
+        );
     }
 }
