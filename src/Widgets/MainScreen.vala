@@ -98,6 +98,10 @@ public class Alohomora.MainScreen: Gtk.ScrolledWindow {
             return false;
         });
 
+        window.search_secret.connect (() => {
+            search_bar.set_search_mode (true);
+        });
+
         welcome.activated.connect ((index) => {
             if (index == 0) {
                 var dialog = new Alohomora.NewSecret (window, secret);

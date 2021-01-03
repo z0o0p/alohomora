@@ -27,6 +27,8 @@ public class Alohomora.Window: Gtk.ApplicationWindow {
     private Alohomora.MainScreen main_screen;
     private Gtk.Stack stack;
 
+    public signal void search_secret ();
+
     public Window (Application app) {
         Object (
             application: app,
