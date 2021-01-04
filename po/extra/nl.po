@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-03 15:18+0530\n"
-"PO-Revision-Date: 2020-08-17 13:06+0200\n"
+"PO-Revision-Date: 2021-01-03 18:29+0100\n"
 "Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.1\n"
+"X-Generator: Poedit 2.4.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: data/com.github.z0o0p.alohomora.desktop.in:3
@@ -57,7 +57,6 @@ msgstr ""
 "onthouden."
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:12
-#, fuzzy
 msgid "Features:"
 msgstr "Kenmerken:"
 
@@ -79,48 +78,49 @@ msgstr "Taqmeel Zubeir"
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:75
 msgid "Improved Usability"
-msgstr ""
+msgstr "Verbeterde vormgeving"
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:77
 msgid "Search for secrets by just typing the credential name."
-msgstr ""
+msgstr "Zoek naar inloggegevens door de betreffende naam te typen."
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:78
 msgid "Your secrets now can be sorted by accessing the preferences section."
 msgstr ""
+"Je inloggegevens kunnen voortaan worden gesorteerd middels de voorkeuren."
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:79
 msgid "Turkish Translations by @safak45x."
-msgstr ""
+msgstr "Turkse vertaling, met dank aan @safak45x"
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:85
 msgid "New Translations"
-msgstr ""
+msgstr "Nieuwe vertalingen"
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:87
 msgid "Dutch Translations by @Vistaus (Heimen Stoffels)."
-msgstr ""
+msgstr "Nederlandse vertaling, met dank aan @Vistaus (Heimen Stoffels)"
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:88
 msgid "French Translations by @NathanBnm (Nathan Bonnemains)."
-msgstr ""
+msgstr "Franse vertaling, met dank aan @NathanBnm (Nathan Bonnemains)"
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:89
 msgid "Portuguese Translations by @rottenpants466."
-msgstr ""
+msgstr "Portugese vertaling, met dank aan @rottenpants466"
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:95
 msgid "Minor Patch"
-msgstr ""
+msgstr "Kleine patch"
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:97
 msgid "Fixed issue regarding locked secrets."
-msgstr ""
+msgstr "Probleem opgelost met vergrendelde inloggegevens"
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:98
 msgid "Improved app icons."
-msgstr ""
+msgstr "Verbeterde toepassingspictogrammen"
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:104
 msgid "Initial Release"
-msgstr ""
+msgstr "Initiële uitgave"
