@@ -31,6 +31,8 @@ public class Alohomora.ValidateScreen: Gtk.Box {
     private Gtk.Box cipher;
     private Gtk.Label key_label;
     private Gtk.Entry key_entry;
+    private Gtk.Label re_key_label;
+    private Gtk.Entry re_key_entry;
     private Gtk.Button submit;
 
     public ValidateScreen (Alohomora.SecretManager secret_manager) {
@@ -77,13 +79,26 @@ public class Alohomora.ValidateScreen: Gtk.Box {
         key_entry.secondary_icon_name = "image-red-eye-symbolic";
         key_entry.secondary_icon_tooltip_text = _("Show Cipher Key");
         key_entry.icon_press.connect (() => key_entry.visibility = !key_entry.visibility);
-        key_entry.activate.connect (() => try_validating(username.label, key_entry.text, newuser));
+        key_entry.activate.connect (() => key_entered ());
+        re_key_label = new Gtk.Label (_("Re-Enter Cipher Key:"));
+        re_key_label.halign = Gtk.Align.START;
+        re_key_entry = new Gtk.Entry ();
+        re_key_entry.visibility = false;
+        re_key_entry.caps_lock_warning = false;
+        re_key_entry.secondary_icon_name = "image-red-eye-symbolic";
+        re_key_entry.secondary_icon_tooltip_text = _("Show Cipher Key");
+        re_key_entry.icon_press.connect (() => re_key_entry.visibility = !re_key_entry.visibility);
+        re_key_entry.activate.connect (() => key_entered ());
         cipher = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
         cipher.pack_start (key_label, false, false, 0);
         cipher.pack_start (key_entry, false, false, 0);
+        if (newuser) {
+            cipher.pack_start (re_key_label, false, false, 0);
+            cipher.pack_start (re_key_entry, false, false, 0);
+        }
 
         submit = new Gtk.Button.with_label (_("Submit"));
-        submit.clicked.connect(() => try_validating(username.label, key_entry.text, newuser));
+        submit.clicked.connect(() => key_entered ());
 
         pack_start(wizard_art, false, false, 20);
         pack_start(message, false, false, 0);
@@ -91,13 +106,15 @@ public class Alohomora.ValidateScreen: Gtk.Box {
         pack_start(submit, true, false, 5);
     }
 
-    private void try_validating(string username, string key, bool newuser) {
-        if (key != "") {
-            if (newuser) {
-                secret.create_cipher_key.begin (username, key);
+    private void key_entered() {
+        if (newuser) {
+            if (key_entry.text != "" && re_key_entry.text != "") {
+                secret.create_cipher_key.begin (username.label, key_entry.text, re_key_entry.text);
             }
-            else {
-                secret.lookup_cipher_key.begin (username, key);
+        }
+        else {
+            if (key_entry.text != "") {
+                secret.lookup_cipher_key.begin (username.label, key_entry.text);
             }
         }
     }

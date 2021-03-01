@@ -82,6 +82,14 @@ public class Alohomora.Window: Gtk.ApplicationWindow {
             }
         });
 
+        secret.key_mismatch.connect (() => {
+            message_dialog (
+                _("Key Mismatch"),
+                _("Passwords entered do not match. Check and try again"),
+                "dialog-error"
+            );
+        });
+
         secret.key_changed.connect ((is_changed) => {
             if (is_changed)
                 message_dialog (

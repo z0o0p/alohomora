@@ -27,6 +27,7 @@ public class Alohomora.SecretManager: GLib.Object {
     public signal void initialized ();
     public signal void changed ();
     public signal void key_validated (bool is_validated);
+    public signal void key_mismatch ();
     public signal void key_changed (bool is_changed);
     public signal void ordering_changed ();
 
@@ -201,22 +202,27 @@ public class Alohomora.SecretManager: GLib.Object {
         return strcmp (attribute1["credential-name"].up (), attribute2["credential-name"].up ());
     };
 
-    public async void create_cipher_key (string user_name, string cipher_key) {
-        try {
-            var res = yield Secret.password_store (
-                cipher_schema (),
-                Secret.COLLECTION_DEFAULT,
-                "Alohomora Cipher",
-                cipher_key,
-                null,
-                "user-name", user_name,
-                null
-            );
-            key = cipher_key;
-            key_validated (res);
+    public async void create_cipher_key (string user_name, string cipher_key, string re_cipher_key) {
+        if (cipher_key != re_cipher_key) {
+            key_mismatch ();
         }
-        catch (Error err) {
-            warning ("%s", err.message);
+        else {
+            try {
+                var res = yield Secret.password_store (
+                    cipher_schema (),
+                    Secret.COLLECTION_DEFAULT,
+                    "Alohomora Cipher",
+                    cipher_key,
+                    null,
+                    "user-name", user_name,
+                    null
+                );
+                key = cipher_key;
+                key_validated (res);
+            }
+            catch (Error err) {
+                warning ("%s", err.message);
+            }
         }
     }
 
