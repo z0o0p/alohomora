@@ -104,11 +104,21 @@ public class Alohomora.NewSecret: Gtk.Dialog {
                 destroy ();
             }
             else if (id == Gtk.ResponseType.APPLY) {
+                var should_copy_pass = new Settings ("com.github.z0o0p.alohomora").get_boolean ("copy-new-pass");
+                var clipboard = Gtk.Clipboard.get_default (Gdk.Display.get_default ());
                 if (stack.visible_child_name == "Generate" && gen_pass.text != "") {
                     secret.new_secret.begin (credential_name.text, username.text, gen_pass.text);
+                    if (should_copy_pass) {
+                        clipboard.clear ();
+                        clipboard.set_text (gen_pass.text, gen_pass.text.length);
+                    }
                 }
                 else if (stack.visible_child_name == "Existing" && exist_pass.text != "") {
                     secret.new_secret.begin (credential_name.text, username.text, exist_pass.text);
+                    if (should_copy_pass) {
+                        clipboard.clear ();
+                        clipboard.set_text (exist_pass.text, exist_pass.text.length);
+                    }
                 }
             }
         });
