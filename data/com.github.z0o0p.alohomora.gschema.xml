@@ -22,6 +22,11 @@
       <summary>Ascending Order Sorting</summary>
       <description>Whether to display secrets in ascending order or not.</description>
     </key>
+    <key name="copy-new-pass" type="b">
+      <default>false</default>
+      <summary>Copy New Password</summary>
+      <description>Whether to copy the new password after adding it or not.</description>
+    </key>
     <key name="gen-pass-length" type="i">
       <default>16</default>
       <summary>Generated Password Length</summary>

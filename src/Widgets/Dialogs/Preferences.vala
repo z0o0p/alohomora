@@ -27,6 +27,9 @@ public class Alohomora.Preferences: Gtk.Dialog {
     private Gtk.Label sort_label;
     private Gtk.RadioButton ascending;
     private Gtk.RadioButton descending;
+    private Gtk.Label copy_label;
+    private Gtk.RadioButton copy_yes;
+    private Gtk.RadioButton copy_no;
     private Gtk.Label pass_length_label;
     private Gtk.SpinButton pass_length;
 
@@ -51,21 +54,30 @@ public class Alohomora.Preferences: Gtk.Dialog {
         descending = new Gtk.RadioButton.with_label_from_widget (ascending, _("Descending"));
         descending.set_active (!settings.get_boolean ("sort-ascending"));
 
+        copy_label = new Gtk.Label (_("Copy New Password After Adding: "));
+        copy_label.halign = Gtk.Align.END;
+        copy_yes = new Gtk.RadioButton.with_label_from_widget (null, _("Yes"));
+        copy_no = new Gtk.RadioButton.with_label_from_widget (copy_yes, _("No"));
+        copy_no.set_active (!settings.get_boolean ("copy-new-pass"));
+
         pass_length_label = new Gtk.Label (_("Generated Password Length: "));
         pass_length_label.halign = Gtk.Align.END;
         pass_length = new Gtk.SpinButton.with_range (8, 24, 1);
         pass_length.set_value (settings.get_int ("gen-pass-length"));
 
         grid = new Gtk.Grid ();
-        grid.row_spacing = 5;
+        grid.row_spacing = 10;
         grid.column_spacing = 5;
         grid.halign = Gtk.Align.CENTER;
-        grid.margin = 15;
+        grid.margin = 10;
         grid.attach (sort_label,        0, 0, 1, 1);
         grid.attach (ascending,         1, 0, 1, 1);
         grid.attach (descending,        2, 0, 1, 1);
-        grid.attach (pass_length_label, 0, 1, 1, 1);
-        grid.attach (pass_length,       1, 1, 2, 1);
+        grid.attach (copy_label,        0, 1, 1, 1);
+        grid.attach (copy_yes,          1, 1, 1, 1);
+        grid.attach (copy_no,           2, 1, 1, 1);
+        grid.attach (pass_length_label, 0, 2, 1, 1);
+        grid.attach (pass_length,       1, 2, 2, 1);
 
         var dialog_content = get_content_area ();
         dialog_content.spacing = 5;
@@ -79,6 +91,7 @@ public class Alohomora.Preferences: Gtk.Dialog {
         response.connect (id => {
             if (id == Gtk.ResponseType.APPLY) {
                 settings.set_boolean ("sort-ascending", ascending.active);
+                settings.set_boolean ("copy-new-pass", copy_yes.active);
                 settings.set_int ("gen-pass-length", (int)pass_length.value);
                 secret.ordering_changed ();
             }
