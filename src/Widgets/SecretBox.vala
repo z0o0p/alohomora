@@ -26,6 +26,7 @@ public class Alohomora.SecretBox : Gtk.Frame {
 
     private string credentials_name;
     private string user_name;
+    private string pin_status;
     private string user_pass;
     private Gtk.Box secret_box;
     private Gtk.Box data_box;
@@ -33,6 +34,7 @@ public class Alohomora.SecretBox : Gtk.Frame {
     private Gtk.Box more_menu;
     private Gtk.MenuButton more;
     private Gtk.PopoverMenu popover;
+    private Gtk.ModelButton pin_secret;
     private Gtk.ModelButton edit_secret;
     private Gtk.ModelButton delete_secret;
     private Gtk.Label credentialname;
@@ -50,13 +52,16 @@ public class Alohomora.SecretBox : Gtk.Frame {
     }
 
     construct {
-        var secret_attributes = secret_item.get_attributes ();
-        credentials_name = secret_attributes.get ("credential-name");
-        user_name = secret_attributes.get ("user-name");
-        load_user_pass ();
+        load_secret_attributes ();
 
         popover = new Gtk.PopoverMenu ();
         more_menu = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+        pin_secret = new Gtk.ModelButton ();
+        pin_secret.text = (bool.parse (pin_status)) ? _("Unpin Secret") : _("Pin Secret");
+        pin_secret.clicked.connect (() => {
+            var new_pin_status = (bool.parse (pin_status)) ? "false" : "true";
+            secret.edit_secret.begin(credentials_name, credentials_name, user_name, user_name, user_pass, new_pin_status);
+        });
         edit_secret = new Gtk.ModelButton ();
         edit_secret.text = _("Edit Secret");
         edit_secret.clicked.connect (() => {
@@ -66,6 +71,8 @@ public class Alohomora.SecretBox : Gtk.Frame {
         delete_secret = new Gtk.ModelButton ();
         delete_secret.text = _("Delete Secret");
         delete_secret.clicked.connect (() => secret.delete_secret.begin(credentials_name, user_name));
+        more_menu.pack_start (pin_secret, false, false, 2);
+        more_menu.pack_start (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
         more_menu.pack_start (edit_secret, false, false, 2);
         more_menu.pack_start (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
         more_menu.pack_start (delete_secret, false, false, 2);
@@ -110,7 +117,11 @@ public class Alohomora.SecretBox : Gtk.Frame {
         add (secret_box);
     }
 
-    private void load_user_pass () {
+    private void load_secret_attributes () {
+        var secret_attributes = secret_item.get_attributes ();
+        credentials_name = secret_attributes.get ("credential-name");
+        user_name = secret_attributes.get ("user-name");
+        pin_status = (secret_attributes.get ("pinned") == null) ? "false" : secret_attributes.get ("pinned");
         secret.load_secret_value.begin (
             secret_item,
             (obj, res) => {

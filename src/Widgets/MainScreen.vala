@@ -25,8 +25,10 @@ public class Alohomora.MainScreen: Gtk.ScrolledWindow {
 
     private Settings settings;
     private Gtk.Box screen;
+    private Gtk.Box pin_screen;
     private Gtk.Box sub_screen;
     private Gtk.Box search_box;
+    private Gtk.Separator separator;
     private Gtk.SearchBar search_bar;
     private Gtk.SearchEntry search_entry;
     private Gtk.Button search_button;
@@ -56,7 +58,7 @@ public class Alohomora.MainScreen: Gtk.ScrolledWindow {
         search_button.clicked.connect (search_secret);
         close_button = new Gtk.Button.with_label (_("Close"));
         close_button.clicked.connect (() => {
-            refresh_sub_screen ();
+            refresh_screen ();
             search_bar.set_search_mode (false);
         });
         search_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 5);
@@ -68,28 +70,33 @@ public class Alohomora.MainScreen: Gtk.ScrolledWindow {
         search_bar.connect_entry (search_entry);
         search_bar.add (search_box);
 
+        separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
+        separator.margin = 10;
+
+        pin_screen = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
         sub_screen = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
 
         screen.add (search_bar);
+        screen.add (pin_screen);
         screen.add (sub_screen);
 
         secret.initialized.connect (() => {
             secrets = secret.get_secrets ();
-            refresh_sub_screen ();
+            refresh_screen ();
             add (screen);
         });
 
         secret.changed.connect (() => {
             secrets = secret.get_secrets ();
-            refresh_sub_screen ();
+            refresh_screen ();
         });
 
-        secret.ordering_changed.connect (refresh_sub_screen);
+        secret.ordering_changed.connect (refresh_screen);
 
         window.key_press_event.connect ((event) => {
             if (window.user_validated ()) {
                 if (Gdk.keyval_name (event.keyval) == "Escape") {
-                    refresh_sub_screen ();
+                    refresh_screen ();
                 }
                 else {
                     return search_bar.handle_event (event);
@@ -110,14 +117,28 @@ public class Alohomora.MainScreen: Gtk.ScrolledWindow {
         });
     }
 
-    private void refresh_sub_screen () {
+    private void refresh_screen () {
+        var pin_empty = true;
+        pin_screen.foreach ((widget) => pin_screen.remove (widget));
         sub_screen.foreach ((widget) => sub_screen.remove (widget));
         secrets.sort (secret.compare_secrets);
         if (!settings.get_boolean ("sort-ascending")) {
             secrets.reverse ();
         }
         if (secrets.length () != 0) {
-            secrets.foreach ((secret_item) => sub_screen.add (new Alohomora.SecretBox (window, secret, secret_item)));
+            secrets.foreach ((secret_item) => {
+                var attribute = secret_item.get_attributes ();
+                if (attribute["pinned"] == "false" || attribute["pinned"] == null) {
+                    sub_screen.add (new Alohomora.SecretBox (window, secret, secret_item));
+                }
+                else {
+                    pin_screen.add (new Alohomora.SecretBox (window, secret, secret_item));
+                    pin_empty = false;
+                }
+            });
+            if (!pin_empty) {
+                pin_screen.add (separator);
+            }
         }
         else {
             sub_screen.add (welcome);
@@ -127,6 +148,7 @@ public class Alohomora.MainScreen: Gtk.ScrolledWindow {
 
     private void search_secret () {
         var search_found = false;
+        pin_screen.foreach ((widget) => pin_screen.remove (widget));
         sub_screen.foreach ((widget) => sub_screen.remove (widget));
         secrets.foreach ((secret_item) => {
             var attribute = secret_item.get_attributes ();

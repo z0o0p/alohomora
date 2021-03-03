@@ -48,6 +48,7 @@ public class Alohomora.EditSecret: Gtk.Dialog {
         var secret_attributes = secret_item.get_attributes ();
         var credentialname = secret_attributes.get ("credential-name");
         var user_name = secret_attributes.get ("user-name");
+        var pin_status = secret_attributes.get ("pinned");
         var user_pass = "";
 
         credential_name_label = new Gtk.Label (_("Name :"));
@@ -101,7 +102,7 @@ public class Alohomora.EditSecret: Gtk.Dialog {
             else if (id == Gtk.ResponseType.APPLY)
                 if (credential_name.text != "" && username.text != "" && pass.text != "" )
                     if (credential_name.text != credentialname || username.text != user_name || pass.text != user_pass)
-                        secret.edit_secret.begin(credentialname, credential_name.text, user_name, username.text, user_pass, pass.text);
+                        secret.edit_secret.begin (credentialname, credential_name.text, user_name, username.text, pass.text, pin_status);
         });
 
         secret.changed.connect (() => destroy());

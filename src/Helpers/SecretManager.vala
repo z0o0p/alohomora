@@ -39,7 +39,8 @@ public class Alohomora.SecretManager: GLib.Object {
         var schema = new Secret.Schema (
             "com.github.z0o0p.alohomora.secret", Secret.SchemaFlags.NONE,
             "credential-name", Secret.SchemaAttributeType.STRING,
-            "user-name", Secret.SchemaAttributeType.STRING
+            "user-name", Secret.SchemaAttributeType.STRING,
+            "pinned", Secret.SchemaAttributeType.BOOLEAN
         );
         return schema;
     }
@@ -114,6 +115,7 @@ public class Alohomora.SecretManager: GLib.Object {
         var attributes = new HashTable<string,string> (str_hash, str_equal);
         attributes["credential-name"] = credential_name;
         attributes["user-name"] = user_name;
+        attributes["pinned"] = "false";
         try {
             var secret = Alohomora.CipherManager.encipher (user_pass, key);
             yield Secret.Item.create (
@@ -133,7 +135,7 @@ public class Alohomora.SecretManager: GLib.Object {
         }
     }
 
-    public async void edit_secret (string old_credentialname, string new_credentialname, string old_username, string new_username, string old_pass, string new_pass) {
+    public async void edit_secret (string old_credentialname, string new_credentialname, string old_username, string new_username, string new_pass, string new_pin_status) {
         var secret_items = collection.get_items ();
         foreach (var item in secret_items) {
             if (item.get_label() == "Alohomora Secret") {
@@ -143,6 +145,7 @@ public class Alohomora.SecretManager: GLib.Object {
                         if (attributes["user-name"] == old_username) {
                             attributes["credential-name"] = new_credentialname;
                             attributes["user-name"] = new_username;
+                            attributes["pinned"] = new_pin_status;
                             yield item.set_attributes (secret_schema(), attributes, null);
                             var secret = Alohomora.CipherManager.encipher (new_pass, key);
                             yield item.set_secret (new Secret.Value(secret, secret.length, "text/plain"), null);
