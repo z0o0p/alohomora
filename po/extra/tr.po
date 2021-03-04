@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-03 15:18+0530\n"
+"POT-Creation-Date: 2021-03-04 15:30+0530\n"
 "PO-Revision-Date: 2020-09-26 21:19+0300\n"
 "Last-Translator: Safak <bjksafak45@gmail.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -60,68 +60,95 @@ msgid "Features:"
 msgstr "Özellikleri:"
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:14
+#, fuzzy
+msgid "Enciphers stored secrets for more security"
+msgstr "Şifreli gizli anahtarlar"
+
+#: data/com.github.z0o0p.alohomora.appdata.xml.in:15
 msgid "Built-in password generator"
 msgstr "Yerleşik şifre üreticisi"
 
-#: data/com.github.z0o0p.alohomora.appdata.xml.in:15
-msgid "Enciphers stored secrets"
-msgstr "Şifreli gizli anahtarlar"
-
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:16
-msgid "Copy passwords to your clipboard"
+msgid "Pin secrets to the top for fast access"
+msgstr ""
+
+#: data/com.github.z0o0p.alohomora.appdata.xml.in:17
+msgid "Quickly search for your secrets"
+msgstr ""
+
+#: data/com.github.z0o0p.alohomora.appdata.xml.in:18
+#, fuzzy
+msgid "Copy passwords to your clipboard for easy use"
 msgstr "Parolaları panonuza kopyalayın"
 
-#: data/com.github.z0o0p.alohomora.appdata.xml.in:22
+#: data/com.github.z0o0p.alohomora.appdata.xml.in:24
 msgid "Taqmeel Zubeir"
 msgstr "Taqmeel Zubeir"
 
-#: data/com.github.z0o0p.alohomora.appdata.xml.in:75
+#: data/com.github.z0o0p.alohomora.appdata.xml.in:77
+#, fuzzy
+msgid "New Features"
+msgstr "Özellikleri:"
+
+#: data/com.github.z0o0p.alohomora.appdata.xml.in:79
+msgid "Pin your favourite secrets to the top now."
+msgstr ""
+
+#: data/com.github.z0o0p.alohomora.appdata.xml.in:80
+msgid "More customization options for the password generator."
+msgstr ""
+
+#: data/com.github.z0o0p.alohomora.appdata.xml.in:81
+msgid "Minor UI optimizations for better usability."
+msgstr ""
+
+#: data/com.github.z0o0p.alohomora.appdata.xml.in:87
 #, fuzzy
 msgid "Improved Usability"
 msgstr "Geliştirilmiş uygulama simgeleri"
 
-#: data/com.github.z0o0p.alohomora.appdata.xml.in:77
-msgid "Search for secrets by just typing the credential name."
+#: data/com.github.z0o0p.alohomora.appdata.xml.in:89
+msgid "Quickly search for secrets by using the search option."
 msgstr ""
 
-#: data/com.github.z0o0p.alohomora.appdata.xml.in:78
+#: data/com.github.z0o0p.alohomora.appdata.xml.in:90
 msgid "Your secrets now can be sorted by accessing the preferences section."
 msgstr ""
 
-#: data/com.github.z0o0p.alohomora.appdata.xml.in:79
-msgid "Turkish Translations by @safak45x."
-msgstr ""
-
-#: data/com.github.z0o0p.alohomora.appdata.xml.in:85
-msgid "New Translations"
-msgstr ""
-
-#: data/com.github.z0o0p.alohomora.appdata.xml.in:87
-msgid "Dutch Translations by @Vistaus (Heimen Stoffels)."
-msgstr ""
-
-#: data/com.github.z0o0p.alohomora.appdata.xml.in:88
-msgid "French Translations by @NathanBnm (Nathan Bonnemains)."
-msgstr ""
-
-#: data/com.github.z0o0p.alohomora.appdata.xml.in:89
-msgid "Portuguese Translations by @rottenpants466."
-msgstr ""
-
-#: data/com.github.z0o0p.alohomora.appdata.xml.in:95
-msgid "Minor Patch"
+#: data/com.github.z0o0p.alohomora.appdata.xml.in:91
+msgid "Turkish Translations by @safak45x (Safak GENISOL)."
 msgstr ""
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:97
+msgid "New Translations"
+msgstr ""
+
+#: data/com.github.z0o0p.alohomora.appdata.xml.in:99
+msgid "Dutch Translations by @Vistaus (Heimen Stoffels)."
+msgstr ""
+
+#: data/com.github.z0o0p.alohomora.appdata.xml.in:100
+msgid "French Translations by @NathanBnm (Nathan Bonnemains)."
+msgstr ""
+
+#: data/com.github.z0o0p.alohomora.appdata.xml.in:101
+msgid "Portuguese Translations by @rottenpants466."
+msgstr ""
+
+#: data/com.github.z0o0p.alohomora.appdata.xml.in:107
+msgid "Minor Patch"
+msgstr ""
+
+#: data/com.github.z0o0p.alohomora.appdata.xml.in:109
 msgid "Fixed issue regarding locked secrets."
 msgstr ""
 
-#: data/com.github.z0o0p.alohomora.appdata.xml.in:98
+#: data/com.github.z0o0p.alohomora.appdata.xml.in:110
 #, fuzzy
 msgid "Improved app icons."
 msgstr "Geliştirilmiş uygulama simgeleri"
 
-#: data/com.github.z0o0p.alohomora.appdata.xml.in:104
+#: data/com.github.z0o0p.alohomora.appdata.xml.in:116
 msgid "Initial Release"
 msgstr "İlk sürüm"
 

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.z0o0p.alohomora\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-03 15:18+0530\n"
+"POT-Creation-Date: 2021-03-04 15:30+0530\n"
 "PO-Revision-Date: 2020-09-26 21:18+0300\n"
 "Last-Translator: Safak <bjksafak45@gmail.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -17,25 +17,34 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 2.0\n"
 
-#: src/Widgets/Window.vala:78 src/Widgets/Window.vala:94
+#: src/Widgets/Window.vala:78 src/Widgets/Window.vala:102
 msgid "Incorrect Key!"
 msgstr "Yanlış Şifre!"
 
-#: src/Widgets/Window.vala:79 src/Widgets/Window.vala:95
+#: src/Widgets/Window.vala:79 src/Widgets/Window.vala:103
 msgid "The cipher key entered is wrong. Check and try again."
 msgstr "Girilen şifre yanlış. Kontrol edip tekrar deneyin."
 
+#: src/Widgets/Window.vala:87
+msgid "Key Mismatch"
+msgstr ""
+
 #: src/Widgets/Window.vala:88
+#, fuzzy
+msgid "Passwords entered do not match. Check and try again"
+msgstr "Girilen şifre yanlış. Kontrol edip tekrar deneyin."
+
+#: src/Widgets/Window.vala:96
 msgid "Successful Change"
 msgstr "Başarılı Değişiklik"
 
-#: src/Widgets/Window.vala:89
+#: src/Widgets/Window.vala:97
 msgid "Cipher key was successfully changed. Existing secrets are unusable now."
 msgstr ""
 "Şifreleme anahtarı başarıyla değiştirildi. Mevcut sırlar artık kullanılamaz."
 
-#: src/Widgets/Window.vala:118 src/Widgets/MainScreen.vala:57
-#: src/Widgets/Dialogs/Preferences.vala:75
+#: src/Widgets/Window.vala:126 src/Widgets/MainScreen.vala:59
+#: src/Widgets/Dialogs/Preferences.vala:124
 msgid "Close"
 msgstr "Kapat"
 
@@ -55,11 +64,11 @@ msgstr "Aydınlık Tema"
 msgid "Dark Theme"
 msgstr "Karanlık Tema"
 
-#: src/Widgets/HeaderBar.vala:70 src/Widgets/MainScreen.vala:55
+#: src/Widgets/HeaderBar.vala:70 src/Widgets/MainScreen.vala:57
 msgid "Search"
 msgstr ""
 
-#: src/Widgets/HeaderBar.vala:75 src/Widgets/Dialogs/Preferences.vala:35
+#: src/Widgets/HeaderBar.vala:75 src/Widgets/Dialogs/Preferences.vala:43
 msgid "Preferences"
 msgstr ""
 
@@ -75,111 +84,128 @@ msgstr "Çık"
 msgid "Help"
 msgstr "Yardım"
 
-#: src/Widgets/ValidateScreen.vala:52
+#: src/Widgets/ValidateScreen.vala:54
 msgid "Welcome"
 msgstr "Hoşgeldiniz"
 
-#: src/Widgets/ValidateScreen.vala:56
+#: src/Widgets/ValidateScreen.vala:58
 msgid "Let's Get You Started"
 msgstr "Başlayalım"
 
-#: src/Widgets/ValidateScreen.vala:56
+#: src/Widgets/ValidateScreen.vala:58
 msgid "I Need To Decipher Your Passwords First"
 msgstr "Önce Şifrelerinizi Çözmem Gerekiyor"
 
-#: src/Widgets/ValidateScreen.vala:58
+#: src/Widgets/ValidateScreen.vala:60
 msgid "Your new cipher key will be used to encipher all your saved passwords"
 msgstr ""
 "Yeni şifre anahtarınız, kayıtlı tüm şifrelerinizi şifrelemek için "
 "kullanılacaktır."
 
-#: src/Widgets/ValidateScreen.vala:72
+#: src/Widgets/ValidateScreen.vala:74
 msgid "Enter Cipher Key:"
 msgstr "Şifre Anahtarını Girin:"
 
-#: src/Widgets/ValidateScreen.vala:78
+#: src/Widgets/ValidateScreen.vala:80 src/Widgets/ValidateScreen.vala:89
 msgid "Show Cipher Key"
 msgstr "Şifre Anahtarını Göster"
 
-#: src/Widgets/ValidateScreen.vala:85
+#: src/Widgets/ValidateScreen.vala:83
+#, fuzzy
+msgid "Re-Enter Cipher Key:"
+msgstr "Şifre Anahtarını Girin:"
+
+#: src/Widgets/ValidateScreen.vala:100
 msgid "Submit"
 msgstr "Gönder"
 
-#: src/Widgets/MainScreen.vala:49
+#: src/Widgets/MainScreen.vala:51
 msgid "No Passwords Found"
 msgstr "Şifre Bulunamadı"
 
-#: src/Widgets/MainScreen.vala:49
+#: src/Widgets/MainScreen.vala:51
 msgid "Add a new credential."
 msgstr "Yeni bir kimlik bilgisi ekleyin."
 
-#: src/Widgets/MainScreen.vala:50
+#: src/Widgets/MainScreen.vala:52
 msgid "Add Password"
 msgstr "Şifre Ekle"
 
-#: src/Widgets/MainScreen.vala:50
+#: src/Widgets/MainScreen.vala:52
 msgid "Stores a new password securely."
 msgstr "Yeni parolayı güvenli bir şekilde saklar."
 
-#: src/Widgets/MainScreen.vala:139
+#: src/Widgets/MainScreen.vala:161
 msgid "No matches found"
 msgstr ""
 
-#: src/Widgets/SecretBox.vala:61 src/Widgets/Dialogs/EditSecret.vala:36
-#: src/Widgets/Dialogs/EditSecret.vala:95
+#: src/Widgets/SecretBox.vala:60
+#, fuzzy
+msgid "Unpin Secret"
+msgstr "Sırrı Düzenle"
+
+#: src/Widgets/SecretBox.vala:60
+#, fuzzy
+msgid "Pin Secret"
+msgstr "Sırrı Düzenle"
+
+#: src/Widgets/SecretBox.vala:66 src/Widgets/Dialogs/EditSecret.vala:36
+#: src/Widgets/Dialogs/EditSecret.vala:96
 msgid "Edit Secret"
 msgstr "Sırrı Düzenle"
 
-#: src/Widgets/SecretBox.vala:67
+#: src/Widgets/SecretBox.vala:72
 msgid "Delete Secret"
 msgstr "Sırrı Sil"
 
-#: src/Widgets/SecretBox.vala:87
+#: src/Widgets/SecretBox.vala:94
 msgid "Copy Password"
 msgstr "Şifreyi Kopyala"
 
-#: src/Widgets/Dialogs/NewSecret.vala:39
+#: src/Widgets/Dialogs/NewSecret.vala:38
 msgid "Add New Secret"
 msgstr "Yeni Sır Ekle"
 
-#: src/Widgets/Dialogs/NewSecret.vala:50 src/Widgets/Dialogs/EditSecret.vala:53
+#: src/Widgets/Dialogs/NewSecret.vala:49 src/Widgets/Dialogs/EditSecret.vala:54
 msgid "Name :"
 msgstr "İsim :"
 
-#: src/Widgets/Dialogs/NewSecret.vala:53
+#: src/Widgets/Dialogs/NewSecret.vala:52
 msgid "Eg. GitHub, Facebook, etc."
 msgstr "Örneğin. GitHub, Facebook vb."
 
-#: src/Widgets/Dialogs/NewSecret.vala:54 src/Widgets/Dialogs/EditSecret.vala:57
+#: src/Widgets/Dialogs/NewSecret.vala:54 src/Widgets/Dialogs/EditSecret.vala:58
 msgid "Username :"
 msgstr "Kullanıcı adı :"
 
-#: src/Widgets/Dialogs/NewSecret.vala:58
-msgid "Your Password Will Be Auto-Generated"
-msgstr "Parolanız Otomatik Oluşturulacak"
-
-#: src/Widgets/Dialogs/NewSecret.vala:60 src/Widgets/Dialogs/EditSecret.vala:61
+#: src/Widgets/Dialogs/NewSecret.vala:58 src/Widgets/Dialogs/EditSecret.vala:62
 msgid "Password :"
 msgstr "Parola :"
 
-#: src/Widgets/Dialogs/NewSecret.vala:66 src/Widgets/Dialogs/EditSecret.vala:67
+#: src/Widgets/Dialogs/NewSecret.vala:64
+#, fuzzy
+msgid "Re-Generate Password"
+msgstr "Yeni Parola Oluştur"
+
+#: src/Widgets/Dialogs/NewSecret.vala:70 src/Widgets/Dialogs/EditSecret.vala:68
 msgid "Show Password"
 msgstr "Şifreyi Göster"
 
-#: src/Widgets/Dialogs/NewSecret.vala:77
-msgid "Generate New Password"
+#: src/Widgets/Dialogs/NewSecret.vala:74
+#, fuzzy
+msgid "Auto-Generate Password"
 msgstr "Yeni Parola Oluştur"
 
-#: src/Widgets/Dialogs/NewSecret.vala:78
+#: src/Widgets/Dialogs/NewSecret.vala:75
 msgid "Use Existing Password"
 msgstr "Mevcut Şifreyi Kullan"
 
-#: src/Widgets/Dialogs/NewSecret.vala:99 src/Widgets/Dialogs/EditSecret.vala:94
+#: src/Widgets/Dialogs/NewSecret.vala:98 src/Widgets/Dialogs/EditSecret.vala:95
 #: src/Widgets/Dialogs/ChangeCipher.vala:79
 msgid "Cancel"
 msgstr "İptal et"
 
-#: src/Widgets/Dialogs/NewSecret.vala:100
+#: src/Widgets/Dialogs/NewSecret.vala:99
 msgid "Add Secret"
 msgstr "Sır Ekle"
 
@@ -208,23 +234,47 @@ msgstr "Yeni Şifre Anahtarını Göster"
 msgid "Change Key"
 msgstr "Anahtarı Değiştir"
 
-#: src/Widgets/Dialogs/Preferences.vala:48
-msgid "Sorting Order: "
+#: src/Widgets/Dialogs/Preferences.vala:56
+msgid "General"
 msgstr ""
 
-#: src/Widgets/Dialogs/Preferences.vala:50
-msgid "Ascending"
+#: src/Widgets/Dialogs/Preferences.vala:60
+msgid "Sort Secrets By: "
 msgstr ""
 
-#: src/Widgets/Dialogs/Preferences.vala:51
-msgid "Descending"
+#: src/Widgets/Dialogs/Preferences.vala:63
+msgid "Ascending Order"
 msgstr ""
 
-#: src/Widgets/Dialogs/Preferences.vala:54
+#: src/Widgets/Dialogs/Preferences.vala:64
+msgid "Descending Order"
+msgstr ""
+
+#: src/Widgets/Dialogs/Preferences.vala:67
+msgid "Copy New Password After Adding: "
+msgstr ""
+
+#: src/Widgets/Dialogs/Preferences.vala:77
+#, fuzzy
+msgid "Password Generator"
+msgstr "Parola :"
+
+#: src/Widgets/Dialogs/Preferences.vala:81
+msgid "Include Digits: "
+msgstr ""
+
+#: src/Widgets/Dialogs/Preferences.vala:88
+msgid "Include Special Characters: "
+msgstr ""
+
+#: src/Widgets/Dialogs/Preferences.vala:95
 #, fuzzy
 msgid "Generated Password Length: "
 msgstr "Yeni Parola Oluştur"
 
-#: src/Widgets/Dialogs/Preferences.vala:76
+#: src/Widgets/Dialogs/Preferences.vala:125
 msgid "Apply"
 msgstr ""
+
+#~ msgid "Your Password Will Be Auto-Generated"
+#~ msgstr "Parolanız Otomatik Oluşturulacak"

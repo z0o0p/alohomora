@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.z0o0p.alohomora\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-03 15:18+0530\n"
+"POT-Creation-Date: 2021-03-04 15:30+0530\n"
 "PO-Revision-Date: 2021-01-03 18:26+0100\n"
 "Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Language-Team: \n"
@@ -18,26 +18,36 @@ msgstr ""
 "X-Generator: Poedit 2.4.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/Widgets/Window.vala:78 src/Widgets/Window.vala:94
+#: src/Widgets/Window.vala:78 src/Widgets/Window.vala:102
 msgid "Incorrect Key!"
 msgstr "Onjuiste sleutel!"
 
-#: src/Widgets/Window.vala:79 src/Widgets/Window.vala:95
+#: src/Widgets/Window.vala:79 src/Widgets/Window.vala:103
 msgid "The cipher key entered is wrong. Check and try again."
 msgstr ""
 "De toegangssleutel is onjuist. Controleer de sleutel en probeer het opnieuw."
 
+#: src/Widgets/Window.vala:87
+msgid "Key Mismatch"
+msgstr ""
+
 #: src/Widgets/Window.vala:88
+#, fuzzy
+msgid "Passwords entered do not match. Check and try again"
+msgstr ""
+"De toegangssleutel is onjuist. Controleer de sleutel en probeer het opnieuw."
+
+#: src/Widgets/Window.vala:96
 msgid "Successful Change"
 msgstr "Gewijzigd"
 
-#: src/Widgets/Window.vala:89
+#: src/Widgets/Window.vala:97
 msgid "Cipher key was successfully changed. Existing secrets are unusable now."
 msgstr ""
 "De toegangssleutel is gewijzigd. Reeds opgeslagen items zijn nu onbruikbaar."
 
-#: src/Widgets/Window.vala:118 src/Widgets/MainScreen.vala:57
-#: src/Widgets/Dialogs/Preferences.vala:75
+#: src/Widgets/Window.vala:126 src/Widgets/MainScreen.vala:59
+#: src/Widgets/Dialogs/Preferences.vala:124
 msgid "Close"
 msgstr "Sluiten"
 
@@ -57,11 +67,11 @@ msgstr "Licht thema"
 msgid "Dark Theme"
 msgstr "Donker thema"
 
-#: src/Widgets/HeaderBar.vala:70 src/Widgets/MainScreen.vala:55
+#: src/Widgets/HeaderBar.vala:70 src/Widgets/MainScreen.vala:57
 msgid "Search"
 msgstr "Zoeken"
 
-#: src/Widgets/HeaderBar.vala:75 src/Widgets/Dialogs/Preferences.vala:35
+#: src/Widgets/HeaderBar.vala:75 src/Widgets/Dialogs/Preferences.vala:43
 msgid "Preferences"
 msgstr "Voorkeuren"
 
@@ -77,111 +87,128 @@ msgstr "Afsluiten"
 msgid "Help"
 msgstr "Hulp"
 
-#: src/Widgets/ValidateScreen.vala:52
+#: src/Widgets/ValidateScreen.vala:54
 msgid "Welcome"
 msgstr "Welkom"
 
-#: src/Widgets/ValidateScreen.vala:56
+#: src/Widgets/ValidateScreen.vala:58
 msgid "Let's Get You Started"
 msgstr "Aan de slag"
 
-#: src/Widgets/ValidateScreen.vala:56
+#: src/Widgets/ValidateScreen.vala:58
 msgid "I Need To Decipher Your Passwords First"
 msgstr "Je wachtwoorden moeten worden ontcijferd"
 
-#: src/Widgets/ValidateScreen.vala:58
+#: src/Widgets/ValidateScreen.vala:60
 msgid "Your new cipher key will be used to encipher all your saved passwords"
 msgstr ""
 "Je nieuwe toegangssleutel wordt gebruikt om al je opgeslagen wachtwoorden te "
 "ontcijferen"
 
-#: src/Widgets/ValidateScreen.vala:72
+#: src/Widgets/ValidateScreen.vala:74
 msgid "Enter Cipher Key:"
 msgstr "Toegangssleutel:"
 
-#: src/Widgets/ValidateScreen.vala:78
+#: src/Widgets/ValidateScreen.vala:80 src/Widgets/ValidateScreen.vala:89
 msgid "Show Cipher Key"
 msgstr "Toegangssleutel tonen"
 
-#: src/Widgets/ValidateScreen.vala:85
+#: src/Widgets/ValidateScreen.vala:83
+#, fuzzy
+msgid "Re-Enter Cipher Key:"
+msgstr "Toegangssleutel:"
+
+#: src/Widgets/ValidateScreen.vala:100
 msgid "Submit"
 msgstr "Versturen"
 
-#: src/Widgets/MainScreen.vala:49
+#: src/Widgets/MainScreen.vala:51
 msgid "No Passwords Found"
 msgstr "Geen wachtwoorden"
 
-#: src/Widgets/MainScreen.vala:49
+#: src/Widgets/MainScreen.vala:51
 msgid "Add a new credential."
 msgstr "Voeg een item toe."
 
-#: src/Widgets/MainScreen.vala:50
+#: src/Widgets/MainScreen.vala:52
 msgid "Add Password"
 msgstr "Wachtwoord toevoegen"
 
-#: src/Widgets/MainScreen.vala:50
+#: src/Widgets/MainScreen.vala:52
 msgid "Stores a new password securely."
 msgstr "Sla een wachtwoord veilig op."
 
-#: src/Widgets/MainScreen.vala:139
+#: src/Widgets/MainScreen.vala:161
 msgid "No matches found"
 msgstr "Geen overeenkomsten"
 
-#: src/Widgets/SecretBox.vala:61 src/Widgets/Dialogs/EditSecret.vala:36
-#: src/Widgets/Dialogs/EditSecret.vala:95
+#: src/Widgets/SecretBox.vala:60
+#, fuzzy
+msgid "Unpin Secret"
+msgstr "Item bewerken"
+
+#: src/Widgets/SecretBox.vala:60
+#, fuzzy
+msgid "Pin Secret"
+msgstr "Item bewerken"
+
+#: src/Widgets/SecretBox.vala:66 src/Widgets/Dialogs/EditSecret.vala:36
+#: src/Widgets/Dialogs/EditSecret.vala:96
 msgid "Edit Secret"
 msgstr "Item bewerken"
 
-#: src/Widgets/SecretBox.vala:67
+#: src/Widgets/SecretBox.vala:72
 msgid "Delete Secret"
 msgstr "Item verwijderen"
 
-#: src/Widgets/SecretBox.vala:87
+#: src/Widgets/SecretBox.vala:94
 msgid "Copy Password"
 msgstr "Wachtwoord kopiëren"
 
-#: src/Widgets/Dialogs/NewSecret.vala:39
+#: src/Widgets/Dialogs/NewSecret.vala:38
 msgid "Add New Secret"
 msgstr "Item toevoegen"
 
-#: src/Widgets/Dialogs/NewSecret.vala:50 src/Widgets/Dialogs/EditSecret.vala:53
+#: src/Widgets/Dialogs/NewSecret.vala:49 src/Widgets/Dialogs/EditSecret.vala:54
 msgid "Name :"
 msgstr "Naam:"
 
-#: src/Widgets/Dialogs/NewSecret.vala:53
+#: src/Widgets/Dialogs/NewSecret.vala:52
 msgid "Eg. GitHub, Facebook, etc."
 msgstr "Bijv. GitHub of Facebook"
 
-#: src/Widgets/Dialogs/NewSecret.vala:54 src/Widgets/Dialogs/EditSecret.vala:57
+#: src/Widgets/Dialogs/NewSecret.vala:54 src/Widgets/Dialogs/EditSecret.vala:58
 msgid "Username :"
 msgstr "Gebruikersnaam:"
 
-#: src/Widgets/Dialogs/NewSecret.vala:58
-msgid "Your Password Will Be Auto-Generated"
-msgstr "Je wachtwoord wordt automatisch gegenereerd"
-
-#: src/Widgets/Dialogs/NewSecret.vala:60 src/Widgets/Dialogs/EditSecret.vala:61
+#: src/Widgets/Dialogs/NewSecret.vala:58 src/Widgets/Dialogs/EditSecret.vala:62
 msgid "Password :"
 msgstr "Wachtwoord:"
 
-#: src/Widgets/Dialogs/NewSecret.vala:66 src/Widgets/Dialogs/EditSecret.vala:67
+#: src/Widgets/Dialogs/NewSecret.vala:64
+#, fuzzy
+msgid "Re-Generate Password"
+msgstr "Wachtwoord genereren"
+
+#: src/Widgets/Dialogs/NewSecret.vala:70 src/Widgets/Dialogs/EditSecret.vala:68
 msgid "Show Password"
 msgstr "Wachtwoord tonen"
 
-#: src/Widgets/Dialogs/NewSecret.vala:77
-msgid "Generate New Password"
+#: src/Widgets/Dialogs/NewSecret.vala:74
+#, fuzzy
+msgid "Auto-Generate Password"
 msgstr "Wachtwoord genereren"
 
-#: src/Widgets/Dialogs/NewSecret.vala:78
+#: src/Widgets/Dialogs/NewSecret.vala:75
 msgid "Use Existing Password"
 msgstr "Bestaand wachtwoord gebruiken"
 
-#: src/Widgets/Dialogs/NewSecret.vala:99 src/Widgets/Dialogs/EditSecret.vala:94
+#: src/Widgets/Dialogs/NewSecret.vala:98 src/Widgets/Dialogs/EditSecret.vala:95
 #: src/Widgets/Dialogs/ChangeCipher.vala:79
 msgid "Cancel"
 msgstr "Annuleren"
 
-#: src/Widgets/Dialogs/NewSecret.vala:100
+#: src/Widgets/Dialogs/NewSecret.vala:99
 msgid "Add Secret"
 msgstr "Item toevoegen"
 
@@ -210,22 +237,51 @@ msgstr "Nieuwe toegangssleutel tonen"
 msgid "Change Key"
 msgstr "Sleutel wijzigen"
 
-#: src/Widgets/Dialogs/Preferences.vala:48
-msgid "Sorting Order: "
-msgstr "Sorteervolgorde: "
+#: src/Widgets/Dialogs/Preferences.vala:56
+msgid "General"
+msgstr ""
 
-#: src/Widgets/Dialogs/Preferences.vala:50
-msgid "Ascending"
+#: src/Widgets/Dialogs/Preferences.vala:60
+msgid "Sort Secrets By: "
+msgstr ""
+
+#: src/Widgets/Dialogs/Preferences.vala:63
+#, fuzzy
+msgid "Ascending Order"
 msgstr "Oplopend"
 
-#: src/Widgets/Dialogs/Preferences.vala:51
-msgid "Descending"
+#: src/Widgets/Dialogs/Preferences.vala:64
+#, fuzzy
+msgid "Descending Order"
 msgstr "Aflopend"
 
-#: src/Widgets/Dialogs/Preferences.vala:54
+#: src/Widgets/Dialogs/Preferences.vala:67
+msgid "Copy New Password After Adding: "
+msgstr ""
+
+#: src/Widgets/Dialogs/Preferences.vala:77
+#, fuzzy
+msgid "Password Generator"
+msgstr "Wachtwoord:"
+
+#: src/Widgets/Dialogs/Preferences.vala:81
+msgid "Include Digits: "
+msgstr ""
+
+#: src/Widgets/Dialogs/Preferences.vala:88
+msgid "Include Special Characters: "
+msgstr ""
+
+#: src/Widgets/Dialogs/Preferences.vala:95
 msgid "Generated Password Length: "
 msgstr "Lengte van gegenereerd wachtwoord: "
 
-#: src/Widgets/Dialogs/Preferences.vala:76
+#: src/Widgets/Dialogs/Preferences.vala:125
 msgid "Apply"
 msgstr "Toepassen"
+
+#~ msgid "Your Password Will Be Auto-Generated"
+#~ msgstr "Je wachtwoord wordt automatisch gegenereerd"
+
+#~ msgid "Sorting Order: "
+#~ msgstr "Sorteervolgorde: "
