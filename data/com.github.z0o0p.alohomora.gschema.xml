@@ -32,5 +32,15 @@
       <summary>Generated Password Length</summary>
       <description>Length of the auto-generated password.</description>
     </key>
+    <key name="include-special" type="b">
+      <default>true</default>
+      <summary>Include Special Characters</summary>
+      <description>Whether to include special characters in the auto-generated password.</description>
+    </key>
+    <key name="include-digit" type="b">
+      <default>true</default>
+      <summary>Include Digits</summary>
+      <description>Whether to include digits in the auto-generated password.</description>
+    </key>
   </schema>
 </schemalist>
