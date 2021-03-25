@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-04 15:30+0530\n"
-"PO-Revision-Date: 2021-01-03 18:29+0100\n"
+"PO-Revision-Date: 2021-03-25 13:31+0100\n"
 "Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -61,7 +61,6 @@ msgid "Features:"
 msgstr "Kenmerken:"
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:14
-#, fuzzy
 msgid "Enciphers stored secrets for more security"
 msgstr "Opgeslagen items worden vercijferd"
 
@@ -71,14 +70,13 @@ msgstr "Ingebouwde wachtwoordgenerator"
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:16
 msgid "Pin secrets to the top for fast access"
-msgstr ""
+msgstr "Maak inloggegevens vast zodat je er sneller toegang tot hebt"
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:17
 msgid "Quickly search for your secrets"
-msgstr ""
+msgstr "Zoek naar je inloggegevens"
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:18
-#, fuzzy
 msgid "Copy passwords to your clipboard for easy use"
 msgstr "Kopieer wachtwoorden naar het klembord"
 
@@ -87,30 +85,28 @@ msgid "Taqmeel Zubeir"
 msgstr "Taqmeel Zubeir"
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:77
-#, fuzzy
 msgid "New Features"
-msgstr "Kenmerken:"
+msgstr "Nieuw"
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:79
 msgid "Pin your favourite secrets to the top now."
-msgstr ""
+msgstr "Voortaan kun je je favoriete inloggegevens vastmaken."
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:80
 msgid "More customization options for the password generator."
-msgstr ""
+msgstr "Meer opties in de wachtwoordgenerator."
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:81
 msgid "Minor UI optimizations for better usability."
-msgstr ""
+msgstr "Kleine vormgevingsverbeteringen."
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:87
 msgid "Improved Usability"
 msgstr "Verbeterde vormgeving"
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:89
-#, fuzzy
 msgid "Quickly search for secrets by using the search option."
-msgstr "Zoek naar inloggegevens door de betreffende naam te typen."
+msgstr "Zoek naar inloggegevens middels de zoekfunctie."
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:90
 msgid "Your secrets now can be sorted by accessing the preferences section."
@@ -118,9 +114,8 @@ msgstr ""
 "Je inloggegevens kunnen voortaan worden gesorteerd middels de voorkeuren."
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:91
-#, fuzzy
 msgid "Turkish Translations by @safak45x (Safak GENISOL)."
-msgstr "Turkse vertaling, met dank aan @safak45x"
+msgstr "Turkse vertaling, met dank aan @safak45x (Safak GENISOL)."
 
 #: data/com.github.z0o0p.alohomora.appdata.xml.in:97
 msgid "New Translations"
