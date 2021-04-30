@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2020 Taqmeel Zubeir
+* Copyright (c) 2021 Taqmeel Zubeir
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public
@@ -23,13 +23,17 @@ public class Alohomora.EditSecret: Gtk.Dialog {
     public Alohomora.SecretManager secret {get; construct;}
     public Secret.Item secret_item {get; construct;}
 
+    private string credential_name;
+    private string user_name;
+    private string pin_status;
+    private string user_pass;
     private Gtk.Grid grid;
     private Gtk.Label credential_name_label;
-    private Gtk.Entry credential_name;
-    private Gtk.Label username_label;
-    private Gtk.Entry username;
+    private Gtk.Entry credential_name_entry;
+    private Gtk.Label user_name_label;
+    private Gtk.Entry user_name_entry;
     private Gtk.Label pass_label;
-    private Gtk.Entry pass;
+    private Gtk.Entry pass_entry;
 
     public EditSecret (Alohomora.Window app_window, Alohomora.SecretManager secret_manager, Secret.Item secretitem) {
         Object (
@@ -45,35 +49,24 @@ public class Alohomora.EditSecret: Gtk.Dialog {
     }
 
     construct {
-        var secret_attributes = secret_item.get_attributes ();
-        var credentialname = secret_attributes.get ("credential-name");
-        var user_name = secret_attributes.get ("user-name");
-        var pin_status = secret_attributes.get ("pinned");
-        var user_pass = "";
+        load_secret_attributes ();
 
         credential_name_label = new Gtk.Label (_("Name :"));
         credential_name_label.halign = Gtk.Align.END;
-        credential_name = new Gtk.Entry ();
-        credential_name.text = credentialname;
-        username_label = new Gtk.Label (_("Username :"));
-        username_label.halign = Gtk.Align.END;
-        username = new Gtk.Entry ();
-        username.text = user_name;
+        credential_name_entry = new Gtk.Entry ();
+        credential_name_entry.text = credential_name;
+        user_name_label = new Gtk.Label (_("Username :"));
+        user_name_label.halign = Gtk.Align.END;
+        user_name_entry = new Gtk.Entry ();
+        user_name_entry.text = user_name;
         pass_label = new Gtk.Label (_("Password :"));
         pass_label.halign = Gtk.Align.END;
-        pass = new Gtk.Entry ();
-        pass.visibility = false;
-        pass.caps_lock_warning = false;
-        pass.secondary_icon_name = "image-red-eye-symbolic";
-        pass.secondary_icon_tooltip_text = _("Show Password");
-        pass.icon_press.connect(() => pass.visibility = !pass.visibility);
-        secret.load_secret_value.begin(
-            secret_item,
-            (obj, res) => {
-                secret.load_secret_value.end(res, out user_pass);
-                pass.text = user_pass;
-            }
-        );
+        pass_entry = new Gtk.Entry ();
+        pass_entry.visibility = false;
+        pass_entry.caps_lock_warning = false;
+        pass_entry.secondary_icon_name = "image-red-eye-symbolic";
+        pass_entry.secondary_icon_tooltip_text = _("Show Password");
+        pass_entry.icon_press.connect(() => pass_entry.visibility = !pass_entry.visibility);
 
         grid = new Gtk.Grid ();
         grid.row_spacing = 5;
@@ -81,11 +74,11 @@ public class Alohomora.EditSecret: Gtk.Dialog {
         grid.halign = Gtk.Align.CENTER;
         grid.margin = 15;
         grid.attach (credential_name_label, 0, 0, 1, 1);
-        grid.attach (credential_name,       1, 0, 1, 1);
-        grid.attach (username_label,        0, 1 ,1, 1);
-        grid.attach (username,              1, 1, 1, 1);
+        grid.attach (credential_name_entry, 1, 0, 1, 1);
+        grid.attach (user_name_label,       0, 1 ,1, 1);
+        grid.attach (user_name_entry,       1, 1, 1, 1);
         grid.attach (pass_label,            0, 2, 1, 1);
-        grid.attach (pass,                  1, 2, 1, 1);
+        grid.attach (pass_entry,            1, 2, 1, 1);
 
         var dialog_content = get_content_area ();
         dialog_content.spacing = 5;
@@ -97,14 +90,30 @@ public class Alohomora.EditSecret: Gtk.Dialog {
         add.get_style_context ().add_class ("suggested-button");
 
         response.connect (id => {
-            if (id == Gtk.ResponseType.CLOSE)
+            if (id == Gtk.ResponseType.CLOSE) {
                 destroy ();
-            else if (id == Gtk.ResponseType.APPLY)
-                if (credential_name.text != "" && username.text != "" && pass.text != "" )
-                    if (credential_name.text != credentialname || username.text != user_name || pass.text != user_pass)
-                        secret.edit_secret.begin (credentialname, credential_name.text, user_name, username.text, pass.text, pin_status);
+            }
+            else if (id == Gtk.ResponseType.APPLY) {
+                if (credential_name_entry.text != "" && user_name_entry.text != "" && pass_entry.text != "" ) {
+                        secret.edit_secret.begin (credential_name, credential_name_entry.text, user_name, user_name_entry.text, pass_entry.text, pin_status);
+                }
+            }
         });
 
         secret.changed.connect (() => destroy());
+    }
+
+    private void load_secret_attributes () {
+        var secret_attributes = secret_item.get_attributes ();
+        credential_name = secret_attributes.get ("credential-name");
+        user_name = secret_attributes.get ("user-name");
+        pin_status = (secret_attributes.get ("pinned") == null) ? "false" : secret_attributes.get ("pinned");
+        secret.load_secret_value.begin (
+            secret_item,
+            (obj, res) => {
+                secret.load_secret_value.end(res, out user_pass);
+                pass_entry.text = user_pass;
+            }
+        );
     }
 }
