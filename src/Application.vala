@@ -1,43 +1,38 @@
 /*
-* Copyright (c) 2020 Taqmeel Zubeir
-*
-* This program is free software; you can redistribute it and/or
-* modify it under the terms of the GNU General Public
-* License as published by the Free Software Foundation; either
-* version 2 of the License, or (at your option) any later version.
-*
-* This program is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-* General Public License for more details.
-*
-* You should have received a copy of the GNU General Public
-* License along with this program; if not, write to the
-* Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
-* Boston, MA 02110-1301 USA
-*
-* Authored by: Taqmeel Zubeir <taqmeelzubeir.dev@gmail.com>
-*/
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2026 Taqmeel Zubeir (https://taqmeelzube.ir)
+ */
 
-public class Application: Gtk.Application {
+public class Alohomora.Application: Gtk.Application {
     public Application () {
         Object (
           application_id: "com.github.z0o0p.alohomora",
-          flags: ApplicationFlags.FLAGS_NONE
+          flags: ApplicationFlags.DEFAULT_FLAGS
         );
     }
 
     protected override void activate () {
+        var display = Gdk.Display.get_default ();
         var provider = new Gtk.CssProvider ();
         provider.load_from_resource ("/com/github/z0o0p/alohomora/styles/global.css");
-        Gtk.StyleContext.add_provider_for_screen (
-            Gdk.Screen.get_default (),
+        Gtk.StyleContext.add_provider_for_display (
+            display,
             provider,
             Gtk.STYLE_PROVIDER_PRIORITY_SETTINGS
         );
 
-        var window = new Alohomora.Window (this);
+        var granite_settings = Granite.Settings.get_default ();
+        var gtk_settings = Gtk.Settings.get_default ();
+        gtk_settings.gtk_application_prefer_dark_theme = granite_settings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK;
+        granite_settings.notify["prefers-color-scheme"].connect (() => {
+            gtk_settings.gtk_application_prefer_dark_theme = granite_settings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK;
+        });
 
-        add_window (window);
+        var window = new Alohomora.Window (this);
+        window.present ();
+    }
+
+    public static int main (string[] args) {
+        return new Application ().run (args);
     }
 }
