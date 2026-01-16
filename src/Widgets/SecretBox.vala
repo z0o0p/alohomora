@@ -25,36 +25,37 @@ public class Alohomora.SecretBox : Gtk.Frame {
     construct {
         load_secret_attributes ();
 
-        var pin_secret = new Gtk.Button ();
-        pin_secret.add_css_class (Granite.STYLE_CLASS_MENUITEM);
-        pin_secret.label = (bool.parse (pin_status)) ? _("Unpin Secret") : _("Pin Secret");
-        pin_secret.clicked.connect (() => {
+        var pin_action = new SimpleAction ("pin", null);
+        pin_action.activate.connect (() => {
             var new_pin_status = (bool.parse (pin_status)) ? "false" : "true";
             secret.edit_secret.begin (credentials_name, credentials_name, user_name, user_name, user_pass, new_pin_status);
         });
-        var edit_secret = new Gtk.Button ();
-        edit_secret.add_css_class (Granite.STYLE_CLASS_MENUITEM);
-        edit_secret.label = _("Edit Secret");
-        edit_secret.clicked.connect (() => {
+        var edit_action = new SimpleAction ("edit", null);
+        edit_action.activate.connect (() => {
             var dialog = new Alohomora.EditSecret (window, secret, secret_item);
             dialog.show ();
         });
-        var delete_secret = new Gtk.Button ();
-        delete_secret.add_css_class (Granite.STYLE_CLASS_MENUITEM);
-        delete_secret.label = _("Delete Secret");
-        delete_secret.clicked.connect (() => secret.delete_secret.begin (credentials_name, user_name));
-        var more_menu = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-        more_menu.append (pin_secret);
-        more_menu.append (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
-        more_menu.append (edit_secret);
-        more_menu.append (new Gtk.Separator (Gtk.Orientation.HORIZONTAL));
-        more_menu.append (delete_secret);
-        var popover = new Gtk.Popover ();
-        popover.add_css_class (Granite.STYLE_CLASS_MENU);
-        popover.set_child (more_menu);
+        var delete_action = new SimpleAction ("delete", null);
+        delete_action.activate.connect (() => secret.delete_secret.begin (credentials_name, user_name));
+
+        var action_group = new GLib.SimpleActionGroup ();
+        action_group.add_action (pin_action);
+        action_group.add_action (edit_action);
+        action_group.add_action (delete_action);
+        this.insert_action_group ("secret", action_group);
+
+        var menu = new Menu ();
+        menu.append ((bool.parse (pin_status)) ? _("Unpin Secret") : _("Pin Secret"), "secret.pin");
+        menu.append (_("Edit Secret"), "secret.edit");
+        menu.append (_("Delete Secret"), "secret.delete");
+
+        var popover_menu = new Gtk.PopoverMenu.from_model (menu);
+        popover_menu.has_arrow = false;
+        popover_menu.halign = Gtk.Align.START;
+        popover_menu.position = Gtk.PositionType.RIGHT;
+
         var more = new Gtk.MenuButton ();
-        more.popover = popover;
-        more.primary = true;
+        more.popover = popover_menu;
         more.icon_name = "more-icon";
         more.tooltip_text = _("More");
 
