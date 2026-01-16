@@ -2,6 +2,11 @@
 @define-color colorAccent #197FFC;
 @define-color textColorPrimary #FFFFFF;
 
+.theme {
+    background-color: #0F4C81;
+    color: #FFFFFF;
+}
+
 .message {
    font-size: 15px;
    font-weight: 600;

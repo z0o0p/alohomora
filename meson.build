@@ -1,4 +1,4 @@
-#Project name, Languages used and Version
+# Project name, Languages used and Version
 project ('com.github.z0o0p.alohomora', 'vala', 'c', version: '1.3.0')
 
 # Translation module
@@ -10,18 +10,18 @@ add_project_arguments (
     language: 'c'
 )
 
-#Executes build files in given directories
+# Executes build files in given directories
 subdir ('src')
 subdir ('data')
 
-#Executable
+# Executable
 executable (
     meson.project_name (),
     sources,
     alohomora_resources,
     dependencies: [
-        dependency ('gtk+-3.0'),
-        dependency ('granite'),
+        dependency ('gtk4'),
+        dependency ('granite-7'),
         dependency ('libsecret-1')
     ],
     install: true

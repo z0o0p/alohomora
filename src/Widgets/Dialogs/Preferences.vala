@@ -1,23 +1,7 @@
 /*
-* Copyright (c) 2020 Taqmeel Zubeir
-*
-* This program is free software; you can redistribute it and/or
-* modify it under the terms of the GNU General Public
-* License as published by the Free Software Foundation; either
-* version 2 of the License, or (at your option) any later version.
-*
-* This program is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-* General Public License for more details.
-*
-* You should have received a copy of the GNU General Public
-* License along with this program; if not, write to the
-* Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
-* Boston, MA 02110-1301 USA
-*
-* Authored by: Taqmeel Zubeir <taqmeelzubeir.dev@gmail.com>
-*/
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2026 Taqmeel Zubeir (https://taqmeelzube.ir)
+ */
 
 public class Alohomora.Preferences: Gtk.Dialog {
     public Alohomora.SecretManager secret {get; construct;}
@@ -45,7 +29,6 @@ public class Alohomora.Preferences: Gtk.Dialog {
             deletable: false,
             resizable: false,
             modal: true,
-            border_width: 10,
             secret: secret_manager
         );
     }
@@ -54,7 +37,7 @@ public class Alohomora.Preferences: Gtk.Dialog {
         settings = new Settings ("com.github.z0o0p.alohomora");
 
         general_section_label = new Gtk.Label (_("General"));
-        general_section_label.get_style_context ().add_class ("header-text");
+        general_section_label.add_css_class ("header-text");
         general_section_label.halign = Gtk.Align.START;
 
         sort_label = new Gtk.Label (_("Sort Secrets By: "));
@@ -72,10 +55,13 @@ public class Alohomora.Preferences: Gtk.Dialog {
         copy.set_active (settings.get_boolean ("copy-new-pass"));
 
         separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
-        separator.margin = 5;
+        separator.margin_top = 5;
+        separator.margin_bottom = 5;
+        separator.margin_start = 5;
+        separator.margin_end = 5;
 
         pass_section_label = new Gtk.Label (_("Password Generator"));
-        pass_section_label.get_style_context ().add_class ("header-text");
+        pass_section_label.add_css_class ("header-text");
         pass_section_label.halign = Gtk.Align.START;
 
         include_digit_label = new Gtk.Label (_("Include Digits: "));
@@ -101,7 +87,10 @@ public class Alohomora.Preferences: Gtk.Dialog {
         grid.row_spacing = 5;
         grid.column_spacing = 5;
         grid.halign = Gtk.Align.CENTER;
-        grid.margin = 5;
+        grid.margin_top = 5;
+        grid.margin_bottom = 5;
+        grid.margin_start = 5;
+        grid.margin_end = 5;
         grid.attach (general_section_label, 0, 0, 2, 1);
         grid.attach (sort_label,            0, 1, 1, 1);
         grid.attach (sort,                  1, 1, 1, 1);
@@ -118,12 +107,11 @@ public class Alohomora.Preferences: Gtk.Dialog {
 
         var dialog_content = get_content_area ();
         dialog_content.spacing = 5;
-        dialog_content.pack_start (grid);
-        dialog_content.show_all ();
+        dialog_content.append (grid);
 
         add_button (_("Close"), Gtk.ResponseType.CLOSE);
         var add = add_button (_("Apply"), Gtk.ResponseType.APPLY);
-        add.get_style_context ().add_class ("suggested-button");
+        add.add_css_class ("suggested-button");
 
         response.connect (id => {
             if (id == Gtk.ResponseType.APPLY) {

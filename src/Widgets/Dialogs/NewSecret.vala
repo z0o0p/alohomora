@@ -1,23 +1,7 @@
 /*
-* Copyright (c) 2020 Taqmeel Zubeir
-*
-* This program is free software; you can redistribute it and/or
-* modify it under the terms of the GNU General Public
-* License as published by the Free Software Foundation; either
-* version 2 of the License, or (at your option) any later version.
-*
-* This program is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-* General Public License for more details.
-*
-* You should have received a copy of the GNU General Public
-* License along with this program; if not, write to the
-* Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
-* Boston, MA 02110-1301 USA
-*
-* Authored by: Taqmeel Zubeir <taqmeelzubeir.dev@gmail.com>
-*/
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2026 Taqmeel Zubeir (https://taqmeelzube.ir)
+ */
 
 public class Alohomora.NewSecret: Gtk.Dialog {
     public Alohomora.SecretManager secret {get; construct;}
@@ -40,7 +24,6 @@ public class Alohomora.NewSecret: Gtk.Dialog {
             deletable: false,
             resizable: false,
             modal: true,
-            border_width: 10,
             secret: secret_manager
         );
     }
@@ -59,13 +42,11 @@ public class Alohomora.NewSecret: Gtk.Dialog {
         pass_label.halign = Gtk.Align.END;
         gen_pass = new Gtk.Entry ();
         gen_pass.text = Alohomora.PasswordGenerator.generate ();
-        gen_pass.caps_lock_warning = false;
         gen_pass.secondary_icon_name = "view-refresh-symbolic";
         gen_pass.secondary_icon_tooltip_text = _("Re-Generate Password");
         gen_pass.icon_press.connect (() => gen_pass.text = Alohomora.PasswordGenerator.generate ());
         exist_pass = new Gtk.Entry ();
         exist_pass.visibility = false;
-        exist_pass.caps_lock_warning = false;
         exist_pass.secondary_icon_name = "image-red-eye-symbolic";
         exist_pass.secondary_icon_tooltip_text = _("Show Password");
         exist_pass.icon_press.connect (() => exist_pass.visibility = !exist_pass.visibility);
@@ -81,7 +62,10 @@ public class Alohomora.NewSecret: Gtk.Dialog {
         grid.row_spacing = 5;
         grid.column_spacing = 5;
         grid.halign = Gtk.Align.CENTER;
-        grid.margin = 20;
+        grid.margin_top = 20;
+        grid.margin_bottom = 20;
+        grid.margin_start = 20;
+        grid.margin_end = 20;
         grid.attach (credential_name_label, 0, 0, 1, 1);
         grid.attach (credential_name,       1, 0, 1, 1);
         grid.attach (username_label,        0, 1 ,1, 1);
@@ -91,13 +75,12 @@ public class Alohomora.NewSecret: Gtk.Dialog {
 
         var dialog_content = get_content_area ();
         dialog_content.spacing = 5;
-        dialog_content.pack_start (stack_switcher);
-        dialog_content.pack_start (grid);
-        dialog_content.show_all ();
+        dialog_content.append (stack_switcher);
+        dialog_content.append (grid);
 
         add_button (_("Cancel"), Gtk.ResponseType.CLOSE);
         var add = add_button (_("Add Secret"), Gtk.ResponseType.APPLY);
-        add.get_style_context ().add_class ("suggested-button");
+        add.add_css_class ("suggested-button");
 
         response.connect (id => {
             if (id == Gtk.ResponseType.CLOSE) {
@@ -105,19 +88,18 @@ public class Alohomora.NewSecret: Gtk.Dialog {
             }
             else if (id == Gtk.ResponseType.APPLY) {
                 var should_copy_pass = new Settings ("com.github.z0o0p.alohomora").get_boolean ("copy-new-pass");
-                var clipboard = Gtk.Clipboard.get_default (Gdk.Display.get_default ());
+                var display = Gdk.Display.get_default ();
+                var clipboard = display.get_clipboard ();
                 if (stack.visible_child_name == "Generate" && gen_pass.text != "") {
                     secret.new_secret.begin (credential_name.text, username.text, gen_pass.text);
                     if (should_copy_pass) {
-                        clipboard.clear ();
-                        clipboard.set_text (gen_pass.text, gen_pass.text.length);
+                        clipboard.set_text (gen_pass.text);
                     }
                 }
                 else if (stack.visible_child_name == "Existing" && exist_pass.text != "") {
                     secret.new_secret.begin (credential_name.text, username.text, exist_pass.text);
                     if (should_copy_pass) {
-                        clipboard.clear ();
-                        clipboard.set_text (exist_pass.text, exist_pass.text.length);
+                        clipboard.set_text (exist_pass.text);
                     }
                 }
             }

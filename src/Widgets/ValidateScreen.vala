@@ -26,7 +26,7 @@ public class Alohomora.ValidateScreen: Gtk.Box {
     }
 
     construct {
-        is_new_user = new GLib.Settings ("com.github.z0o0p.alohomora").get_boolean ("new-user");
+        is_new_user = new Settings ("com.github.z0o0p.alohomora").get_boolean ("new-user");
         user_real_name = GLib.Environment.get_real_name ();
 
         var wizard_art = new Gtk.Image.from_resource ("/com/github/z0o0p/alohomora/wizard.svg");
