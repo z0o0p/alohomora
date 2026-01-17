@@ -37,13 +37,17 @@ public class Alohomora.MainScreen: Gtk.Box {
 
         search_entry = new Gtk.SearchEntry ();
         search_entry.activate.connect (search_secret);
+        search_entry.stop_search.connect (() => {
+            refresh_screen ();
+            window.search_secret (false);
+        });
         var search_button = new Gtk.Button.with_label (_("Search"));
         search_button.add_css_class ("primary-background");
         search_button.clicked.connect (search_secret);
         var close_button = new Gtk.Button.with_label (_("Close"));
         close_button.clicked.connect (() => {
             refresh_screen ();
-            search_bar.set_search_mode (false);
+            window.search_secret (false);
         });
         var search_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 5);
         search_box.append (search_entry);
@@ -77,8 +81,8 @@ public class Alohomora.MainScreen: Gtk.Box {
 
         secret.ordering_changed.connect (refresh_screen);
 
-        window.search_secret.connect (() => {
-            search_bar.set_search_mode (true);
+        window.search_secret.connect ((is_search_mode_enabled) => {
+            search_bar.set_search_mode (is_search_mode_enabled);
         });
 
         add_secret.clicked.connect (() => {

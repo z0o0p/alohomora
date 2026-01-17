@@ -5,6 +5,7 @@
 
 public class Alohomora.ValidateScreen: Gtk.Box {
     public Alohomora.SecretManager secret {get; construct;}
+
     private bool is_new_user;
     private string user_real_name;
     private Gtk.Box message;

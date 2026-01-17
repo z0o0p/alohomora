@@ -8,10 +8,6 @@ public class Alohomora.HeaderBar: Gtk.Box {
     public Alohomora.SecretManager secret {get; construct;}
 
     private Gtk.Button add_secret;
-    private SimpleAction search_action;
-    private SimpleAction preferences_action;
-    private SimpleAction change_key_action;
-    private SimpleAction quit_action;
 
     public HeaderBar (Alohomora.Window app_window, Alohomora.SecretManager secret_manager) {
         Object (
@@ -27,49 +23,25 @@ public class Alohomora.HeaderBar: Gtk.Box {
 
         add_secret = new Gtk.Button.from_icon_name ("add-icon");
         add_secret.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
-        add_secret.tooltip_text = _("Add New Login");
+        add_secret.action_name = "add.add-secret";
+        add_secret.tooltip_text = _("Add New Login [Ctrl+N]");
         add_secret.sensitive = false;
         add_secret.clicked.connect (() => {
             var dialog = new Alohomora.NewSecret (window, secret);
             dialog.show ();
         });
 
-        search_action = new SimpleAction ("search", null);
-        search_action.set_enabled (false);
-        search_action.activate.connect (() => window.search_secret ());
-        preferences_action = new SimpleAction ("preferences", null);
-        preferences_action.set_enabled (false);
-        preferences_action.activate.connect (() => {
-            var dialog = new Alohomora.Preferences (window, secret);
-            dialog.show ();
-        });
-        change_key_action = new SimpleAction ("change-key", null);
-        change_key_action.set_enabled (false);
-        change_key_action.activate.connect (() => {
-            var dialog = new Alohomora.ChangeCipher (window, secret);
-            dialog.show ();
-        });
-        quit_action = new SimpleAction ("quit", null);
-        quit_action.activate.connect (() => window.close ());
-
-        var action_group = new GLib.SimpleActionGroup ();
-        action_group.add_action (search_action);
-        action_group.add_action (preferences_action);
-        action_group.add_action (change_key_action);
-        action_group.add_action (quit_action);
-        this.insert_action_group ("help", action_group);
-
         var menu = new Menu ();
-        var search_menu_item = new MenuItem (_("Search"), "help.search");
+        var search_menu_item = new MenuItem (_("Search"), "app.search");
         search_menu_item.set_attribute_value ("hidden-when", "action-disabled");
         menu.append_item (search_menu_item);
-        var preferences_menu_item = new MenuItem (_("Preferences"), "help.preferences");
+        var preferences_menu_item = new MenuItem (_("Preferences"), "app.preferences");
         preferences_menu_item.set_attribute_value ("hidden-when", "action-disabled");
         menu.append_item (preferences_menu_item);
-        var change_cipher_menu_item = new MenuItem (_("Change Cipher Key"), "help.change-key");
+        var change_cipher_menu_item = new MenuItem (_("Change Cipher Key"), "app.change-key");
         change_cipher_menu_item.set_attribute_value ("hidden-when", "action-disabled");
         menu.append_item (change_cipher_menu_item);
-        menu.append (_("Quit"), "help.quit");
+        menu.append (_("Quit"), "app.quit");
 
         var popover_menu = new Gtk.PopoverMenu.from_model (menu);
         popover_menu.has_arrow = false;
@@ -94,9 +66,6 @@ public class Alohomora.HeaderBar: Gtk.Box {
 
         secret.key_validated.connect ((is_validated) => {
             add_secret.set_sensitive (is_validated);
-            search_action.set_enabled (is_validated);
-            preferences_action.set_enabled (is_validated);
-            change_key_action.set_enabled (is_validated);
         });
     }
 }

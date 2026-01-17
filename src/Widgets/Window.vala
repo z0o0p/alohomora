@@ -4,27 +4,27 @@
  */
 
 public class Alohomora.Window: Gtk.ApplicationWindow {
-    private Alohomora.SecretManager secret;
+    public Alohomora.SecretManager secret {get; construct;}
+
     private Alohomora.HeaderBar header_bar;
     private Alohomora.ValidateScreen validate_screen;
     private Alohomora.MainScreen main_screen;
     private Gtk.Stack stack;
 
-    public signal void search_secret ();
+    public signal void search_secret (bool is_search_mode_enabled);
 
-    public Window (Application app) {
+    public Window (Application app, Alohomora.SecretManager secret_manager) {
         Object (
             application: app,
             title: "Alohomora",
             default_height: 575,
             default_width: 400,
-            resizable: false
+            resizable: false,
+            secret: secret_manager
         );
     }
 
     construct {
-        secret = new Alohomora.SecretManager ();
-
         header_bar = new Alohomora.HeaderBar (this, secret);
         set_titlebar (header_bar);
 
