@@ -29,7 +29,7 @@ public class Alohomora.Application: Gtk.Application {
         });
 
         var window = new Alohomora.Window (this);
-        window.add_css_class ("rounded");
+        window.add_css_class (Granite.CssClass.CARD);
         window.present ();
     }
 

@@ -11,12 +11,8 @@ public class Alohomora.EditSecret: Gtk.Dialog {
     private string user_name;
     private string pin_status;
     private string user_pass;
-    private Gtk.Grid grid;
-    private Gtk.Label credential_name_label;
     private Gtk.Entry credential_name_entry;
-    private Gtk.Label user_name_label;
     private Gtk.Entry user_name_entry;
-    private Gtk.Label pass_label;
     private Gtk.Entry pass_entry;
 
     public EditSecret (Alohomora.Window app_window, Alohomora.SecretManager secret_manager, Secret.Item secretitem) {
@@ -34,15 +30,15 @@ public class Alohomora.EditSecret: Gtk.Dialog {
     construct {
         load_secret_attributes ();
 
-        credential_name_label = new Gtk.Label (_("Name :"));
+        var credential_name_label = new Gtk.Label (_("Name :"));
         credential_name_label.halign = Gtk.Align.END;
         credential_name_entry = new Gtk.Entry ();
         credential_name_entry.text = credential_name;
-        user_name_label = new Gtk.Label (_("Username :"));
+        var user_name_label = new Gtk.Label (_("Username :"));
         user_name_label.halign = Gtk.Align.END;
         user_name_entry = new Gtk.Entry ();
         user_name_entry.text = user_name;
-        pass_label = new Gtk.Label (_("Password :"));
+        var pass_label = new Gtk.Label (_("Password :"));
         pass_label.halign = Gtk.Align.END;
         pass_entry = new Gtk.Entry ();
         pass_entry.visibility = false;
@@ -50,14 +46,10 @@ public class Alohomora.EditSecret: Gtk.Dialog {
         pass_entry.secondary_icon_tooltip_text = _("Show Password");
         pass_entry.icon_press.connect(() => pass_entry.visibility = !pass_entry.visibility);
 
-        grid = new Gtk.Grid ();
+        var grid = new Gtk.Grid ();
         grid.row_spacing = 5;
         grid.column_spacing = 5;
         grid.halign = Gtk.Align.CENTER;
-        grid.margin_top = 15;
-        grid.margin_bottom = 15;
-        grid.margin_start = 15;
-        grid.margin_end = 15;
         grid.attach (credential_name_label, 0, 0, 1, 1);
         grid.attach (credential_name_entry, 1, 0, 1, 1);
         grid.attach (user_name_label,       0, 1 ,1, 1);
@@ -66,7 +58,10 @@ public class Alohomora.EditSecret: Gtk.Dialog {
         grid.attach (pass_entry,            1, 2, 1, 1);
 
         var dialog_content = get_content_area ();
-        dialog_content.spacing = 5;
+        dialog_content.margin_top = 15;
+        dialog_content.margin_bottom = 15;
+        dialog_content.margin_start = 15;
+        dialog_content.margin_end = 15;
         dialog_content.append (grid);
 
         add_button (_("Cancel"), Gtk.ResponseType.CLOSE);

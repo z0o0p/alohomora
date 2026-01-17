@@ -6,16 +6,10 @@
 public class Alohomora.NewSecret: Gtk.Dialog {
     public Alohomora.SecretManager secret {get; construct;}
 
-    private Gtk.Grid grid;
-    private Gtk.Label credential_name_label;
     private Gtk.Entry credential_name;
-    private Gtk.Label username_label;
     private Gtk.Entry username;
-    private Gtk.Label pass_label;
     private Gtk.Entry gen_pass;
     private Gtk.Entry exist_pass;
-    private Gtk.Stack stack;
-    private Gtk.StackSwitcher stack_switcher;
 
     public NewSecret (Alohomora.Window app_window, Alohomora.SecretManager secret_manager) {
         Object (
@@ -29,16 +23,16 @@ public class Alohomora.NewSecret: Gtk.Dialog {
     }
 
     construct {
-        credential_name_label = new Gtk.Label (_("Name :"));
+        var credential_name_label = new Gtk.Label (_("Name :"));
         credential_name_label.halign = Gtk.Align.END;
         credential_name = new Gtk.Entry();
         credential_name.placeholder_text = _("Eg. GitHub, Facebook, etc.");
 
-        username_label = new Gtk.Label (_("Username :"));
+        var username_label = new Gtk.Label (_("Username :"));
         username_label.halign = Gtk.Align.END;
         username = new Gtk.Entry ();
 
-        pass_label = new Gtk.Label (_("Password :"));
+        var pass_label = new Gtk.Label (_("Password :"));
         pass_label.halign = Gtk.Align.END;
         gen_pass = new Gtk.Entry ();
         gen_pass.text = Alohomora.PasswordGenerator.generate ();
@@ -51,21 +45,18 @@ public class Alohomora.NewSecret: Gtk.Dialog {
         exist_pass.secondary_icon_tooltip_text = _("Show Password");
         exist_pass.icon_press.connect (() => exist_pass.visibility = !exist_pass.visibility);
 
-        stack = new Gtk.Stack ();
+        var stack = new Gtk.Stack ();
         stack.add_titled (gen_pass, "Generate", _("Auto-Generate Password"));
         stack.add_titled (exist_pass, "Existing", _("Use Existing Password"));
         stack.set_transition_type (Gtk.StackTransitionType.SLIDE_LEFT_RIGHT);
-        stack_switcher = new Gtk.StackSwitcher ();
+        var stack_switcher = new Gtk.StackSwitcher ();
         stack_switcher.stack = stack;
 
-        grid = new Gtk.Grid ();
+        var grid = new Gtk.Grid ();
         grid.row_spacing = 5;
         grid.column_spacing = 5;
+        grid.margin_top = 15;
         grid.halign = Gtk.Align.CENTER;
-        grid.margin_top = 20;
-        grid.margin_bottom = 20;
-        grid.margin_start = 20;
-        grid.margin_end = 20;
         grid.attach (credential_name_label, 0, 0, 1, 1);
         grid.attach (credential_name,       1, 0, 1, 1);
         grid.attach (username_label,        0, 1 ,1, 1);
@@ -74,7 +65,10 @@ public class Alohomora.NewSecret: Gtk.Dialog {
         grid.attach (stack,                 1, 2, 1, 1);
 
         var dialog_content = get_content_area ();
-        dialog_content.spacing = 5;
+        dialog_content.margin_top = 15;
+        dialog_content.margin_bottom = 15;
+        dialog_content.margin_start = 15;
+        dialog_content.margin_end = 15;
         dialog_content.append (stack_switcher);
         dialog_content.append (grid);
 
