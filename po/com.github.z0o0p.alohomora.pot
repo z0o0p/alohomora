@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.z0o0p.alohomora\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-04 15:30+0530\n"
+"POT-Creation-Date: 2026-01-18 01:06+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,249 +17,236 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/Widgets/Window.vala:78 src/Widgets/Window.vala:102
-msgid "Incorrect Key!"
+#: src/Widgets/Window.vala:53 src/Widgets/Window.vala:77
+msgid "Incorrect Key"
 msgstr ""
 
-#: src/Widgets/Window.vala:79 src/Widgets/Window.vala:103
-msgid "The cipher key entered is wrong. Check and try again."
+#: src/Widgets/Window.vala:54 src/Widgets/Window.vala:78
+msgid "The cipher key entered is wrong. Check and try again"
 msgstr ""
 
-#: src/Widgets/Window.vala:87
+#: src/Widgets/Window.vala:62
 msgid "Key Mismatch"
 msgstr ""
 
-#: src/Widgets/Window.vala:88
+#: src/Widgets/Window.vala:63
 msgid "Passwords entered do not match. Check and try again"
 msgstr ""
 
-#: src/Widgets/Window.vala:96
+#: src/Widgets/Window.vala:71
 msgid "Successful Change"
 msgstr ""
 
-#: src/Widgets/Window.vala:97
-msgid "Cipher key was successfully changed. Existing secrets are unusable now."
+#: src/Widgets/Window.vala:72
+msgid "Cipher key was successfully changed. Existing secrets are unusable now"
 msgstr ""
 
-#: src/Widgets/Window.vala:126 src/Widgets/MainScreen.vala:59
-#: src/Widgets/Dialogs/Preferences.vala:124
-msgid "Close"
+#: src/Widgets/HeaderBar.vala:27
+msgid "Add New Login [Ctrl+N]"
 msgstr ""
 
-#: src/Widgets/HeaderBar.vala:40
-msgid "Alohomora"
-msgstr ""
-
-#: src/Widgets/HeaderBar.vala:55
-msgid "Add New Login"
-msgstr ""
-
-#: src/Widgets/HeaderBar.vala:64
-msgid "Light Theme"
-msgstr ""
-
-#: src/Widgets/HeaderBar.vala:65
-msgid "Dark Theme"
-msgstr ""
-
-#: src/Widgets/HeaderBar.vala:70 src/Widgets/MainScreen.vala:57
+#: src/Widgets/HeaderBar.vala:35 src/Widgets/MainScreen.vala:44
 msgid "Search"
 msgstr ""
 
-#: src/Widgets/HeaderBar.vala:75 src/Widgets/Dialogs/Preferences.vala:43
+#: src/Widgets/HeaderBar.vala:38 src/Widgets/Dialogs/Preferences.vala:18
 msgid "Preferences"
 msgstr ""
 
-#: src/Widgets/HeaderBar.vala:83 src/Widgets/Dialogs/ChangeCipher.vala:34
+#: src/Widgets/HeaderBar.vala:41 src/Widgets/Dialogs/ChangeCipher.vala:14
 msgid "Change Cipher Key"
 msgstr ""
 
-#: src/Widgets/HeaderBar.vala:91
+#: src/Widgets/HeaderBar.vala:44
 msgid "Quit"
 msgstr ""
 
-#: src/Widgets/HeaderBar.vala:108
+#: src/Widgets/HeaderBar.vala:56
 msgid "Help"
 msgstr ""
 
-#: src/Widgets/ValidateScreen.vala:54
+#: src/Widgets/ValidateScreen.vala:38
 msgid "Welcome"
 msgstr ""
 
-#: src/Widgets/ValidateScreen.vala:58
+#: src/Widgets/ValidateScreen.vala:42
 msgid "Let's Get You Started"
 msgstr ""
 
-#: src/Widgets/ValidateScreen.vala:58
+#: src/Widgets/ValidateScreen.vala:42
 msgid "I Need To Decipher Your Passwords First"
 msgstr ""
 
-#: src/Widgets/ValidateScreen.vala:60
+#: src/Widgets/ValidateScreen.vala:46
 msgid "Your new cipher key will be used to encipher all your saved passwords"
 msgstr ""
 
-#: src/Widgets/ValidateScreen.vala:74
+#: src/Widgets/ValidateScreen.vala:60
 msgid "Enter Cipher Key:"
 msgstr ""
 
-#: src/Widgets/ValidateScreen.vala:80 src/Widgets/ValidateScreen.vala:89
+#: src/Widgets/ValidateScreen.vala:65 src/Widgets/ValidateScreen.vala:76
 msgid "Show Cipher Key"
 msgstr ""
 
-#: src/Widgets/ValidateScreen.vala:83
+#: src/Widgets/ValidateScreen.vala:71
 msgid "Re-Enter Cipher Key:"
 msgstr ""
 
-#: src/Widgets/ValidateScreen.vala:100
+#: src/Widgets/ValidateScreen.vala:92
 msgid "Submit"
 msgstr ""
 
-#: src/Widgets/MainScreen.vala:51
+#: src/Widgets/MainScreen.vala:31
 msgid "No Passwords Found"
 msgstr ""
 
-#: src/Widgets/MainScreen.vala:51
-msgid "Add a new credential."
-msgstr ""
-
-#: src/Widgets/MainScreen.vala:52
+#: src/Widgets/MainScreen.vala:34
 msgid "Add Password"
 msgstr ""
 
-#: src/Widgets/MainScreen.vala:52
-msgid "Stores a new password securely."
+#: src/Widgets/MainScreen.vala:34
+msgid "Stores a new password securely"
 msgstr ""
 
-#: src/Widgets/MainScreen.vala:161
+#: src/Widgets/MainScreen.vala:47 src/Widgets/Dialogs/Preferences.vala:99
+msgid "Close"
+msgstr ""
+
+#: src/Widgets/MainScreen.vala:134
 msgid "No matches found"
 msgstr ""
 
-#: src/Widgets/SecretBox.vala:60
+#: src/Widgets/SecretBox.vala:49
 msgid "Unpin Secret"
 msgstr ""
 
-#: src/Widgets/SecretBox.vala:60
+#: src/Widgets/SecretBox.vala:49
 msgid "Pin Secret"
 msgstr ""
 
-#: src/Widgets/SecretBox.vala:66 src/Widgets/Dialogs/EditSecret.vala:36
-#: src/Widgets/Dialogs/EditSecret.vala:96
+#: src/Widgets/SecretBox.vala:50 src/Widgets/Dialogs/EditSecret.vala:20
+#: src/Widgets/Dialogs/EditSecret.vala:68
 msgid "Edit Secret"
 msgstr ""
 
-#: src/Widgets/SecretBox.vala:72
+#: src/Widgets/SecretBox.vala:51
 msgid "Delete Secret"
 msgstr ""
 
-#: src/Widgets/SecretBox.vala:94
+#: src/Widgets/SecretBox.vala:61
+msgid "More"
+msgstr ""
+
+#: src/Widgets/SecretBox.vala:71
 msgid "Copy Password"
 msgstr ""
 
-#: src/Widgets/Dialogs/NewSecret.vala:38
+#: src/Widgets/Dialogs/NewSecret.vala:16
 msgid "Add New Secret"
 msgstr ""
 
-#: src/Widgets/Dialogs/NewSecret.vala:49 src/Widgets/Dialogs/EditSecret.vala:54
+#: src/Widgets/Dialogs/NewSecret.vala:26 src/Widgets/Dialogs/EditSecret.vala:33
 msgid "Name :"
 msgstr ""
 
-#: src/Widgets/Dialogs/NewSecret.vala:52
+#: src/Widgets/Dialogs/NewSecret.vala:29
 msgid "Eg. GitHub, Facebook, etc."
 msgstr ""
 
-#: src/Widgets/Dialogs/NewSecret.vala:54 src/Widgets/Dialogs/EditSecret.vala:58
+#: src/Widgets/Dialogs/NewSecret.vala:31 src/Widgets/Dialogs/EditSecret.vala:37
 msgid "Username :"
 msgstr ""
 
-#: src/Widgets/Dialogs/NewSecret.vala:58 src/Widgets/Dialogs/EditSecret.vala:62
+#: src/Widgets/Dialogs/NewSecret.vala:35 src/Widgets/Dialogs/EditSecret.vala:41
 msgid "Password :"
 msgstr ""
 
-#: src/Widgets/Dialogs/NewSecret.vala:64
+#: src/Widgets/Dialogs/NewSecret.vala:40
 msgid "Re-Generate Password"
 msgstr ""
 
-#: src/Widgets/Dialogs/NewSecret.vala:70 src/Widgets/Dialogs/EditSecret.vala:68
+#: src/Widgets/Dialogs/NewSecret.vala:45 src/Widgets/Dialogs/EditSecret.vala:46
 msgid "Show Password"
 msgstr ""
 
-#: src/Widgets/Dialogs/NewSecret.vala:74
+#: src/Widgets/Dialogs/NewSecret.vala:49
 msgid "Auto-Generate Password"
 msgstr ""
 
-#: src/Widgets/Dialogs/NewSecret.vala:75
+#: src/Widgets/Dialogs/NewSecret.vala:50
 msgid "Use Existing Password"
 msgstr ""
 
-#: src/Widgets/Dialogs/NewSecret.vala:98 src/Widgets/Dialogs/EditSecret.vala:95
-#: src/Widgets/Dialogs/ChangeCipher.vala:79
+#: src/Widgets/Dialogs/NewSecret.vala:75 src/Widgets/Dialogs/EditSecret.vala:67
+#: src/Widgets/Dialogs/ChangeCipher.vala:64
 msgid "Cancel"
 msgstr ""
 
-#: src/Widgets/Dialogs/NewSecret.vala:99
+#: src/Widgets/Dialogs/NewSecret.vala:76
 msgid "Add Secret"
 msgstr ""
 
-#: src/Widgets/Dialogs/ChangeCipher.vala:45
+#: src/Widgets/Dialogs/ChangeCipher.vala:24
 msgid "CHANGING THE CIPHER KEY WILL MAKE THE EXISTING SECRETS UNUSABLE"
 msgstr ""
 
-#: src/Widgets/Dialogs/ChangeCipher.vala:48
+#: src/Widgets/Dialogs/ChangeCipher.vala:32
 msgid "Old Cipher Key:"
 msgstr ""
 
-#: src/Widgets/Dialogs/ChangeCipher.vala:54
+#: src/Widgets/Dialogs/ChangeCipher.vala:37
 msgid "Show Old Cipher Key"
 msgstr ""
 
-#: src/Widgets/Dialogs/ChangeCipher.vala:56
+#: src/Widgets/Dialogs/ChangeCipher.vala:39
 msgid "New Cipher Key:"
 msgstr ""
 
-#: src/Widgets/Dialogs/ChangeCipher.vala:62
+#: src/Widgets/Dialogs/ChangeCipher.vala:44
 msgid "Show New Cipher Key"
 msgstr ""
 
-#: src/Widgets/Dialogs/ChangeCipher.vala:80
+#: src/Widgets/Dialogs/ChangeCipher.vala:65
 msgid "Change Key"
 msgstr ""
 
-#: src/Widgets/Dialogs/Preferences.vala:56
+#: src/Widgets/Dialogs/Preferences.vala:30
 msgid "General"
 msgstr ""
 
-#: src/Widgets/Dialogs/Preferences.vala:60
+#: src/Widgets/Dialogs/Preferences.vala:34
 msgid "Sort Secrets By: "
 msgstr ""
 
-#: src/Widgets/Dialogs/Preferences.vala:63
+#: src/Widgets/Dialogs/Preferences.vala:36
 msgid "Ascending Order"
 msgstr ""
 
-#: src/Widgets/Dialogs/Preferences.vala:64
+#: src/Widgets/Dialogs/Preferences.vala:36
 msgid "Descending Order"
 msgstr ""
 
-#: src/Widgets/Dialogs/Preferences.vala:67
+#: src/Widgets/Dialogs/Preferences.vala:40
 msgid "Copy New Password After Adding: "
 msgstr ""
 
-#: src/Widgets/Dialogs/Preferences.vala:77
+#: src/Widgets/Dialogs/Preferences.vala:51
 msgid "Password Generator"
 msgstr ""
 
-#: src/Widgets/Dialogs/Preferences.vala:81
+#: src/Widgets/Dialogs/Preferences.vala:55
 msgid "Include Digits: "
 msgstr ""
 
-#: src/Widgets/Dialogs/Preferences.vala:88
+#: src/Widgets/Dialogs/Preferences.vala:62
 msgid "Include Special Characters: "
 msgstr ""
 
-#: src/Widgets/Dialogs/Preferences.vala:95
+#: src/Widgets/Dialogs/Preferences.vala:69
 msgid "Generated Password Length: "
 msgstr ""
 
-#: src/Widgets/Dialogs/Preferences.vala:125
+#: src/Widgets/Dialogs/Preferences.vala:100
 msgid "Apply"
 msgstr ""
