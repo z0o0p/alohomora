@@ -1,0 +1,15 @@
+id: com.github.z0o0p.alohomora
+runtime: io.elementary.Platform
+runtime-version: '8'
+sdk: io.elementary.Sdk
+command: com.github.z0o0p.alohomora
+finish-args:
+  - '--share=ipc'
+  - '--socket=fallback-x11'
+  - '--socket=wayland'
+modules:
+  - name: alohomora
+    buildsystem: meson
+    sources:
+      - type: dir
+        path: .

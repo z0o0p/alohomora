@@ -1,17 +1,9 @@
 # Project name, Languages used and Version
-project ('com.github.z0o0p.alohomora', 'vala', 'c', version: '1.3.0')
-
-# Translation module
-i18n = import ('i18n')
-
-# Project arguments
-add_project_arguments (
-    '-DGETTEXT_PACKAGE="@0@"'.format (meson.project_name ()),
-    language: 'c'
-)
+project ('com.github.z0o0p.alohomora', 'vala', 'c', version: '1.3.0', meson_version: '>= 0.56.0')
 
 # Executes build files in given directories
 subdir ('src')
+subdir ('po')
 subdir ('data')
 
 # Executable
@@ -26,7 +18,5 @@ executable (
     ],
     install: true
 )
-
-subdir ('po')
 
 meson.add_install_script ('meson/post_install.py')
