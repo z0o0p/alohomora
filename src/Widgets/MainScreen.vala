@@ -29,8 +29,11 @@ public class Alohomora.MainScreen: Gtk.Box {
         screen = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
 
         welcome = new Granite.Placeholder (_("No Passwords Found"));
-        welcome.description = _("Add a new credential.");
-        var add_secret = welcome.append_button (new ThemedIcon ("list-add"), _("Add Password"), _("Stores a new password securely."));
+        welcome.hexpand = true;
+        welcome.vexpand = true;
+        var add_secret = welcome.append_button (new ThemedIcon ("list-add"), _("Add Password"), _("Stores a new password securely"));
+        add_secret.can_focus = false;
+        add_secret.halign = Gtk.Align.CENTER;
 
         search_entry = new Gtk.SearchEntry ();
         search_entry.activate.connect (search_secret);

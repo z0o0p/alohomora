@@ -50,8 +50,8 @@ public class Alohomora.Window: Gtk.ApplicationWindow {
             }
             else {
                 message_dialog (
-                    _("Incorrect Key!"),
-                    _("The cipher key entered is wrong. Check and try again."),
+                    _("Incorrect Key"),
+                    _("The cipher key entered is wrong. Check and try again"),
                     "dialog-error"
                 );
             }
@@ -69,13 +69,13 @@ public class Alohomora.Window: Gtk.ApplicationWindow {
             if (is_changed)
                 message_dialog (
                     _("Successful Change"),
-                    _("Cipher key was successfully changed. Existing secrets are unusable now."),
+                    _("Cipher key was successfully changed. Existing secrets are unusable now"),
                     "process-completed"
                 );
             else {
                 message_dialog (
-                    _("Incorrect Key!"),
-                    _("The cipher key entered is wrong. Check and try again."),
+                    _("Incorrect Key"),
+                    _("The cipher key entered is wrong. Check and try again"),
                     "dialog-error"
                 );
             }

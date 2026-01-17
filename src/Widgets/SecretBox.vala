@@ -24,6 +24,7 @@ public class Alohomora.SecretBox : Gtk.Frame {
 
     construct {
         load_secret_attributes ();
+        add_css_class ("secret-box-container");
 
         var pin_action = new SimpleAction ("pin", null);
         pin_action.activate.connect (() => {
@@ -58,6 +59,7 @@ public class Alohomora.SecretBox : Gtk.Frame {
         more.popover = popover_menu;
         more.icon_name = "more-icon";
         more.tooltip_text = _("More");
+        more.can_focus = false;
 
         var credentialname = new Gtk.Label (credentials_name);
         credentialname.add_css_class ("primary-text");
@@ -85,7 +87,7 @@ public class Alohomora.SecretBox : Gtk.Frame {
         copy_box.append (copy);
 
         var secret_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 5);
-        secret_box.margin_top = 5;
+        secret_box.margin_top = 10;
         secret_box.margin_bottom = 5;
         secret_box.margin_start = 5;
         secret_box.margin_end = 10;

@@ -60,17 +60,23 @@ public class Alohomora.ValidateScreen: Gtk.Box {
         key_label.halign = Gtk.Align.START;
         key_entry = new Gtk.Entry ();
         key_entry.visibility = false;
-        key_entry.secondary_icon_name = "image-red-eye-symbolic";
+        key_entry.secondary_icon_name = "eye-open-negative-filled-symbolic";
         key_entry.secondary_icon_tooltip_text = _("Show Cipher Key");
-        key_entry.icon_press.connect (() => key_entry.visibility = !key_entry.visibility);
+        key_entry.icon_press.connect (() => {
+            key_entry.visibility = !key_entry.visibility;
+            key_entry.secondary_icon_name = ((key_entry.visibility) ? "eye-not-looking-symbolic" : "eye-open-negative-filled-symbolic");
+        });
         key_entry.activate.connect (() => key_entered ());
         var re_key_label = new Gtk.Label (_("Re-Enter Cipher Key:"));
         re_key_label.halign = Gtk.Align.START;
         re_key_entry = new Gtk.Entry ();
         re_key_entry.visibility = false;
-        re_key_entry.secondary_icon_name = "image-red-eye-symbolic";
+        re_key_entry.secondary_icon_name = "eye-open-negative-filled-symbolic";
         re_key_entry.secondary_icon_tooltip_text = _("Show Cipher Key");
-        re_key_entry.icon_press.connect (() => re_key_entry.visibility = !re_key_entry.visibility);
+        re_key_entry.icon_press.connect (() => {
+            re_key_entry.visibility = !re_key_entry.visibility;
+            re_key_entry.secondary_icon_name = ((re_key_entry.visibility) ? "eye-not-looking-symbolic" : "eye-open-negative-filled-symbolic");
+        });
         re_key_entry.activate.connect (() => key_entered ());
         cipher = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
         cipher.margin_top = 35;

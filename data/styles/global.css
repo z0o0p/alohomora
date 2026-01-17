@@ -18,6 +18,10 @@
 	font-weight: 600;
 }
 
+.secret-box-container {
+	border-width: 0;
+}
+
 .warning-background {
 	background-color: #cd1919;
 	color: #FFFFFF;
