@@ -22,7 +22,7 @@ public class Alohomora.ChangeCipher: Gtk.Dialog {
 
     construct {
         var warning = new Gtk.Label (_("CHANGING THE CIPHER KEY WILL MAKE THE EXISTING SECRETS UNUSABLE"));
-        warning.add_css_class ("message-warning");
+        warning.add_css_class ("warning-text");
         warning.halign = Gtk.Align.CENTER;
         warning.margin_top = 5;
         warning.max_width_chars = 40;
@@ -63,7 +63,7 @@ public class Alohomora.ChangeCipher: Gtk.Dialog {
 
         add_button (_("Cancel"), Gtk.ResponseType.CLOSE);
         var add = add_button (_("Change Key"), Gtk.ResponseType.APPLY);
-        add.add_css_class ("discouraged-button");
+        add.add_css_class ("warning-background");
 
         response.connect(id => {
             if(id == Gtk.ResponseType.CLOSE) {

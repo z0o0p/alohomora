@@ -60,7 +60,7 @@ public class Alohomora.SecretBox : Gtk.Frame {
         more.tooltip_text = _("More");
 
         var credentialname = new Gtk.Label (credentials_name);
-        credentialname.add_css_class ("header-text");
+        credentialname.add_css_class ("primary-text");
         credentialname.halign = Gtk.Align.START;
         var username = new Gtk.Label (user_name);
         username.halign = Gtk.Align.START;

@@ -66,7 +66,7 @@ public class Alohomora.EditSecret: Gtk.Dialog {
 
         add_button (_("Cancel"), Gtk.ResponseType.CLOSE);
         var add = add_button (_("Edit Secret"), Gtk.ResponseType.APPLY);
-        add.add_css_class ("suggested-button");
+        add.add_css_class ("primary-background");
 
         response.connect (id => {
             if (id == Gtk.ResponseType.CLOSE) {

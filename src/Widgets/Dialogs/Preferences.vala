@@ -28,7 +28,7 @@ public class Alohomora.Preferences: Gtk.Dialog {
         settings = new Settings ("com.github.z0o0p.alohomora");
 
         var general_section_label = new Gtk.Label (_("General"));
-        general_section_label.add_css_class ("header-text");
+        general_section_label.add_css_class ("primary-text");
         general_section_label.halign = Gtk.Align.START;
 
         var sort_label = new Gtk.Label (_("Sort Secrets By: "));
@@ -49,7 +49,7 @@ public class Alohomora.Preferences: Gtk.Dialog {
         separator.margin_bottom = 5;
 
         var pass_section_label = new Gtk.Label (_("Password Generator"));
-        pass_section_label.add_css_class ("header-text");
+        pass_section_label.add_css_class ("primary-text");
         pass_section_label.halign = Gtk.Align.START;
 
         var include_digit_label = new Gtk.Label (_("Include Digits: "));
@@ -98,7 +98,7 @@ public class Alohomora.Preferences: Gtk.Dialog {
 
         add_button (_("Close"), Gtk.ResponseType.CLOSE);
         var add = add_button (_("Apply"), Gtk.ResponseType.APPLY);
-        add.add_css_class ("suggested-button");
+        add.add_css_class ("primary-background");
 
         response.connect (id => {
             if (id == Gtk.ResponseType.APPLY) {

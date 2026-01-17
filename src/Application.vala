@@ -11,6 +11,11 @@ public class Alohomora.Application: Gtk.Application {
         );
     }
 
+    protected override void startup () {
+        Granite.init ();
+        base.startup ();
+    }
+
     protected override void activate () {
         var display = Gdk.Display.get_default ();
         var provider = new Gtk.CssProvider ();

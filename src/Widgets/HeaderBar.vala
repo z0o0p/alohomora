@@ -84,7 +84,7 @@ public class Alohomora.HeaderBar: Gtk.Box {
         help.tooltip_text = _("Help");
 
         var header_bar = new Gtk.HeaderBar ();
-        header_bar.add_css_class ("theme");
+        header_bar.add_css_class ("primary-background");
         header_bar.hexpand = true;
         header_bar.show_title_buttons = true;
         header_bar.pack_start (add_secret);

@@ -30,11 +30,12 @@ public class Alohomora.MainScreen: Gtk.Box {
 
         welcome = new Granite.Placeholder (_("No Passwords Found"));
         welcome.description = _("Add a new credential.");
-        welcome.append_button (new ThemedIcon ("list-add"), _("Add Password"), _("Stores a new password securely."));
+        var add_secret = welcome.append_button (new ThemedIcon ("list-add"), _("Add Password"), _("Stores a new password securely."));
 
         search_entry = new Gtk.SearchEntry ();
         search_entry.activate.connect (search_secret);
         var search_button = new Gtk.Button.with_label (_("Search"));
+        search_button.add_css_class ("primary-background");
         search_button.clicked.connect (search_secret);
         var close_button = new Gtk.Button.with_label (_("Close"));
         close_button.clicked.connect (() => {
@@ -75,6 +76,11 @@ public class Alohomora.MainScreen: Gtk.Box {
 
         window.search_secret.connect (() => {
             search_bar.set_search_mode (true);
+        });
+
+        add_secret.clicked.connect (() => {
+            var dialog = new Alohomora.NewSecret (window, secret);
+            dialog.show ();
         });
     }
 

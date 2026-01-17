@@ -2,38 +2,28 @@
 @define-color colorAccent #197FFC;
 @define-color textColorPrimary #FFFFFF;
 
-.theme {
-    background-color: #0F4C81;
-    color: #FFFFFF;
+.accent-bold-text {
+	color: #197FFC;
+	font-size: 25px;
+	font-weight: 700;
 }
 
-.message {
-   font-size: 15px;
-   font-weight: 600;
+.primary-background {
+	background-color: #0F4C81;
+	color: #FFFFFF;
 }
 
-.message-name {
-   color: #197FFC;
-   font-size: 25px;
-   font-weight: 700;
+.primary-text {
+	font-size: 14px;
+	font-weight: 600;
 }
 
-.message-warning {
-    color: #D52D2D;
-    font-weight: 700;
+.warning-background {
+	background-color: #cd1919;
+	color: #FFFFFF;
 }
 
-.header-text {
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.suggested-button {
-    color: #FFFFFF;
-    background-color: #0F4C81;
-}
-
-.discouraged-button {
-    color: #FFFFFF;
-    background-color: #D52D2D;
+.warning-text {
+	color: #cd1919;
+	font-weight: 700;
 }

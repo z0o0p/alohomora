@@ -25,7 +25,7 @@ public class Alohomora.Message: Gtk.Dialog {
         var icon = new Gtk.Image.from_icon_name (dialog_icon);
         icon.pixel_size = 48;
         var title = new Gtk.Label (dialog_title);
-        title.add_css_class ("header-text");
+        title.add_css_class ("primary-text");
         var subtitle = new Gtk.Label (dialog_subtitle);
         subtitle.max_width_chars = 30;
         subtitle.lines = 2;

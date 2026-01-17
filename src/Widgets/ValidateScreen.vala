@@ -35,11 +35,11 @@ public class Alohomora.ValidateScreen: Gtk.Box {
         wizard_art.pixel_size = 128;
 
         var greet = new Gtk.Label (_("Welcome"));
-        greet.add_css_class ("message");
+        greet.add_css_class ("primary-text");
         var username = new Gtk.Label (user_real_name);
-        username.add_css_class ("message-name");
+        username.add_css_class ("accent-bold-text");
         var text = new Gtk.Label ((is_new_user) ? _("Let's Get You Started") : _("I Need To Decipher Your Passwords First"));
-        text.add_css_class ("message");
+        text.add_css_class ("primary-text");
         text.vexpand = true;
         text.valign = Gtk.Align.CENTER;
         var info = new Gtk.Label (_("Your new cipher key will be used to encipher all your saved passwords"));
