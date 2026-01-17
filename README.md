@@ -1,7 +1,7 @@
 # Alohomora
 
-[![License](https://img.shields.io/badge/license-GPL%20v3.0-blue)](https://github.com/z0o0p/alohomora/blob/master/COPYING)
-[![Build Status](https://travis-ci.com/z0o0p/alohomora.svg?branch=master)](https://travis-ci.com/z0o0p/alohomora)
+[![License](https://img.shields.io/badge/license-GPL%20v3.0-blue)](https://github.com/z0o0p/alohomora/blob/master/LICENSE)
+[![CI](https://github.com/z0o0p/alohomora/actions/workflows/ci.yaml/badge.svg)](https://github.com/z0o0p/alohomora/actions/workflows/ci.yaml)
 [![Open Issues](https://img.shields.io/github/issues/z0o0p/alohomora)](https://github.com/z0o0p/alohomora/issues)
 
 Alohomora is a free and open-source password manager designed for elementary OS and built using Vala and Gtk. It manages your passwords in a user-friendly manner while ensuring security.
@@ -24,26 +24,20 @@ You can build and install Alohomora from the source. Ensure that you have the re
 
 * meson
 * valac 
-* libgtk-3-dev
-* libgranite-dev
+* libgtk-4-dev
+* libgranite-7-dev
 * libsecret-1-dev
 
-### Build, install and run
+### Build, Install and Run
 
 ```bash
 # Clone repository and build application
-git clone https://github.com/z0o0p/alohomora.git
-cd alohomora
-meson build --prefix=/usr
-```
+git clone https://github.com/z0o0p/alohomora.git && cd alohomora
 
-
-```bash
 # Install and run application
-cd build
-ninja && sudo ninja install
-./com.github.z0o0p.alohomora
+flatpak-builder build com.github.z0o0p.alohomora.yml --user --install --force-clean
 ```
 
 ## Contributions <3
+
 Anyone willing to contribute to this project is most welcome. Please refer to the [contributing guidelines](https://github.com/z0o0p/alohomora/blob/master/CONTRIBUTING.md) to get started.
