@@ -83,15 +83,8 @@ public class Alohomora.Window: Gtk.ApplicationWindow {
     }
 
     private void message_dialog (string title, string subtitle, string icon) {
-        var dialog = new Granite.MessageDialog.with_image_from_icon_name (
-            title,
-            subtitle,
-            icon,
-            Gtk.ButtonsType.CLOSE
-        );
-        dialog.set_transient_for (this);
+        var dialog = new Alohomora.Message (this, title, subtitle, icon);
         dialog.show ();
-        dialog.response.connect ((response_id) => dialog.destroy ());
     }
 
     public bool user_validated () {
