@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2020 Taqmeel Zubeir <taqmeelzubeir.dev@gmail.com> -->
 <schemalist>
   <schema path="/com/github/z0o0p/alohomora/" id="com.github.z0o0p.alohomora">
     <key name="new-user" type="b">

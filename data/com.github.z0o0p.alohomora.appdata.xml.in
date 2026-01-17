@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2020 Taqmeel Zubeir <taqmeelzubeir.dev@gmail.com> -->
 <component type="desktop">
   <id>com.github.z0o0p.alohomora</id>
-  <metadata_license>CC0-1.0</metadata_license>
-  <project_license>GPL-3.0+</project_license>
   <name>Alohomora</name>
   <summary>Store and manage passwords securely</summary>
+  <metadata_license>CC-BY-4.0</metadata_license>
+  <project_license>LGPL-3.0-or-later</project_license>
   <description>
     <p>A clean and easy-to-use password manager that securely stores all your passwords in your device.</p>
     <p>You can now forget about having to remember a unique, long, complex password for every one of your online accounts.</p>
@@ -21,10 +20,14 @@
   <provides>
     <binary>com.github.z0o0p.alohomora</binary>
   </provides>
-  <developer_name>Taqmeel Zubeir</developer_name>
+  <launchable type="desktop-id">com.github.z0o0p.alohomora.desktop</launchable>
+  <developer>
+    <name>Taqmeel Zubeir</name>
+  </developer>
   <url type="homepage">https://github.com/z0o0p/alohomora</url>
-  <url type="bugtracker">http://github.com/z0o0p/alohomora/issues</url>
-  <url type="help">http://github.com/z0o0p/alohomora/issues</url>
+  <url type="bugtracker">https://github.com/z0o0p/alohomora/issues</url>
+  <url type="help">https://github.com/z0o0p/alohomora/issues</url>
+  <url type="contact">https://taqmeelzube.ir</url>
   <screenshots>
     <screenshot type="default">
       <image>https://raw.githubusercontent.com/z0o0p/alohomora/master/data/screenshots/alohomora-screenshot-1.png</image>
@@ -117,9 +120,10 @@
       </description>
     </release>
   </releases>
+  <branding>
+    <color type="primary">#197FFC</color>
+  </branding>
   <custom>
-    <value key="x-appcenter-color-primary">#A6F8EB</value>
-    <value key="x-appcenter-color-primary-text">#0F48C1</value>
     <value key="x-appcenter-suggested-price">0</value>
   </custom>
 </component>
