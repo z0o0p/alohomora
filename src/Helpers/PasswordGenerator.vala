@@ -10,7 +10,7 @@ public class Alohomora.PasswordGenerator {
         const string DIGIT = "1234567890";
         const string SPECIAL = "!@#$%^&*+=><?";
         StringBuilder password = new StringBuilder ();
-        Settings settings = new Settings ("com.github.z0o0p.alohomora");
+        Settings settings = new Settings ("io.github.z0o0p.alohomora");
         while (password.len < settings.get_int ("gen-pass-length")) {
             string next = "";
             switch (GLib.Random.int_range (0, 4)) {

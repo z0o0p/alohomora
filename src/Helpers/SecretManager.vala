@@ -21,7 +21,7 @@ public class Alohomora.SecretManager: GLib.Object {
 
     private Secret.Schema secret_schema () {
         var schema = new Secret.Schema (
-            "com.github.z0o0p.alohomora.secret", Secret.SchemaFlags.NONE,
+            "io.github.z0o0p.alohomora.secret", Secret.SchemaFlags.NONE,
             "secret-id", Secret.SchemaAttributeType.STRING,
             "secret-type", Secret.SchemaAttributeType.STRING,
             "credential-name", Secret.SchemaAttributeType.STRING,
@@ -33,7 +33,7 @@ public class Alohomora.SecretManager: GLib.Object {
 
     private Secret.Schema cipher_schema () {
         var schema = new Secret.Schema (
-            "com.github.z0o0p.alohomora.cipher", Secret.SchemaFlags.NONE,
+            "io.github.z0o0p.alohomora.cipher", Secret.SchemaFlags.NONE,
             "user-name", Secret.SchemaAttributeType.STRING
         );
         return schema;

@@ -14,7 +14,7 @@ public class Alohomora.Application: Gtk.Application {
 
     public Application () {
         Object (
-          application_id: "com.github.z0o0p.alohomora",
+          application_id: "io.github.z0o0p.alohomora",
           flags: ApplicationFlags.DEFAULT_FLAGS
         );
     }
@@ -43,7 +43,7 @@ public class Alohomora.Application: Gtk.Application {
     private void init_style () {
         var display = Gdk.Display.get_default ();
         var provider = new Gtk.CssProvider ();
-        provider.load_from_resource ("/com/github/z0o0p/alohomora/styles/global.css");
+        provider.load_from_resource ("/io/github/z0o0p/alohomora/styles/global.css");
         Gtk.StyleContext.add_provider_for_display (
             display,
             provider,

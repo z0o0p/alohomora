@@ -18,29 +18,29 @@ msgstr ""
 "X-Generator: Poedit 2.4.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: data/com.github.z0o0p.alohomora.desktop.in:3
-#: data/com.github.z0o0p.alohomora.appdata.xml.in:7
+#: data/io.github.z0o0p.alohomora.desktop.in:3
+#: data/io.github.z0o0p.alohomora.appdata.xml.in:7
 msgid "Alohomora"
 msgstr "Alohomora"
 
-#: data/com.github.z0o0p.alohomora.desktop.in:4
+#: data/io.github.z0o0p.alohomora.desktop.in:4
 msgid "Password Manager"
 msgstr "Wachtwoordbeheerder"
 
-#: data/com.github.z0o0p.alohomora.desktop.in:5
-#: data/com.github.z0o0p.alohomora.appdata.xml.in:8
+#: data/io.github.z0o0p.alohomora.desktop.in:5
+#: data/io.github.z0o0p.alohomora.appdata.xml.in:8
 msgid "Store and manage passwords securely"
 msgstr "Sla wachtwoorden veilig op en beheer ze"
 
-#: data/com.github.z0o0p.alohomora.desktop.in:8
-msgid "com.github.z0o0p.alohomora"
-msgstr "com.github.z0o0p.alohomora"
+#: data/io.github.z0o0p.alohomora.desktop.in:8
+msgid "io.github.z0o0p.alohomora"
+msgstr "io.github.z0o0p.alohomora"
 
-#: data/com.github.z0o0p.alohomora.desktop.in:11
+#: data/io.github.z0o0p.alohomora.desktop.in:11
 msgid "Password;Manager;Security;"
 msgstr "Wachtwoord;Beheer;Beveiliging;"
 
-#: data/com.github.z0o0p.alohomora.appdata.xml.in:10
+#: data/io.github.z0o0p.alohomora.appdata.xml.in:10
 msgid ""
 "A clean and easy-to-use password manager that securely stores all your "
 "passwords in your device."
@@ -48,7 +48,7 @@ msgstr ""
 "Een eenvoudige, makkelijk te gebruiken wachtwoordbeheerder die al je "
 "wachtwoorden veilig opslaat op je apparaat."
 
-#: data/com.github.z0o0p.alohomora.appdata.xml.in:11
+#: data/io.github.z0o0p.alohomora.appdata.xml.in:11
 msgid ""
 "You can now forget about having to remember a unique, long, complex password "
 "for every one of your online accounts."
@@ -56,95 +56,95 @@ msgstr ""
 "Vanaf nu hoef je nooit meer een uniek, lang of moeilijk wachtwoord te "
 "onthouden."
 
-#: data/com.github.z0o0p.alohomora.appdata.xml.in:12
+#: data/io.github.z0o0p.alohomora.appdata.xml.in:12
 msgid "Features:"
 msgstr "Kenmerken:"
 
-#: data/com.github.z0o0p.alohomora.appdata.xml.in:14
+#: data/io.github.z0o0p.alohomora.appdata.xml.in:14
 msgid "Enciphers stored secrets for more security"
 msgstr "Opgeslagen items worden vercijferd"
 
-#: data/com.github.z0o0p.alohomora.appdata.xml.in:15
+#: data/io.github.z0o0p.alohomora.appdata.xml.in:15
 msgid "Built-in password generator"
 msgstr "Ingebouwde wachtwoordgenerator"
 
-#: data/com.github.z0o0p.alohomora.appdata.xml.in:16
+#: data/io.github.z0o0p.alohomora.appdata.xml.in:16
 msgid "Pin secrets to the top for fast access"
 msgstr "Maak inloggegevens vast zodat je er sneller toegang tot hebt"
 
-#: data/com.github.z0o0p.alohomora.appdata.xml.in:17
+#: data/io.github.z0o0p.alohomora.appdata.xml.in:17
 msgid "Quickly search for your secrets"
 msgstr "Zoek naar je inloggegevens"
 
-#: data/com.github.z0o0p.alohomora.appdata.xml.in:18
+#: data/io.github.z0o0p.alohomora.appdata.xml.in:18
 msgid "Copy passwords to your clipboard for easy use"
 msgstr "Kopieer wachtwoorden naar het klembord"
 
-#: data/com.github.z0o0p.alohomora.appdata.xml.in:24
+#: data/io.github.z0o0p.alohomora.appdata.xml.in:24
 msgid "Taqmeel Zubeir"
 msgstr "Taqmeel Zubeir"
 
-#: data/com.github.z0o0p.alohomora.appdata.xml.in:77
+#: data/io.github.z0o0p.alohomora.appdata.xml.in:77
 msgid "New Features"
 msgstr "Nieuw"
 
-#: data/com.github.z0o0p.alohomora.appdata.xml.in:79
+#: data/io.github.z0o0p.alohomora.appdata.xml.in:79
 msgid "Pin your favourite secrets to the top now."
 msgstr "Voortaan kun je je favoriete inloggegevens vastmaken."
 
-#: data/com.github.z0o0p.alohomora.appdata.xml.in:80
+#: data/io.github.z0o0p.alohomora.appdata.xml.in:80
 msgid "More customization options for the password generator."
 msgstr "Meer opties in de wachtwoordgenerator."
 
-#: data/com.github.z0o0p.alohomora.appdata.xml.in:81
+#: data/io.github.z0o0p.alohomora.appdata.xml.in:81
 msgid "Minor UI optimizations for better usability."
 msgstr "Kleine vormgevingsverbeteringen."
 
-#: data/com.github.z0o0p.alohomora.appdata.xml.in:87
+#: data/io.github.z0o0p.alohomora.appdata.xml.in:87
 msgid "Improved Usability"
 msgstr "Verbeterde vormgeving"
 
-#: data/com.github.z0o0p.alohomora.appdata.xml.in:89
+#: data/io.github.z0o0p.alohomora.appdata.xml.in:89
 msgid "Quickly search for secrets by using the search option."
 msgstr "Zoek naar inloggegevens middels de zoekfunctie."
 
-#: data/com.github.z0o0p.alohomora.appdata.xml.in:90
+#: data/io.github.z0o0p.alohomora.appdata.xml.in:90
 msgid "Your secrets now can be sorted by accessing the preferences section."
 msgstr ""
 "Je inloggegevens kunnen voortaan worden gesorteerd middels de voorkeuren."
 
-#: data/com.github.z0o0p.alohomora.appdata.xml.in:91
+#: data/io.github.z0o0p.alohomora.appdata.xml.in:91
 msgid "Turkish Translations by @safak45x (Safak GENISOL)."
 msgstr "Turkse vertaling, met dank aan @safak45x (Safak GENISOL)."
 
-#: data/com.github.z0o0p.alohomora.appdata.xml.in:97
+#: data/io.github.z0o0p.alohomora.appdata.xml.in:97
 msgid "New Translations"
 msgstr "Nieuwe vertalingen"
 
-#: data/com.github.z0o0p.alohomora.appdata.xml.in:99
+#: data/io.github.z0o0p.alohomora.appdata.xml.in:99
 msgid "Dutch Translations by @Vistaus (Heimen Stoffels)."
 msgstr "Nederlandse vertaling, met dank aan @Vistaus (Heimen Stoffels)"
 
-#: data/com.github.z0o0p.alohomora.appdata.xml.in:100
+#: data/io.github.z0o0p.alohomora.appdata.xml.in:100
 msgid "French Translations by @NathanBnm (Nathan Bonnemains)."
 msgstr "Franse vertaling, met dank aan @NathanBnm (Nathan Bonnemains)"
 
-#: data/com.github.z0o0p.alohomora.appdata.xml.in:101
+#: data/io.github.z0o0p.alohomora.appdata.xml.in:101
 msgid "Portuguese Translations by @rottenpants466."
 msgstr "Portugese vertaling, met dank aan @rottenpants466"
 
-#: data/com.github.z0o0p.alohomora.appdata.xml.in:107
+#: data/io.github.z0o0p.alohomora.appdata.xml.in:107
 msgid "Minor Patch"
 msgstr "Kleine patch"
 
-#: data/com.github.z0o0p.alohomora.appdata.xml.in:109
+#: data/io.github.z0o0p.alohomora.appdata.xml.in:109
 msgid "Fixed issue regarding locked secrets."
 msgstr "Probleem opgelost met vergrendelde inloggegevens"
 
-#: data/com.github.z0o0p.alohomora.appdata.xml.in:110
+#: data/io.github.z0o0p.alohomora.appdata.xml.in:110
 msgid "Improved app icons."
 msgstr "Verbeterde toepassingspictogrammen"
 
-#: data/com.github.z0o0p.alohomora.appdata.xml.in:116
+#: data/io.github.z0o0p.alohomora.appdata.xml.in:116
 msgid "Initial Release"
 msgstr "Initiële uitgave"

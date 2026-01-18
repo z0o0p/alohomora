@@ -19,7 +19,7 @@ public class Alohomora.HeaderBar: Gtk.Box {
     construct {
         var display = Gdk.Display.get_default ();
         var icon_theme = Gtk.IconTheme.get_for_display (display);
-        icon_theme.add_resource_path ("/com/github/z0o0p/alohomora");
+        icon_theme.add_resource_path ("/io/github/z0o0p/alohomora");
 
         add_secret = new Gtk.Button.from_icon_name ("add-icon");
         add_secret.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);

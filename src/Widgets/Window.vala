@@ -46,7 +46,7 @@ public class Alohomora.Window: Gtk.ApplicationWindow {
         secret.key_validated.connect ((is_validated) => {
             if (is_validated) {
                 stack.visible_child_name = "MainScreen";
-                new Settings ("com.github.z0o0p.alohomora").set_boolean ("new-user", false);
+                new Settings ("io.github.z0o0p.alohomora").set_boolean ("new-user", false);
             }
             else {
                 message_dialog (

@@ -12,7 +12,7 @@ Alohomora leverages the libsecret-1 library package to store passwords securely 
 
 ## Get it from elementary OS AppCenter!
 
-[![Get it on AppCenter](https://appcenter.elementary.io/badge.svg)](https://appcenter.elementary.io/com.github.z0o0p.alohomora)
+[![Get it on AppCenter](https://appcenter.elementary.io/badge.svg)](https://appcenter.elementary.io/io.github.z0o0p.alohomora)
 
 This app is available on the elementary OS AppCenter. Head over there to download and install Alohomora.
 
@@ -35,7 +35,7 @@ You can build and install Alohomora from the source. Ensure that you have the re
 git clone https://github.com/z0o0p/alohomora.git && cd alohomora
 
 # Install and run application
-flatpak-builder build com.github.z0o0p.alohomora.yml --user --install --force-clean
+flatpak-builder build io.github.z0o0p.alohomora.yml --user --install --force-clean
 ```
 
 ## Contributions <3

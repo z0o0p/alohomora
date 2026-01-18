@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<component type="desktop">
-  <id>com.github.z0o0p.alohomora</id>
+<component type="desktop-application">
+  <id>io.github.z0o0p.alohomora</id>
   <name>Alohomora</name>
   <summary>Store and manage passwords securely</summary>
   <metadata_license>CC-BY-4.0</metadata_license>
-  <project_license>LGPL-3.0-or-later</project_license>
+  <project_license>GPL-3.0-or-later</project_license>
   <description>
     <p>A clean and easy-to-use password manager that securely stores all your passwords in your device.</p>
     <p>You can now forget about having to remember a unique, long, complex password for every one of your online accounts.</p>
@@ -18,9 +18,9 @@
     </ul>
   </description>
   <provides>
-    <binary>com.github.z0o0p.alohomora</binary>
+    <binary>io.github.z0o0p.alohomora</binary>
   </provides>
-  <launchable type="desktop-id">com.github.z0o0p.alohomora.desktop</launchable>
+  <launchable type="desktop-id">io.github.z0o0p.alohomora.desktop</launchable>
   <developer>
     <name>Taqmeel Zubeir</name>
   </developer>

@@ -25,7 +25,7 @@ public class Alohomora.Preferences: Gtk.Dialog {
     }
 
     construct {
-        settings = new Settings ("com.github.z0o0p.alohomora");
+        settings = new Settings ("io.github.z0o0p.alohomora");
 
         var general_section_label = new Gtk.Label (_("General"));
         general_section_label.add_css_class ("primary-text");

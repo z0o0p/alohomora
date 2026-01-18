@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist>
-  <schema path="/com/github/z0o0p/alohomora/" id="com.github.z0o0p.alohomora">
+  <schema path="/io/github/z0o0p/alohomora/" id="io.github.z0o0p.alohomora">
     <key name="new-user" type="b">
       <default>true</default>
       <summary>New User</summary>

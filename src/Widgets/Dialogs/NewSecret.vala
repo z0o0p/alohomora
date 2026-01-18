@@ -127,7 +127,7 @@ public class Alohomora.NewSecret: Gtk.Dialog {
                 destroy ();
             }
             else if (id == Gtk.ResponseType.APPLY) {
-                var should_copy_pass = new Settings ("com.github.z0o0p.alohomora").get_boolean ("copy-new-pass");
+                var should_copy_pass = new Settings ("io.github.z0o0p.alohomora").get_boolean ("copy-new-pass");
                 var display = Gdk.Display.get_default ();
                 var clipboard = display.get_clipboard ();
                 if (stack.visible_child_name == "Credentials") {

@@ -27,10 +27,10 @@ public class Alohomora.ValidateScreen: Gtk.Box {
     }
 
     construct {
-        is_new_user = new Settings ("com.github.z0o0p.alohomora").get_boolean ("new-user");
+        is_new_user = new Settings ("io.github.z0o0p.alohomora").get_boolean ("new-user");
         user_real_name = GLib.Environment.get_real_name ();
 
-        var wizard_art = new Gtk.Image.from_resource ("/com/github/z0o0p/alohomora/wizard.svg");
+        var wizard_art = new Gtk.Image.from_resource ("/io/github/z0o0p/alohomora/wizard.svg");
         wizard_art.vexpand = true;
         wizard_art.valign = Gtk.Align.CENTER;
         wizard_art.pixel_size = 128;

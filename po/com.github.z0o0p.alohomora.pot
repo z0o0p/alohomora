@@ -1,12 +1,12 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the com.github.z0o0p.alohomora package.
+# This file is distributed under the same license as the io.github.z0o0p.alohomora package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: com.github.z0o0p.alohomora\n"
+"Project-Id-Version: io.github.z0o0p.alohomora\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-18 01:06+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"

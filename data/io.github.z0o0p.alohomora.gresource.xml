@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
-  <gresource prefix="/com/github/z0o0p/alohomora">
+  <gresource prefix="/io/github/z0o0p/alohomora">
     <file alias="help-icon.svg">artworks/icons/help-icon.svg</file>
       <file alias="add-icon.svg">artworks/icons/add-icon.svg</file>
       <file alias="more-icon.svg">artworks/icons/more-icon.svg</file>
       <file alias="copy-icon.svg">artworks/icons/copy-icon.svg</file>
       <file alias="wizard.svg">artworks/wizard.svg</file>
   </gresource>
-  <gresource prefix="/com/github/z0o0p/alohomora">
+  <gresource prefix="/io/github/z0o0p/alohomora">
     <file alias="styles/global.css">styles/global.css</file>
   </gresource>
 </gresources>

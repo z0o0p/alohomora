@@ -1,13 +1,13 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the com.github.z0o0p.alohomora package.
+# This file is distributed under the same license as the io.github.z0o0p.alohomora package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: com.github.z0o0p.alohomora\n"
+"Project-Id-Version: io.github.z0o0p.alohomora\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-18 01:06+0530\n"
+"POT-Creation-Date: 2026-01-19 03:00+0530\n"
 "PO-Revision-Date: 2021-03-25 13:29+0100\n"
 "Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Language-Team: \n"
@@ -94,15 +94,21 @@ msgstr ""
 msgid "Enter Cipher Key:"
 msgstr "Toegangssleutel:"
 
-#: src/Widgets/ValidateScreen.vala:65 src/Widgets/ValidateScreen.vala:76
+#: src/Widgets/ValidateScreen.vala:65 src/Widgets/ValidateScreen.vala:69
+#: src/Widgets/ValidateScreen.vala:77 src/Widgets/ValidateScreen.vala:81
 msgid "Show Cipher Key"
 msgstr "Toegangssleutel tonen"
 
-#: src/Widgets/ValidateScreen.vala:71
+#: src/Widgets/ValidateScreen.vala:69 src/Widgets/ValidateScreen.vala:81
+#, fuzzy
+msgid "Hide Cipher Key"
+msgstr "Oude toegangssleutel:"
+
+#: src/Widgets/ValidateScreen.vala:72
 msgid "Re-Enter Cipher Key:"
 msgstr "Toegangssleutel opnieuw invoeren:"
 
-#: src/Widgets/ValidateScreen.vala:92
+#: src/Widgets/ValidateScreen.vala:94
 msgid "Submit"
 msgstr "Versturen"
 
@@ -127,73 +133,94 @@ msgstr "Sluiten"
 msgid "No matches found"
 msgstr "Geen overeenkomsten"
 
-#: src/Widgets/SecretBox.vala:49
+#: src/Widgets/SecretBox.vala:51
 msgid "Unpin Secret"
 msgstr "Inloggegevens losmaken"
 
-#: src/Widgets/SecretBox.vala:49
+#: src/Widgets/SecretBox.vala:51
 msgid "Pin Secret"
 msgstr "Inloggegevens vastmaken"
 
-#: src/Widgets/SecretBox.vala:50 src/Widgets/Dialogs/EditSecret.vala:20
-#: src/Widgets/Dialogs/EditSecret.vala:68
+#: src/Widgets/SecretBox.vala:52 src/Widgets/Dialogs/EditSecret.vala:25
+#: src/Widgets/Dialogs/EditSecret.vala:124
 msgid "Edit Secret"
 msgstr "Item bewerken"
 
-#: src/Widgets/SecretBox.vala:51
+#: src/Widgets/SecretBox.vala:53
 msgid "Delete Secret"
 msgstr "Item verwijderen"
 
-#: src/Widgets/SecretBox.vala:61
+#: src/Widgets/SecretBox.vala:63
 msgid "More"
 msgstr ""
 
-#: src/Widgets/SecretBox.vala:71
-msgid "Copy Password"
-msgstr "Wachtwoord kopiëren"
+#: src/Widgets/SecretBox.vala:73
+#, fuzzy
+msgid "Copy Secret"
+msgstr "Inloggegevens losmaken"
 
-#: src/Widgets/Dialogs/NewSecret.vala:16
+#: src/Widgets/Dialogs/NewSecret.vala:19
 msgid "Add New Secret"
 msgstr "Item toevoegen"
 
-#: src/Widgets/Dialogs/NewSecret.vala:26 src/Widgets/Dialogs/EditSecret.vala:33
+#: src/Widgets/Dialogs/NewSecret.vala:29 src/Widgets/Dialogs/NewSecret.vala:68
+#: src/Widgets/Dialogs/EditSecret.vala:39
+#: src/Widgets/Dialogs/EditSecret.vala:79
 msgid "Name :"
 msgstr "Naam:"
 
-#: src/Widgets/Dialogs/NewSecret.vala:29
-msgid "Eg. GitHub, Facebook, etc."
+#: src/Widgets/Dialogs/NewSecret.vala:34
+#, fuzzy
+msgid "Eg. GitHub, AWS API Key, etc."
 msgstr "Bijv. GitHub of Facebook"
 
-#: src/Widgets/Dialogs/NewSecret.vala:31 src/Widgets/Dialogs/EditSecret.vala:37
+#: src/Widgets/Dialogs/NewSecret.vala:35 src/Widgets/Dialogs/EditSecret.vala:45
 msgid "Username :"
 msgstr "Gebruikersnaam:"
 
-#: src/Widgets/Dialogs/NewSecret.vala:35 src/Widgets/Dialogs/EditSecret.vala:41
+#: src/Widgets/Dialogs/NewSecret.vala:40 src/Widgets/Dialogs/EditSecret.vala:51
 msgid "Password :"
 msgstr "Wachtwoord:"
 
-#: src/Widgets/Dialogs/NewSecret.vala:40
-msgid "Re-Generate Password"
-msgstr "Wachtwoord opnieuw genereren"
-
-#: src/Widgets/Dialogs/NewSecret.vala:45 src/Widgets/Dialogs/EditSecret.vala:46
+#: src/Widgets/Dialogs/NewSecret.vala:45 src/Widgets/Dialogs/NewSecret.vala:49
+#: src/Widgets/Dialogs/EditSecret.vala:56
+#: src/Widgets/Dialogs/EditSecret.vala:60
 msgid "Show Password"
 msgstr "Wachtwoord tonen"
 
-#: src/Widgets/Dialogs/NewSecret.vala:49
-msgid "Auto-Generate Password"
-msgstr "Wachtwoord automatisch genereren"
+#: src/Widgets/Dialogs/NewSecret.vala:49 src/Widgets/Dialogs/EditSecret.vala:60
+#, fuzzy
+msgid "Hide Password"
+msgstr "Wachtwoord toevoegen"
 
-#: src/Widgets/Dialogs/NewSecret.vala:50
-msgid "Use Existing Password"
-msgstr "Bestaand wachtwoord gebruiken"
+#: src/Widgets/Dialogs/NewSecret.vala:52 src/Widgets/Dialogs/EditSecret.vala:63
+#, fuzzy
+msgid "Regenerate Password"
+msgstr "Wachtwoord opnieuw genereren"
 
-#: src/Widgets/Dialogs/NewSecret.vala:75 src/Widgets/Dialogs/EditSecret.vala:67
+#: src/Widgets/Dialogs/NewSecret.vala:73
+msgid "Eg. SSH Key, SSL/TLS Certificates, etc."
+msgstr ""
+
+#: src/Widgets/Dialogs/NewSecret.vala:74 src/Widgets/Dialogs/EditSecret.vala:85
+msgid "Note :"
+msgstr ""
+
+#: src/Widgets/Dialogs/NewSecret.vala:105
+msgid "Credentials"
+msgstr ""
+
+#: src/Widgets/Dialogs/NewSecret.vala:106
+msgid "Secure Note"
+msgstr ""
+
+#: src/Widgets/Dialogs/NewSecret.vala:120
+#: src/Widgets/Dialogs/EditSecret.vala:123
 #: src/Widgets/Dialogs/ChangeCipher.vala:64
 msgid "Cancel"
 msgstr "Annuleren"
 
-#: src/Widgets/Dialogs/NewSecret.vala:76
+#: src/Widgets/Dialogs/NewSecret.vala:121
 msgid "Add Secret"
 msgstr "Item toevoegen"
 
@@ -261,6 +288,15 @@ msgstr "Lengte van gegenereerd wachtwoord: "
 #: src/Widgets/Dialogs/Preferences.vala:100
 msgid "Apply"
 msgstr "Toepassen"
+
+#~ msgid "Copy Password"
+#~ msgstr "Wachtwoord kopiëren"
+
+#~ msgid "Auto-Generate Password"
+#~ msgstr "Wachtwoord automatisch genereren"
+
+#~ msgid "Use Existing Password"
+#~ msgstr "Bestaand wachtwoord gebruiken"
 
 #~ msgid "Alohomora"
 #~ msgstr "Alohomora"
