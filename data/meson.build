@@ -13,6 +13,8 @@ install_data (
     install_dir: join_paths (get_option ('datadir'), 'glib-2.0', 'schemas'),
 )
 
+gnome.post_install ( glib_compile_schemas: true)
+
 # Install icons
 icon_sizes = ['16', '24', '32', '48', '64', '128']
 foreach i : icon_sizes
