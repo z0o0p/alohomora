@@ -8,6 +8,8 @@ public class Alohomora.SecretBox : Gtk.Frame {
     public Alohomora.SecretManager secret {get; construct;}
     public Secret.Item secret_item {get; construct;}
 
+    private string secret_id;
+    private string secret_type;
     private string credentials_name;
     private string user_name;
     private string pin_status;
@@ -29,7 +31,7 @@ public class Alohomora.SecretBox : Gtk.Frame {
         var pin_action = new SimpleAction ("pin", null);
         pin_action.activate.connect (() => {
             var new_pin_status = (bool.parse (pin_status)) ? "false" : "true";
-            secret.edit_secret.begin (credentials_name, credentials_name, user_name, user_name, user_pass, new_pin_status);
+            secret.edit_secret.begin (secret_id, credentials_name, user_name, user_pass, new_pin_status);
         });
         var edit_action = new SimpleAction ("edit", null);
         edit_action.activate.connect (() => {
@@ -37,7 +39,7 @@ public class Alohomora.SecretBox : Gtk.Frame {
             dialog.show ();
         });
         var delete_action = new SimpleAction ("delete", null);
-        delete_action.activate.connect (() => secret.delete_secret.begin (credentials_name, user_name));
+        delete_action.activate.connect (() => secret.delete_secret.begin (secret_id));
 
         var action_group = new GLib.SimpleActionGroup ();
         action_group.add_action (pin_action);
@@ -68,7 +70,7 @@ public class Alohomora.SecretBox : Gtk.Frame {
         username.halign = Gtk.Align.START;
 
         var copy_icon = new Gtk.Image.from_icon_name ("copy-icon");
-        copy = new Gtk.Button.with_label (_("Copy Password"));
+        copy = new Gtk.Button.with_label (_("Copy Secret"));
         copy.can_focus = false;
         copy.clicked.connect (() => {
             var clipboard = Gdk.Display.get_default ().get_clipboard ();
@@ -77,8 +79,9 @@ public class Alohomora.SecretBox : Gtk.Frame {
 
         var data_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
         data_box.halign = Gtk.Align.START;
+        data_box.valign = Gtk.Align.CENTER;
         data_box.append (credentialname);
-        data_box.append (username);
+        if (secret_type == Alohomora.Constants.SECRET_TYPE_CREDENTIAL) data_box.append (username);
 
         var copy_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 3);
         copy_box.hexpand = true;
@@ -100,6 +103,8 @@ public class Alohomora.SecretBox : Gtk.Frame {
 
     private void load_secret_attributes () {
         var secret_attributes = secret_item.get_attributes ();
+        secret_id = secret_attributes.get ("secret-id");
+        secret_type = secret_attributes.get ("secret-type");
         credentials_name = secret_attributes.get ("credential-name");
         user_name = secret_attributes.get ("user-name");
         pin_status = (secret_attributes.get ("pinned") == null) ? "false" : secret_attributes.get ("pinned");

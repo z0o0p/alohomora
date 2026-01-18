@@ -7,13 +7,17 @@ public class Alohomora.EditSecret: Gtk.Dialog {
     public Alohomora.SecretManager secret {get; construct;}
     public Secret.Item secret_item {get; construct;}
 
+    private string secret_id;
+    private string secret_type;
     private string credential_name;
     private string user_name;
-    private string pin_status;
     private string user_pass;
+    private string pin_status;
     private Gtk.Entry credential_name_entry;
     private Gtk.Entry user_name_entry;
     private Gtk.Entry pass_entry;
+    private Gtk.Entry note_name_entry;
+    private Gtk.TextView note;
 
     public EditSecret (Alohomora.Window app_window, Alohomora.SecretManager secret_manager, Secret.Item secretitem) {
         Object (
@@ -42,27 +46,71 @@ public class Alohomora.EditSecret: Gtk.Dialog {
         pass_label.halign = Gtk.Align.END;
         pass_entry = new Gtk.Entry ();
         pass_entry.visibility = false;
-        pass_entry.secondary_icon_name = "image-red-eye-symbolic";
+        pass_entry.secondary_icon_name = "eye-open-negative-filled-symbolic";
         pass_entry.secondary_icon_tooltip_text = _("Show Password");
-        pass_entry.icon_press.connect(() => pass_entry.visibility = !pass_entry.visibility);
+        pass_entry.icon_press.connect (() => {
+            pass_entry.visibility = !pass_entry.visibility;
+            pass_entry.secondary_icon_name = ((pass_entry.visibility) ? "eye-not-looking-symbolic" : "eye-open-negative-filled-symbolic");
+            pass_entry.secondary_icon_tooltip_text = ((pass_entry.visibility) ? _("Hide Password") : _("Show Password"));
+        });
+        var pass_regen_button = new Gtk.Button.from_icon_name ("view-refresh-symbolic");
+        pass_regen_button.tooltip_text = _("Regenerate Password");
+        pass_regen_button.clicked.connect (() => pass_entry.text = Alohomora.PasswordGenerator.generate ());
+        var creds_grid = new Gtk.Grid ();
+        creds_grid.row_spacing = 5;
+        creds_grid.column_spacing = 5;
+        creds_grid.margin_top = 15;
+        creds_grid.hexpand = true;
+        creds_grid.halign = Gtk.Align.CENTER;
+        creds_grid.attach (credential_name_label, 0, 0, 1, 1);
+        creds_grid.attach (credential_name_entry, 1, 0, 2, 1);
+        creds_grid.attach (user_name_label,       0, 1 ,1, 1);
+        creds_grid.attach (user_name_entry,       1, 1, 2, 1);
+        creds_grid.attach (pass_label,            0, 2, 1, 1);
+        creds_grid.attach (pass_entry,            1, 2, 1, 1);
+        creds_grid.attach (pass_regen_button,     2, 2, 1, 1);
 
-        var grid = new Gtk.Grid ();
-        grid.row_spacing = 5;
-        grid.column_spacing = 5;
-        grid.halign = Gtk.Align.CENTER;
-        grid.attach (credential_name_label, 0, 0, 1, 1);
-        grid.attach (credential_name_entry, 1, 0, 1, 1);
-        grid.attach (user_name_label,       0, 1 ,1, 1);
-        grid.attach (user_name_entry,       1, 1, 1, 1);
-        grid.attach (pass_label,            0, 2, 1, 1);
-        grid.attach (pass_entry,            1, 2, 1, 1);
+        var note_name_label = new Gtk.Label (_("Name :"));
+        note_name_label.halign = Gtk.Align.END;
+        note_name_entry = new Gtk.Entry();
+        note_name_entry.text = credential_name;
+        var note_label = new Gtk.Label (_("Note :"));
+        note_label.halign = Gtk.Align.END;
+        note = new Gtk.TextView ();
+        note.left_margin = 5;
+        note.top_margin = 5;
+        note.right_margin = 5;
+        note.bottom_margin = 5;
+        note.wrap_mode = Gtk.WrapMode.CHAR;
+        note.add_css_class (Granite.STYLE_CLASS_TERMINAL);
+        var note_scroll_view = new Gtk.ScrolledWindow ();
+        note_scroll_view.hscrollbar_policy = Gtk.PolicyType.NEVER;
+        note_scroll_view.vscrollbar_policy = Gtk.PolicyType.AUTOMATIC;
+        note_scroll_view.hexpand = true;
+        note_scroll_view.halign = Gtk.Align.FILL;
+        note_scroll_view.vexpand = true;
+        note_scroll_view.valign = Gtk.Align.FILL;
+        note_scroll_view.set_child (note);
+        var note_grid = new Gtk.Grid ();
+        note_grid.height_request = 100;
+        note_grid.width_request = 275;
+        note_grid.row_spacing = 5;
+        note_grid.column_spacing = 5;
+        note_grid.margin_top = 15;
+        note_grid.hexpand = true;
+        note_grid.halign = Gtk.Align.FILL;
+        note_grid.attach (note_name_label,       0, 0, 1, 1);
+        note_grid.attach (note_name_entry,       1, 0, 1, 1);
+        note_grid.attach (note_label,            0, 1, 1, 1);
+        note_grid.attach (note_scroll_view,      1, 1, 1, 1);
 
         var dialog_content = get_content_area ();
         dialog_content.margin_top = 15;
         dialog_content.margin_bottom = 15;
         dialog_content.margin_start = 15;
         dialog_content.margin_end = 15;
-        dialog_content.append (grid);
+        if (secret_type == Alohomora.Constants.SECRET_TYPE_CREDENTIAL) dialog_content.append (creds_grid);
+        else dialog_content.append (note_grid);
 
         add_button (_("Cancel"), Gtk.ResponseType.CLOSE);
         var add = add_button (_("Edit Secret"), Gtk.ResponseType.APPLY);
@@ -73,8 +121,11 @@ public class Alohomora.EditSecret: Gtk.Dialog {
                 destroy ();
             }
             else if (id == Gtk.ResponseType.APPLY) {
-                if (credential_name_entry.text != "" && user_name_entry.text != "" && pass_entry.text != "" ) {
-                        secret.edit_secret.begin (credential_name, credential_name_entry.text, user_name, user_name_entry.text, pass_entry.text, pin_status);
+                if (secret_type == Alohomora.Constants.SECRET_TYPE_CREDENTIAL) {
+                    secret.edit_secret.begin (secret_id, credential_name_entry.text, user_name_entry.text, pass_entry.text, pin_status);
+                }
+                else if (secret_type == Alohomora.Constants.SECRET_TYPE_OTHER) {
+                    secret.edit_secret.begin (secret_id, note_name_entry.text, "", note.buffer.text, pin_status);
                 }
             }
         });
@@ -84,14 +135,17 @@ public class Alohomora.EditSecret: Gtk.Dialog {
 
     private void load_secret_attributes () {
         var secret_attributes = secret_item.get_attributes ();
+        secret_id = secret_attributes.get ("secret-id");
+        secret_type = secret_attributes.get ("secret-type");
         credential_name = secret_attributes.get ("credential-name");
         user_name = secret_attributes.get ("user-name");
         pin_status = (secret_attributes.get ("pinned") == null) ? "false" : secret_attributes.get ("pinned");
         secret.load_secret_value.begin (
             secret_item,
             (obj, res) => {
-                secret.load_secret_value.end(res, out user_pass);
+                secret.load_secret_value.end (res, out user_pass);
                 pass_entry.text = user_pass;
+                note.buffer.text = user_pass;
             }
         );
     }
