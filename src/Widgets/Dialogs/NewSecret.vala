@@ -6,11 +6,13 @@
 public class Alohomora.NewSecret: Gtk.Dialog {
     public Alohomora.SecretManager secret {get; construct;}
 
-    private Gtk.Entry credential_name;
-    private Gtk.Entry username_entry;
+    private Granite.ValidatedEntry credential_name_entry;
+    private Granite.ValidatedEntry username_entry;
     private Gtk.Entry pass_entry;
-    private Gtk.Entry note_name;
+    private Granite.ValidatedEntry note_name_entry;
     private Gtk.TextView note;
+    private Gtk.Stack stack;
+    private Gtk.Widget add;
 
     public NewSecret (Alohomora.Window app_window, Alohomora.SecretManager secret_manager) {
         Object (
@@ -26,11 +28,15 @@ public class Alohomora.NewSecret: Gtk.Dialog {
     construct {
         var credential_name_label = new Gtk.Label (_("Name :"));
         credential_name_label.halign = Gtk.Align.END;
-        credential_name = new Gtk.Entry();
-        credential_name.placeholder_text = _("Eg. GitHub, AWS API Key, etc.");
+        credential_name_entry = new Granite.ValidatedEntry ();
+        credential_name_entry.min_length = 1;
+        credential_name_entry.changed.connect (update_form_state);
+        credential_name_entry.placeholder_text = _("Eg. GitHub, AWS API Key, etc.");
         var username_label = new Gtk.Label (_("Username :"));
         username_label.halign = Gtk.Align.END;
-        username_entry = new Gtk.Entry ();
+        username_entry = new Granite.ValidatedEntry ();
+        username_entry.min_length = 1;
+        username_entry.changed.connect (update_form_state);
         var pass_label = new Gtk.Label (_("Password :"));
         pass_label.halign = Gtk.Align.END;
         pass_entry = new Gtk.Entry ();
@@ -52,7 +58,7 @@ public class Alohomora.NewSecret: Gtk.Dialog {
         creds_grid.hexpand = true;
         creds_grid.halign = Gtk.Align.CENTER;
         creds_grid.attach (credential_name_label, 0, 0, 1, 1);
-        creds_grid.attach (credential_name,       1, 0, 2, 1);
+        creds_grid.attach (credential_name_entry, 1, 0, 2, 1);
         creds_grid.attach (username_label,        0, 1 ,1, 1);
         creds_grid.attach (username_entry,        1, 1, 2, 1);
         creds_grid.attach (pass_label,            0, 2, 1, 1);
@@ -61,8 +67,10 @@ public class Alohomora.NewSecret: Gtk.Dialog {
 
         var note_name_label = new Gtk.Label (_("Name :"));
         note_name_label.halign = Gtk.Align.END;
-        note_name = new Gtk.Entry();
-        note_name.placeholder_text = _("Eg. SSH Key, SSL/TLS Certificates, etc.");
+        note_name_entry = new Granite.ValidatedEntry ();
+        note_name_entry.min_length = 1;
+        note_name_entry.changed.connect (update_form_state);
+        note_name_entry.placeholder_text = _("Eg. SSH Key, SSL/TLS Certificates, etc.");
         var note_label = new Gtk.Label (_("Note :"));
         note_label.halign = Gtk.Align.END;
         note = new Gtk.TextView ();
@@ -89,14 +97,15 @@ public class Alohomora.NewSecret: Gtk.Dialog {
         note_grid.hexpand = true;
         note_grid.halign = Gtk.Align.FILL;
         note_grid.attach (note_name_label,       0, 0, 1, 1);
-        note_grid.attach (note_name,             1, 0, 1, 1);
+        note_grid.attach (note_name_entry,       1, 0, 1, 1);
         note_grid.attach (note_label,            0, 1, 1, 1);
         note_grid.attach (note_scroll_view,      1, 1, 1, 1);
 
-        var stack = new Gtk.Stack ();
+        stack = new Gtk.Stack ();
         stack.add_titled (creds_grid, "Credentials", _("Credentials"));
         stack.add_titled (note_grid, "Other", _("Secure Note"));
         stack.set_transition_type (Gtk.StackTransitionType.SLIDE_LEFT_RIGHT);
+        stack.notify["visible-child"].connect (update_form_state);
         var stack_switcher = new Gtk.StackSwitcher ();
         stack_switcher.stack = stack;
 
@@ -109,8 +118,9 @@ public class Alohomora.NewSecret: Gtk.Dialog {
         dialog_content.append (stack);
 
         add_button (_("Cancel"), Gtk.ResponseType.CLOSE);
-        var add = add_button (_("Add Secret"), Gtk.ResponseType.APPLY);
+        add = add_button (_("Add Secret"), Gtk.ResponseType.APPLY);
         add.add_css_class ("primary-background");
+        add.sensitive = false;
 
         response.connect (id => {
             if (id == Gtk.ResponseType.CLOSE) {
@@ -120,18 +130,27 @@ public class Alohomora.NewSecret: Gtk.Dialog {
                 var should_copy_pass = new Settings ("com.github.z0o0p.alohomora").get_boolean ("copy-new-pass");
                 var display = Gdk.Display.get_default ();
                 var clipboard = display.get_clipboard ();
-                if (stack.visible_child_name == "Credentials" && pass_entry.text != "") {
-                    secret.new_secret.begin (Alohomora.Constants.SECRET_TYPE_CREDENTIAL, credential_name.text, username_entry.text, pass_entry.text);
+                if (stack.visible_child_name == "Credentials") {
+                    secret.new_secret.begin (Alohomora.Constants.SECRET_TYPE_CREDENTIAL, credential_name_entry.text, username_entry.text, pass_entry.text);
                     if (should_copy_pass) {
                         clipboard.set_text (pass_entry.text);
                     }
                 }
-                else if (stack.visible_child_name == "Other" && note.buffer.text != "") {
-                    secret.new_secret.begin (Alohomora.Constants.SECRET_TYPE_OTHER, note_name.text, "", note.buffer.text);
+                else if (stack.visible_child_name == "Other") {
+                    secret.new_secret.begin (Alohomora.Constants.SECRET_TYPE_OTHER, note_name_entry.text, "", note.buffer.text);
                 }
             }
         });
 
         secret.changed.connect (() => destroy ());
+    }
+
+    private void update_form_state () {
+        if (stack.visible_child_name == "Credentials") {
+            add.sensitive = credential_name_entry.is_valid && username_entry.is_valid;
+        }
+        else if (stack.visible_child_name == "Other") {
+            add.sensitive = note_name_entry.is_valid;
+        }
     }
 }
