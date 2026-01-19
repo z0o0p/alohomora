@@ -1,5 +1,5 @@
 # Project name, Languages used and Version
-project ('io.github.z0o0p.alohomora', 'vala', 'c', version: '2.0.0', meson_version: '>= 0.56.0')
+project ('io.github.z0o0p.alohomora', 'vala', 'c', version: '2.0.0', meson_version: '>= 0.57.0')
 
 # Executes build files in given directories
 subdir ('src')
@@ -18,3 +18,5 @@ executable (
     ],
     install: true
 )
+
+subdir ('test')
