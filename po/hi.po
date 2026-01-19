@@ -1,13 +1,13 @@
-# Hindi translations for com.github.z0o0p.alohomora package.
-# Copyright (C) 2020 THE com.github.z0o0p.alohomora'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the com.github.z0o0p.alohomora package.
+# Hindi translations for io.github.z0o0p.alohomora package.
+# Copyright (C) 2020 THE io.github.z0o0p.alohomora'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the io.github.z0o0p.alohomora package.
 # Automatically generated, 2020.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: com.github.z0o0p.alohomora\n"
+"Project-Id-Version: io.github.z0o0p.alohomora\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-04 15:30+0530\n"
+"POT-Creation-Date: 2026-01-19 03:00+0530\n"
 "PO-Revision-Date: 2021-01-03 15:40+0530\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,262 +17,301 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.4.2\n"
 
-#: src/Widgets/Window.vala:78 src/Widgets/Window.vala:102
-msgid "Incorrect Key!"
+#: src/Widgets/Window.vala:53 src/Widgets/Window.vala:77
+#, fuzzy
+msgid "Incorrect Key"
 msgstr "गलत चाबी है!"
 
-#: src/Widgets/Window.vala:79 src/Widgets/Window.vala:103
-msgid "The cipher key entered is wrong. Check and try again."
+#: src/Widgets/Window.vala:54 src/Widgets/Window.vala:78
+#, fuzzy
+msgid "The cipher key entered is wrong. Check and try again"
 msgstr "दर्ज की गई सैफर चाबी गलत है। जाँच करें और पुनः कोशिश करें।"
 
-#: src/Widgets/Window.vala:87
+#: src/Widgets/Window.vala:62
 msgid "Key Mismatch"
 msgstr ""
 
-#: src/Widgets/Window.vala:88
+#: src/Widgets/Window.vala:63
 #, fuzzy
 msgid "Passwords entered do not match. Check and try again"
 msgstr "दर्ज की गई सैफर चाबी गलत है। जाँच करें और पुनः कोशिश करें।"
 
-#: src/Widgets/Window.vala:96
+#: src/Widgets/Window.vala:71
 msgid "Successful Change"
 msgstr "बदलाव सफल रहा"
 
-#: src/Widgets/Window.vala:97
-msgid "Cipher key was successfully changed. Existing secrets are unusable now."
+#: src/Widgets/Window.vala:72
+#, fuzzy
+msgid "Cipher key was successfully changed. Existing secrets are unusable now"
 msgstr "सैफर चाबी को सफलतापूर्वक बदल दिया है। मौजूदा रहस्य अब दुरुपयोग हैं।"
 
-#: src/Widgets/Window.vala:126 src/Widgets/MainScreen.vala:59
-#: src/Widgets/Dialogs/Preferences.vala:124
-msgid "Close"
-msgstr "बंद"
-
-#: src/Widgets/HeaderBar.vala:40
-msgid "Alohomora"
-msgstr "अलोहोमोरा"
-
-#: src/Widgets/HeaderBar.vala:55
-msgid "Add New Login"
+#: src/Widgets/HeaderBar.vala:27
+#, fuzzy
+msgid "Add New Login [Ctrl+N]"
 msgstr "नई लॉगिन जोड़ें"
 
-#: src/Widgets/HeaderBar.vala:64
-msgid "Light Theme"
-msgstr "लाइट थीम"
-
-#: src/Widgets/HeaderBar.vala:65
-msgid "Dark Theme"
-msgstr "डार्क थीम"
-
-#: src/Widgets/HeaderBar.vala:70 src/Widgets/MainScreen.vala:57
+#: src/Widgets/HeaderBar.vala:35 src/Widgets/MainScreen.vala:44
 msgid "Search"
 msgstr "ढूढें"
 
-#: src/Widgets/HeaderBar.vala:75 src/Widgets/Dialogs/Preferences.vala:43
+#: src/Widgets/HeaderBar.vala:38 src/Widgets/Dialogs/Preferences.vala:18
 msgid "Preferences"
 msgstr "सेटिंग्स"
 
-#: src/Widgets/HeaderBar.vala:83 src/Widgets/Dialogs/ChangeCipher.vala:34
+#: src/Widgets/HeaderBar.vala:41 src/Widgets/Dialogs/ChangeCipher.vala:14
 msgid "Change Cipher Key"
 msgstr "सैफर चाबी बदलें"
 
-#: src/Widgets/HeaderBar.vala:91
+#: src/Widgets/HeaderBar.vala:44
 msgid "Quit"
 msgstr "छोड़ें"
 
-#: src/Widgets/HeaderBar.vala:108
+#: src/Widgets/HeaderBar.vala:56
 msgid "Help"
 msgstr "मदद"
 
-#: src/Widgets/ValidateScreen.vala:54
+#: src/Widgets/ValidateScreen.vala:38
 msgid "Welcome"
 msgstr "स्वागत हे"
 
-#: src/Widgets/ValidateScreen.vala:58
+#: src/Widgets/ValidateScreen.vala:42
 msgid "Let's Get You Started"
 msgstr "चलिए शुरू करते है"
 
-#: src/Widgets/ValidateScreen.vala:58
+#: src/Widgets/ValidateScreen.vala:42
 msgid "I Need To Decipher Your Passwords First"
 msgstr "पहले आपके पासवर्ड को दीसैफर करने की जरूरत है"
 
-#: src/Widgets/ValidateScreen.vala:60
+#: src/Widgets/ValidateScreen.vala:46
 msgid "Your new cipher key will be used to encipher all your saved passwords"
 msgstr ""
 "आपकी नई सैफर चाबी का उपयोग आपके सभी पासवर्ड को येनसैफर करने के लिए उपयोग किया जाएगा"
 
-#: src/Widgets/ValidateScreen.vala:74
+#: src/Widgets/ValidateScreen.vala:60
 msgid "Enter Cipher Key:"
 msgstr "सैफर चाबी दर्ज करें :"
 
-#: src/Widgets/ValidateScreen.vala:80 src/Widgets/ValidateScreen.vala:89
+#: src/Widgets/ValidateScreen.vala:65 src/Widgets/ValidateScreen.vala:69
+#: src/Widgets/ValidateScreen.vala:77 src/Widgets/ValidateScreen.vala:81
 msgid "Show Cipher Key"
 msgstr "सैफर चाबी दिखाओ"
 
-#: src/Widgets/ValidateScreen.vala:83
+#: src/Widgets/ValidateScreen.vala:69 src/Widgets/ValidateScreen.vala:81
+#, fuzzy
+msgid "Hide Cipher Key"
+msgstr "पुरानी सैफर चाबी:"
+
+#: src/Widgets/ValidateScreen.vala:72
 #, fuzzy
 msgid "Re-Enter Cipher Key:"
 msgstr "सैफर चाबी दर्ज करें :"
 
-#: src/Widgets/ValidateScreen.vala:100
+#: src/Widgets/ValidateScreen.vala:94
 msgid "Submit"
 msgstr "आगे बड़े"
 
-#: src/Widgets/MainScreen.vala:51
+#: src/Widgets/MainScreen.vala:31
 msgid "No Passwords Found"
 msgstr "कोई पासवर्ड नहीं मिला"
 
-#: src/Widgets/MainScreen.vala:51
-msgid "Add a new credential."
-msgstr "एक नया पासवर्ड जोड़े।"
-
-#: src/Widgets/MainScreen.vala:52
+#: src/Widgets/MainScreen.vala:34
 msgid "Add Password"
 msgstr "पासवर्ड जोड़ें"
 
-#: src/Widgets/MainScreen.vala:52
-msgid "Stores a new password securely."
+#: src/Widgets/MainScreen.vala:34
+#, fuzzy
+msgid "Stores a new password securely"
 msgstr "एक नया पासवर्ड सुरक्षित रूप से संचित करता है।"
 
-#: src/Widgets/MainScreen.vala:161
+#: src/Widgets/MainScreen.vala:47 src/Widgets/Dialogs/Preferences.vala:99
+msgid "Close"
+msgstr "बंद"
+
+#: src/Widgets/MainScreen.vala:134
 msgid "No matches found"
 msgstr "कोई मेल नहीं मिले"
 
-#: src/Widgets/SecretBox.vala:60
+#: src/Widgets/SecretBox.vala:51
 #, fuzzy
 msgid "Unpin Secret"
 msgstr "गुप्त बदलें"
 
-#: src/Widgets/SecretBox.vala:60
+#: src/Widgets/SecretBox.vala:51
 #, fuzzy
 msgid "Pin Secret"
 msgstr "गुप्त बदलें"
 
-#: src/Widgets/SecretBox.vala:66 src/Widgets/Dialogs/EditSecret.vala:36
-#: src/Widgets/Dialogs/EditSecret.vala:96
+#: src/Widgets/SecretBox.vala:52 src/Widgets/Dialogs/EditSecret.vala:25
+#: src/Widgets/Dialogs/EditSecret.vala:124
 msgid "Edit Secret"
 msgstr "गुप्त बदलें"
 
-#: src/Widgets/SecretBox.vala:72
+#: src/Widgets/SecretBox.vala:53
 msgid "Delete Secret"
 msgstr "गुप्त मिटाएं"
 
-#: src/Widgets/SecretBox.vala:94
-msgid "Copy Password"
-msgstr "पासवर्ड कॉपी करें"
+#: src/Widgets/SecretBox.vala:63
+msgid "More"
+msgstr ""
 
-#: src/Widgets/Dialogs/NewSecret.vala:38
+#: src/Widgets/SecretBox.vala:73
+#, fuzzy
+msgid "Copy Secret"
+msgstr "गुप्त बदलें"
+
+#: src/Widgets/Dialogs/NewSecret.vala:19
 msgid "Add New Secret"
 msgstr "नया रहस्य जोड़ें"
 
-#: src/Widgets/Dialogs/NewSecret.vala:49 src/Widgets/Dialogs/EditSecret.vala:54
+#: src/Widgets/Dialogs/NewSecret.vala:29 src/Widgets/Dialogs/NewSecret.vala:68
+#: src/Widgets/Dialogs/EditSecret.vala:39
+#: src/Widgets/Dialogs/EditSecret.vala:79
 msgid "Name :"
 msgstr "नाम :"
 
-#: src/Widgets/Dialogs/NewSecret.vala:52
-msgid "Eg. GitHub, Facebook, etc."
+#: src/Widgets/Dialogs/NewSecret.vala:34
+#, fuzzy
+msgid "Eg. GitHub, AWS API Key, etc."
 msgstr "जैसे गिटहब, फेसबुक और आदि।"
 
-#: src/Widgets/Dialogs/NewSecret.vala:54 src/Widgets/Dialogs/EditSecret.vala:58
+#: src/Widgets/Dialogs/NewSecret.vala:35 src/Widgets/Dialogs/EditSecret.vala:45
 msgid "Username :"
 msgstr "उपयोगकर्ता नाम :"
 
-#: src/Widgets/Dialogs/NewSecret.vala:58 src/Widgets/Dialogs/EditSecret.vala:62
+#: src/Widgets/Dialogs/NewSecret.vala:40 src/Widgets/Dialogs/EditSecret.vala:51
 msgid "Password :"
 msgstr "पासवर्ड :"
 
-#: src/Widgets/Dialogs/NewSecret.vala:64
-#, fuzzy
-msgid "Re-Generate Password"
-msgstr "नया पासवर्ड उत्पादन करें"
-
-#: src/Widgets/Dialogs/NewSecret.vala:70 src/Widgets/Dialogs/EditSecret.vala:68
+#: src/Widgets/Dialogs/NewSecret.vala:45 src/Widgets/Dialogs/NewSecret.vala:49
+#: src/Widgets/Dialogs/EditSecret.vala:56
+#: src/Widgets/Dialogs/EditSecret.vala:60
 msgid "Show Password"
 msgstr "पासवर्ड दिखाओ"
 
-#: src/Widgets/Dialogs/NewSecret.vala:74
+#: src/Widgets/Dialogs/NewSecret.vala:49 src/Widgets/Dialogs/EditSecret.vala:60
 #, fuzzy
-msgid "Auto-Generate Password"
+msgid "Hide Password"
+msgstr "पासवर्ड जोड़ें"
+
+#: src/Widgets/Dialogs/NewSecret.vala:52 src/Widgets/Dialogs/EditSecret.vala:63
+#, fuzzy
+msgid "Regenerate Password"
 msgstr "नया पासवर्ड उत्पादन करें"
 
-#: src/Widgets/Dialogs/NewSecret.vala:75
-msgid "Use Existing Password"
-msgstr "मौजूदा पासवर्ड का उपयोग करें"
+#: src/Widgets/Dialogs/NewSecret.vala:73
+msgid "Eg. SSH Key, SSL/TLS Certificates, etc."
+msgstr ""
 
-#: src/Widgets/Dialogs/NewSecret.vala:98 src/Widgets/Dialogs/EditSecret.vala:95
-#: src/Widgets/Dialogs/ChangeCipher.vala:79
+#: src/Widgets/Dialogs/NewSecret.vala:74 src/Widgets/Dialogs/EditSecret.vala:85
+msgid "Note :"
+msgstr ""
+
+#: src/Widgets/Dialogs/NewSecret.vala:105
+msgid "Credentials"
+msgstr ""
+
+#: src/Widgets/Dialogs/NewSecret.vala:106
+msgid "Secure Note"
+msgstr ""
+
+#: src/Widgets/Dialogs/NewSecret.vala:120
+#: src/Widgets/Dialogs/EditSecret.vala:123
+#: src/Widgets/Dialogs/ChangeCipher.vala:64
 msgid "Cancel"
 msgstr "रद्द करें"
 
-#: src/Widgets/Dialogs/NewSecret.vala:99
+#: src/Widgets/Dialogs/NewSecret.vala:121
 msgid "Add Secret"
 msgstr "रहस्य जोड़ें"
 
-#: src/Widgets/Dialogs/ChangeCipher.vala:45
+#: src/Widgets/Dialogs/ChangeCipher.vala:24
 msgid "CHANGING THE CIPHER KEY WILL MAKE THE EXISTING SECRETS UNUSABLE"
 msgstr "सैफर चाबी को बदलने से मौजूदा रहस्य व्यर्थ हो जाएंगे"
 
-#: src/Widgets/Dialogs/ChangeCipher.vala:48
+#: src/Widgets/Dialogs/ChangeCipher.vala:32
 msgid "Old Cipher Key:"
 msgstr "पुरानी सैफर चाबी:"
 
-#: src/Widgets/Dialogs/ChangeCipher.vala:54
+#: src/Widgets/Dialogs/ChangeCipher.vala:37
 msgid "Show Old Cipher Key"
 msgstr "पुरानी सैफर चाबी दिखाओ"
 
-#: src/Widgets/Dialogs/ChangeCipher.vala:56
+#: src/Widgets/Dialogs/ChangeCipher.vala:39
 msgid "New Cipher Key:"
 msgstr "नया सैफर चाबी:"
 
-#: src/Widgets/Dialogs/ChangeCipher.vala:62
+#: src/Widgets/Dialogs/ChangeCipher.vala:44
 msgid "Show New Cipher Key"
 msgstr "नया सैफर चाबी दिखाओ"
 
-#: src/Widgets/Dialogs/ChangeCipher.vala:80
+#: src/Widgets/Dialogs/ChangeCipher.vala:65
 msgid "Change Key"
 msgstr "चाबी बदलें"
 
-#: src/Widgets/Dialogs/Preferences.vala:56
+#: src/Widgets/Dialogs/Preferences.vala:30
 msgid "General"
 msgstr ""
 
-#: src/Widgets/Dialogs/Preferences.vala:60
+#: src/Widgets/Dialogs/Preferences.vala:34
 msgid "Sort Secrets By: "
 msgstr ""
 
-#: src/Widgets/Dialogs/Preferences.vala:63
+#: src/Widgets/Dialogs/Preferences.vala:36
 #, fuzzy
 msgid "Ascending Order"
 msgstr "आरोही"
 
-#: src/Widgets/Dialogs/Preferences.vala:64
+#: src/Widgets/Dialogs/Preferences.vala:36
 #, fuzzy
 msgid "Descending Order"
 msgstr "अवरोही"
 
-#: src/Widgets/Dialogs/Preferences.vala:67
+#: src/Widgets/Dialogs/Preferences.vala:40
 msgid "Copy New Password After Adding: "
 msgstr ""
 
-#: src/Widgets/Dialogs/Preferences.vala:77
+#: src/Widgets/Dialogs/Preferences.vala:51
 #, fuzzy
 msgid "Password Generator"
 msgstr "पासवर्ड :"
 
-#: src/Widgets/Dialogs/Preferences.vala:81
+#: src/Widgets/Dialogs/Preferences.vala:55
 msgid "Include Digits: "
 msgstr ""
 
-#: src/Widgets/Dialogs/Preferences.vala:88
+#: src/Widgets/Dialogs/Preferences.vala:62
 msgid "Include Special Characters: "
 msgstr ""
 
-#: src/Widgets/Dialogs/Preferences.vala:95
+#: src/Widgets/Dialogs/Preferences.vala:69
 msgid "Generated Password Length: "
 msgstr "पासवर्ड की लंबाई: "
 
-#: src/Widgets/Dialogs/Preferences.vala:125
+#: src/Widgets/Dialogs/Preferences.vala:100
 msgid "Apply"
 msgstr "लागू करें "
+
+#~ msgid "Copy Password"
+#~ msgstr "पासवर्ड कॉपी करें"
+
+#, fuzzy
+#~ msgid "Auto-Generate Password"
+#~ msgstr "नया पासवर्ड उत्पादन करें"
+
+#~ msgid "Use Existing Password"
+#~ msgstr "मौजूदा पासवर्ड का उपयोग करें"
+
+#~ msgid "Alohomora"
+#~ msgstr "अलोहोमोरा"
+
+#~ msgid "Light Theme"
+#~ msgstr "लाइट थीम"
+
+#~ msgid "Dark Theme"
+#~ msgstr "डार्क थीम"
+
+#~ msgid "Add a new credential."
+#~ msgstr "एक नया पासवर्ड जोड़े।"
 
 #~ msgid "Your Password Will Be Auto-Generated"
 #~ msgstr "आपका पासवर्ड अप्प उत्पादन करेगा"

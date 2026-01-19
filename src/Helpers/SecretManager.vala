@@ -1,23 +1,7 @@
 /*
-* Copyright (c) 2020 Taqmeel Zubeir
-*
-* This program is free software; you can redistribute it and/or
-* modify it under the terms of the GNU General Public
-* License as published by the Free Software Foundation; either
-* version 2 of the License, or (at your option) any later version.
-*
-* This program is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-* General Public License for more details.
-*
-* You should have received a copy of the GNU General Public
-* License along with this program; if not, write to the
-* Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
-* Boston, MA 02110-1301 USA
-*
-* Authored by: Taqmeel Zubeir <taqmeelzubeir.dev@gmail.com>
-*/
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ * SPDX-FileCopyrightText: 2026 Taqmeel Zubeir (https://taqmeelzube.ir)
+ */
 
 public class Alohomora.SecretManager: GLib.Object {
     private Secret.Collection collection;
@@ -37,7 +21,9 @@ public class Alohomora.SecretManager: GLib.Object {
 
     private Secret.Schema secret_schema () {
         var schema = new Secret.Schema (
-            "com.github.z0o0p.alohomora.secret", Secret.SchemaFlags.NONE,
+            "io.github.z0o0p.alohomora.secret", Secret.SchemaFlags.NONE,
+            "secret-id", Secret.SchemaAttributeType.STRING,
+            "secret-type", Secret.SchemaAttributeType.STRING,
             "credential-name", Secret.SchemaAttributeType.STRING,
             "user-name", Secret.SchemaAttributeType.STRING,
             "pinned", Secret.SchemaAttributeType.BOOLEAN
@@ -47,14 +33,14 @@ public class Alohomora.SecretManager: GLib.Object {
 
     private Secret.Schema cipher_schema () {
         var schema = new Secret.Schema (
-            "com.github.z0o0p.alohomora.cipher", Secret.SchemaFlags.NONE,
+            "io.github.z0o0p.alohomora.cipher", Secret.SchemaFlags.NONE,
             "user-name", Secret.SchemaAttributeType.STRING
         );
         return schema;
     }
 
     private async void load_secrets () {
-        secrets.foreach ((secret_item) => secrets.remove(secret_item));
+        secrets.foreach ((secret_item) => secrets.remove (secret_item));
         try {
             key = yield Secret.password_lookup (
                 cipher_schema (),
@@ -64,10 +50,10 @@ public class Alohomora.SecretManager: GLib.Object {
             );
             var is_loaded = yield collection.load_items(null);
             if (is_loaded) {
-                var secret_items = collection.get_items();
-                foreach(var item in secret_items) {
-                    if(item.get_label() == "Alohomora Secret") {
-                        secrets.append(item);
+                var secret_items = collection.get_items ();
+                foreach (var item in secret_items) {
+                    if (item.get_label () == "Alohomora Secret") {
+                        secrets.append (item);
                     }
                 }
             }
@@ -96,13 +82,13 @@ public class Alohomora.SecretManager: GLib.Object {
                 );
             }
             else {
-                if(collection.get_locked ()) {
-                    var objects = new GLib.List<GLib.DBusProxy>();
-		            objects.prepend(collection);
+                if (collection.get_locked ()) {
+                    var objects = new GLib.List<GLib.DBusProxy> ();
+		            objects.prepend (collection);
 		            GLib.List<GLib.DBusProxy> unlocked;
 		            yield service.unlock (objects, null, out unlocked);
                 }
-                yield load_secrets();
+                yield load_secrets ();
             }
             initialized ();
         }
@@ -111,8 +97,10 @@ public class Alohomora.SecretManager: GLib.Object {
         }
     }
 
-    public async void new_secret (string credential_name, string user_name, string user_pass) {
+    public async void new_secret (string secret_type, string credential_name, string user_name, string user_pass) {
         var attributes = new HashTable<string,string> (str_hash, str_equal);
+        attributes["secret-id"] = new GLib.DateTime.now_utc ().to_unix ().to_string ();
+        attributes["secret-type"] = secret_type;
         attributes["credential-name"] = credential_name;
         attributes["user-name"] = user_name;
         attributes["pinned"] = "false";
@@ -131,27 +119,26 @@ public class Alohomora.SecretManager: GLib.Object {
             changed ();
         }
         catch (Error err) {
-            critical("%s", err.message);
+            critical ("%s", err.message);
         }
     }
 
-    public async void edit_secret (string old_credentialname, string new_credentialname, string old_username, string new_username, string new_pass, string new_pin_status) {
+    public async void edit_secret (string secret_id, string new_credential_name, string new_username, string new_pass, string new_pin_status) {
         var secret_items = collection.get_items ();
         foreach (var item in secret_items) {
-            if (item.get_label() == "Alohomora Secret") {
+            if (item.get_label () == "Alohomora Secret") {
                 try {
-                    var attributes = item.get_attributes();
-                    if (attributes["credential-name"] == old_credentialname) {
-                        if (attributes["user-name"] == old_username) {
-                            attributes["credential-name"] = new_credentialname;
-                            attributes["user-name"] = new_username;
-                            attributes["pinned"] = new_pin_status;
-                            yield item.set_attributes (secret_schema(), attributes, null);
-                            var secret = Alohomora.CipherManager.encipher (new_pass, key);
-                            yield item.set_secret (new Secret.Value(secret, secret.length, "text/plain"), null);
-                            yield load_secrets ();
-                            changed ();
-                        }
+                    var attributes = item.get_attributes ();
+                    if (attributes["secret-id"] == secret_id) {
+                        attributes["credential-name"] = new_credential_name;
+                        attributes["user-name"] = new_username;
+                        attributes["pinned"] = new_pin_status;
+                        yield item.set_attributes (secret_schema(), attributes, null);
+                        var secret = Alohomora.CipherManager.encipher (new_pass, key);
+                        yield item.set_secret (new Secret.Value (secret, secret.length, "text/plain"), null);
+                        yield load_secrets ();
+                        changed ();
+                        break;
                     }
                 }
                 catch (Error err) {
@@ -161,23 +148,22 @@ public class Alohomora.SecretManager: GLib.Object {
         }
     }
 
-    public async void delete_secret (string credential_name, string user_name) {
+    public async void delete_secret (string secret_id) {
         var secret_items = collection.get_items ();
         foreach (var item in secret_items) {
-            if (item.get_label() == "Alohomora Secret") {
+            if (item.get_label () == "Alohomora Secret") {
                 try {
                     var attributes = item.get_attributes ();
-                    if (attributes["credential-name"] == credential_name) {
-                        if (attributes["user-name"] == user_name) {
-                            var success = yield item.delete (null);
-                            if (success) {
-                                yield load_secrets ();
-                                changed ();
-                            }
+                    if (attributes["secret-id"] == secret_id) {
+                        var success = yield item.delete (null);
+                        if (success) {
+                            yield load_secrets ();
+                            changed ();
+                            break;
                         }
                     }
                 }
-                catch(Error err) {
+                catch (Error err) {
                     critical ("%s", err.message);
                 }
             }
@@ -240,7 +226,7 @@ public class Alohomora.SecretManager: GLib.Object {
             key_validated (entered_cipher_key == key);
         }
         catch (Error err) {
-            warning("%s", err.message);
+            warning ("%s", err.message);
         }
     }
 
@@ -252,7 +238,7 @@ public class Alohomora.SecretManager: GLib.Object {
                 "user-name", user_name,
                 null
             );
-            if(key == old_key) {
+            if (key == old_key) {
                 var res = yield Secret.password_store (
                     cipher_schema (),
                     Secret.COLLECTION_DEFAULT,
@@ -268,8 +254,8 @@ public class Alohomora.SecretManager: GLib.Object {
                 key_changed (false);
             }
         }
-        catch(Error err) {
-            warning("%s", err.message);
+        catch (Error err) {
+            warning ("%s", err.message);
         }
     }
 }

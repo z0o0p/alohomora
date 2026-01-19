@@ -1,24 +1,40 @@
 # Contributing to Alohomora
+
 Contributions to this repository are highly appreciated, but there are few things to keep in mind to ensure your code is consistent across the project.
 
-As Joel Spolsky once quoted, _It's harder to read code than to write it_.
-
 ## Getting Started
-* Create or log in with a Github account to start contributing.
+
 * Look for [issues](https://github.com/z0o0p/alohomora/issues) to work on, or [create](https://github.com/z0o0p/alohomora/issues/new) a new issue. Ensure that your issue is not similar to the existing ones.
 * It is recommended that you share your approach by commenting on that issue beforehand.
 * When ready to work, [fork](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo) this repository to your account.
-* Please go through the project files and get an idea about the project to avoid confusions.
+
+#### Development Setup
+
+Run the setup script which will help you get started.
+
+```bash
+sudo bash setup/setup.sh
+```
 
 ## Making Changes
-* Please avoid working directly on the `master` branch by creating a `dev` branch from it.
+
+* Please avoid working directly on the `master` branch. Checkout to a `develop` branch from it.
 * Follow the [code style](https://docs.elementary.io/develop/writing-apps/code-style) as recommended by elementary OS.
 * Make commits after every logical unit.
-* Ensure that your commit messages follow the below format. The commit message should be brief but could be expressive if you feel it is needed.
+
+#### Commit Message
+
+The commit message should follow the below format.
+
 ```
-Fix/Update/Add - Commit Message
+Type(Optional Scope) - Message
+
+Optional Body
 ```
+
+The commit type could be Add, Fix or Update.
+
 ## Submitting Changes
-* Push your changes to the `dev` branch in your forked repository.
-* Create a [pull request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork) to Alohomora repository.
+
+* Push your changes, and create a [pull request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork) to the Alohomora repository.
 * Please mention the associated issue and describe the changes/additions to the code base.

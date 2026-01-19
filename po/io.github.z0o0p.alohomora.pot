@@ -1,55 +1,49 @@
+# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the io.github.z0o0p.alohomora package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-# Safak <bjksafak45@gmail.com>, 2020.
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: io.github.z0o0p.alohomora\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-19 03:00+0530\n"
-"PO-Revision-Date: 2020-09-26 21:18+0300\n"
-"Last-Translator: Safak <bjksafak45@gmail.com>\n"
-"Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
-"Language: tr_TR\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 2.0\n"
 
 #: src/Widgets/Window.vala:53 src/Widgets/Window.vala:77
-#, fuzzy
 msgid "Incorrect Key"
-msgstr "Yanlış Şifre!"
+msgstr ""
 
 #: src/Widgets/Window.vala:54 src/Widgets/Window.vala:78
-#, fuzzy
 msgid "The cipher key entered is wrong. Check and try again"
-msgstr "Girilen şifre yanlış. Kontrol edip tekrar deneyin."
+msgstr ""
 
 #: src/Widgets/Window.vala:62
 msgid "Key Mismatch"
 msgstr ""
 
 #: src/Widgets/Window.vala:63
-#, fuzzy
 msgid "Passwords entered do not match. Check and try again"
-msgstr "Girilen şifre yanlış. Kontrol edip tekrar deneyin."
+msgstr ""
 
 #: src/Widgets/Window.vala:71
 msgid "Successful Change"
-msgstr "Başarılı Değişiklik"
+msgstr ""
 
 #: src/Widgets/Window.vala:72
-#, fuzzy
 msgid "Cipher key was successfully changed. Existing secrets are unusable now"
 msgstr ""
-"Şifreleme anahtarı başarıyla değiştirildi. Mevcut sırlar artık kullanılamaz."
 
 #: src/Widgets/HeaderBar.vala:27
-#, fuzzy
 msgid "Add New Login [Ctrl+N]"
-msgstr "Yeni Giriş Ekle"
+msgstr ""
 
 #: src/Widgets/HeaderBar.vala:35 src/Widgets/MainScreen.vala:44
 msgid "Search"
@@ -61,144 +55,133 @@ msgstr ""
 
 #: src/Widgets/HeaderBar.vala:41 src/Widgets/Dialogs/ChangeCipher.vala:14
 msgid "Change Cipher Key"
-msgstr "Şifre Anahtarını Değiştir"
+msgstr ""
 
 #: src/Widgets/HeaderBar.vala:44
 msgid "Quit"
-msgstr "Çık"
+msgstr ""
 
 #: src/Widgets/HeaderBar.vala:56
 msgid "Help"
-msgstr "Yardım"
+msgstr ""
 
 #: src/Widgets/ValidateScreen.vala:38
 msgid "Welcome"
-msgstr "Hoşgeldiniz"
+msgstr ""
 
 #: src/Widgets/ValidateScreen.vala:42
 msgid "Let's Get You Started"
-msgstr "Başlayalım"
+msgstr ""
 
 #: src/Widgets/ValidateScreen.vala:42
 msgid "I Need To Decipher Your Passwords First"
-msgstr "Önce Şifrelerinizi Çözmem Gerekiyor"
+msgstr ""
 
 #: src/Widgets/ValidateScreen.vala:46
 msgid "Your new cipher key will be used to encipher all your saved passwords"
 msgstr ""
-"Yeni şifre anahtarınız, kayıtlı tüm şifrelerinizi şifrelemek için "
-"kullanılacaktır."
 
 #: src/Widgets/ValidateScreen.vala:60
 msgid "Enter Cipher Key:"
-msgstr "Şifre Anahtarını Girin:"
+msgstr ""
 
 #: src/Widgets/ValidateScreen.vala:65 src/Widgets/ValidateScreen.vala:69
 #: src/Widgets/ValidateScreen.vala:77 src/Widgets/ValidateScreen.vala:81
 msgid "Show Cipher Key"
-msgstr "Şifre Anahtarını Göster"
+msgstr ""
 
 #: src/Widgets/ValidateScreen.vala:69 src/Widgets/ValidateScreen.vala:81
-#, fuzzy
 msgid "Hide Cipher Key"
-msgstr "Eski Şifreleme Anahtarı:"
+msgstr ""
 
 #: src/Widgets/ValidateScreen.vala:72
-#, fuzzy
 msgid "Re-Enter Cipher Key:"
-msgstr "Şifre Anahtarını Girin:"
+msgstr ""
 
 #: src/Widgets/ValidateScreen.vala:94
 msgid "Submit"
-msgstr "Gönder"
+msgstr ""
 
 #: src/Widgets/MainScreen.vala:31
 msgid "No Passwords Found"
-msgstr "Şifre Bulunamadı"
+msgstr ""
 
 #: src/Widgets/MainScreen.vala:34
 msgid "Add Password"
-msgstr "Şifre Ekle"
+msgstr ""
 
 #: src/Widgets/MainScreen.vala:34
-#, fuzzy
 msgid "Stores a new password securely"
-msgstr "Yeni parolayı güvenli bir şekilde saklar."
+msgstr ""
 
 #: src/Widgets/MainScreen.vala:47 src/Widgets/Dialogs/Preferences.vala:99
 msgid "Close"
-msgstr "Kapat"
+msgstr ""
 
 #: src/Widgets/MainScreen.vala:134
 msgid "No matches found"
 msgstr ""
 
 #: src/Widgets/SecretBox.vala:51
-#, fuzzy
 msgid "Unpin Secret"
-msgstr "Sırrı Düzenle"
+msgstr ""
 
 #: src/Widgets/SecretBox.vala:51
-#, fuzzy
 msgid "Pin Secret"
-msgstr "Sırrı Düzenle"
+msgstr ""
 
 #: src/Widgets/SecretBox.vala:52 src/Widgets/Dialogs/EditSecret.vala:25
 #: src/Widgets/Dialogs/EditSecret.vala:124
 msgid "Edit Secret"
-msgstr "Sırrı Düzenle"
+msgstr ""
 
 #: src/Widgets/SecretBox.vala:53
 msgid "Delete Secret"
-msgstr "Sırrı Sil"
+msgstr ""
 
 #: src/Widgets/SecretBox.vala:63
 msgid "More"
 msgstr ""
 
 #: src/Widgets/SecretBox.vala:73
-#, fuzzy
 msgid "Copy Secret"
-msgstr "Sırrı Düzenle"
+msgstr ""
 
 #: src/Widgets/Dialogs/NewSecret.vala:19
 msgid "Add New Secret"
-msgstr "Yeni Sır Ekle"
+msgstr ""
 
 #: src/Widgets/Dialogs/NewSecret.vala:29 src/Widgets/Dialogs/NewSecret.vala:68
 #: src/Widgets/Dialogs/EditSecret.vala:39
 #: src/Widgets/Dialogs/EditSecret.vala:79
 msgid "Name :"
-msgstr "İsim :"
+msgstr ""
 
 #: src/Widgets/Dialogs/NewSecret.vala:34
-#, fuzzy
 msgid "Eg. GitHub, AWS API Key, etc."
-msgstr "Örneğin. GitHub, Facebook vb."
+msgstr ""
 
 #: src/Widgets/Dialogs/NewSecret.vala:35 src/Widgets/Dialogs/EditSecret.vala:45
 msgid "Username :"
-msgstr "Kullanıcı adı :"
+msgstr ""
 
 #: src/Widgets/Dialogs/NewSecret.vala:40 src/Widgets/Dialogs/EditSecret.vala:51
 msgid "Password :"
-msgstr "Parola :"
+msgstr ""
 
 #: src/Widgets/Dialogs/NewSecret.vala:45 src/Widgets/Dialogs/NewSecret.vala:49
 #: src/Widgets/Dialogs/EditSecret.vala:56
 #: src/Widgets/Dialogs/EditSecret.vala:60
 msgid "Show Password"
-msgstr "Şifreyi Göster"
+msgstr ""
 
 #: src/Widgets/Dialogs/NewSecret.vala:49 src/Widgets/Dialogs/EditSecret.vala:60
-#, fuzzy
 msgid "Hide Password"
-msgstr "Şifre Ekle"
+msgstr ""
 
 #: src/Widgets/Dialogs/NewSecret.vala:52 src/Widgets/Dialogs/EditSecret.vala:63
-#, fuzzy
 msgid "Regenerate Password"
-msgstr "Yeni Parola Oluştur"
+msgstr ""
 
 #: src/Widgets/Dialogs/NewSecret.vala:73
 msgid "Eg. SSH Key, SSL/TLS Certificates, etc."
@@ -220,36 +203,35 @@ msgstr ""
 #: src/Widgets/Dialogs/EditSecret.vala:123
 #: src/Widgets/Dialogs/ChangeCipher.vala:64
 msgid "Cancel"
-msgstr "İptal et"
+msgstr ""
 
 #: src/Widgets/Dialogs/NewSecret.vala:121
 msgid "Add Secret"
-msgstr "Sır Ekle"
+msgstr ""
 
 #: src/Widgets/Dialogs/ChangeCipher.vala:24
 msgid "CHANGING THE CIPHER KEY WILL MAKE THE EXISTING SECRETS UNUSABLE"
 msgstr ""
-"ŞİFRE ANAHTARININ DEĞİŞTİRİLMESİ MEVCUT SIRLARI KULLANILAMAZ YAPACAKTIR"
 
 #: src/Widgets/Dialogs/ChangeCipher.vala:32
 msgid "Old Cipher Key:"
-msgstr "Eski Şifreleme Anahtarı:"
+msgstr ""
 
 #: src/Widgets/Dialogs/ChangeCipher.vala:37
 msgid "Show Old Cipher Key"
-msgstr "Eski Şifre Anahtarını Göster"
+msgstr ""
 
 #: src/Widgets/Dialogs/ChangeCipher.vala:39
 msgid "New Cipher Key:"
-msgstr "Yeni Şifreleme Anahtarı:"
+msgstr ""
 
 #: src/Widgets/Dialogs/ChangeCipher.vala:44
 msgid "Show New Cipher Key"
-msgstr "Yeni Şifre Anahtarını Göster"
+msgstr ""
 
 #: src/Widgets/Dialogs/ChangeCipher.vala:65
 msgid "Change Key"
-msgstr "Anahtarı Değiştir"
+msgstr ""
 
 #: src/Widgets/Dialogs/Preferences.vala:30
 msgid "General"
@@ -272,9 +254,8 @@ msgid "Copy New Password After Adding: "
 msgstr ""
 
 #: src/Widgets/Dialogs/Preferences.vala:51
-#, fuzzy
 msgid "Password Generator"
-msgstr "Parola :"
+msgstr ""
 
 #: src/Widgets/Dialogs/Preferences.vala:55
 msgid "Include Digits: "
@@ -285,35 +266,9 @@ msgid "Include Special Characters: "
 msgstr ""
 
 #: src/Widgets/Dialogs/Preferences.vala:69
-#, fuzzy
 msgid "Generated Password Length: "
-msgstr "Yeni Parola Oluştur"
+msgstr ""
 
 #: src/Widgets/Dialogs/Preferences.vala:100
 msgid "Apply"
 msgstr ""
-
-#~ msgid "Copy Password"
-#~ msgstr "Şifreyi Kopyala"
-
-#, fuzzy
-#~ msgid "Auto-Generate Password"
-#~ msgstr "Yeni Parola Oluştur"
-
-#~ msgid "Use Existing Password"
-#~ msgstr "Mevcut Şifreyi Kullan"
-
-#~ msgid "Alohomora"
-#~ msgstr "Alohomora"
-
-#~ msgid "Light Theme"
-#~ msgstr "Aydınlık Tema"
-
-#~ msgid "Dark Theme"
-#~ msgstr "Karanlık Tema"
-
-#~ msgid "Add a new credential."
-#~ msgstr "Yeni bir kimlik bilgisi ekleyin."
-
-#~ msgid "Your Password Will Be Auto-Generated"
-#~ msgstr "Parolanız Otomatik Oluşturulacak"

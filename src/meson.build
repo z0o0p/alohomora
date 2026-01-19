@@ -1,7 +1,7 @@
-#Files to compile
+# Files to compile
 sources = files (
-    'Main.vala',
     'Application.vala',
+    'Constants.vala',
 
     'Widgets/Window.vala',
     'Widgets/HeaderBar.vala',
@@ -13,6 +13,7 @@ sources = files (
     'Widgets/Dialogs/EditSecret.vala',
     'Widgets/Dialogs/ChangeCipher.vala',
     'Widgets/Dialogs/Preferences.vala',
+    'Widgets/Dialogs/Message.vala',
 
     'Helpers/SecretManager.vala',
     'Helpers/CipherManager.vala',
