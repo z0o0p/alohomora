@@ -1,7 +1,8 @@
 # Alohomora
 
+[![GitHub Release](https://img.shields.io/github/v/release/z0o0p/alohomora)](https://github.com/z0o0p/alohomora/releases)
 [![License](https://img.shields.io/badge/license-GPL%20v3.0-blue)](https://github.com/z0o0p/alohomora/blob/master/LICENSE)
-[![CI](https://github.com/z0o0p/alohomora/actions/workflows/ci.yaml/badge.svg)](https://github.com/z0o0p/alohomora/actions/workflows/ci.yaml)
+[![CI Status](https://github.com/z0o0p/alohomora/actions/workflows/ci.yaml/badge.svg)](https://github.com/z0o0p/alohomora/actions/workflows/ci.yaml)
 [![Open Issues](https://img.shields.io/github/issues/z0o0p/alohomora)](https://github.com/z0o0p/alohomora/issues)
 
 Alohomora is a free and open-source password manager designed for elementary OS and built using Vala and Gtk. It manages your passwords in a user-friendly manner while ensuring security.
@@ -36,6 +37,7 @@ git clone https://github.com/z0o0p/alohomora.git && cd alohomora
 
 # Install and run application
 flatpak-builder build io.github.z0o0p.alohomora.yml --user --install --force-clean
+flatpak run io.github.z0o0p.alohomora
 ```
 
 ## Contributions <3
