@@ -17,8 +17,8 @@ public class Alohomora.Window: Gtk.ApplicationWindow {
         Object (
             application: app,
             title: "Alohomora",
-            default_height: 575,
-            default_width: 400,
+            default_height: 525,
+            default_width: 350,
             resizable: false,
             secret: secret_manager
         );
