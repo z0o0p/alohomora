@@ -6,6 +6,7 @@
 public class Alohomora.ValidateScreen: Gtk.Box {
     public Alohomora.SecretManager secret {get; construct;}
 
+    private bool is_valid_input;
     private bool is_new_user;
     private string user_real_name;
     private Gtk.Box message;
@@ -57,6 +58,8 @@ public class Alohomora.ValidateScreen: Gtk.Box {
             message.append (info);
         }
 
+        var pass_strength_bar = new Gtk.ProgressBar ();
+        pass_strength_bar.opacity = 0;
         var key_label = new Gtk.Label (_("Enter Cipher Key:"));
         key_label.halign = Gtk.Align.START;
         key_entry = new Gtk.Entry ();
@@ -68,7 +71,14 @@ public class Alohomora.ValidateScreen: Gtk.Box {
             key_entry.secondary_icon_name = ((key_entry.visibility) ? "eye-not-looking-symbolic" : "eye-open-negative-filled-symbolic");
             key_entry.secondary_icon_tooltip_text = ((key_entry.visibility) ? _("Hide Cipher Key") : _("Show Cipher Key"));
         });
-        key_entry.activate.connect (() => key_entered ());
+        key_entry.activate.connect (() => submit_key ());
+        key_entry.changed.connect (() => {
+            validate_input ();
+            pass_strength_bar.opacity = 1.0;
+            pass_strength_bar.fraction = key_entry.text.length / 8.0;
+            if (is_valid_input) submit.sensitive = true;
+            else submit.sensitive = false;
+        });
         var re_key_label = new Gtk.Label (_("Re-Enter Cipher Key:"));
         re_key_label.halign = Gtk.Align.START;
         re_key_entry = new Gtk.Entry ();
@@ -80,20 +90,28 @@ public class Alohomora.ValidateScreen: Gtk.Box {
             re_key_entry.secondary_icon_name = ((re_key_entry.visibility) ? "eye-not-looking-symbolic" : "eye-open-negative-filled-symbolic");
             re_key_entry.secondary_icon_tooltip_text = ((re_key_entry.visibility) ? _("Hide Cipher Key") : _("Show Cipher Key"));
         });
-        re_key_entry.activate.connect (() => key_entered ());
+        re_key_entry.activate.connect (() => submit_key ());
+        re_key_entry.changed.connect (() => {
+            validate_input ();
+            if (is_valid_input) submit.sensitive = true;
+            else submit.sensitive = false;
+        });
+
         cipher = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
         cipher.margin_top = 35;
-        cipher.margin_bottom = 15;
+        cipher.margin_bottom = 10;
         cipher.append (key_label);
         cipher.append (key_entry);
         if (is_new_user) {
             cipher.append (re_key_label);
             cipher.append (re_key_entry);
+            cipher.append (pass_strength_bar);
         }
 
         submit = new Gtk.Button.with_label (_("Submit"));
+        submit.sensitive = false;
         submit.valign = Gtk.Align.CENTER;
-        submit.clicked.connect (() => key_entered ());
+        submit.clicked.connect (() => submit_key ());
 
         append (wizard_art);
         append (message);
@@ -101,16 +119,18 @@ public class Alohomora.ValidateScreen: Gtk.Box {
         append (submit);
     }
 
-    private void key_entered () {
-        if (is_new_user) {
-            if (key_entry.text != "" && re_key_entry.text != "") {
-                secret.create_cipher_key.begin (user_real_name, key_entry.text, re_key_entry.text);
-            }
+    private void validate_input () {
+        is_valid_input = key_entry.text != "";
+        if (is_new_user) is_valid_input = is_valid_input && key_entry.text == re_key_entry.text && (key_entry.text.length / 8.0) >= 1.0;
+    }
+
+    private void submit_key () {
+        validate_input ();
+        if (is_valid_input && is_new_user) {
+            secret.create_cipher_key.begin (user_real_name, key_entry.text, re_key_entry.text);
         }
-        else {
-            if (key_entry.text != "") {
-                secret.lookup_cipher_key.begin (user_real_name, key_entry.text);
-            }
+        else if (is_valid_input) {
+            secret.lookup_cipher_key.begin (user_real_name, key_entry.text);
         }
     }
 }
