@@ -18,23 +18,30 @@ sudo bash setup/setup.sh
 
 ## Making Changes
 
-* Please avoid working directly on the `master` branch. Checkout to a `develop` branch from it.
+* Please avoid working directly on the `master` branch. Fork from the `develop` branch and add your changes there instead.
 * Follow the [code style](https://docs.elementary.io/develop/writing-apps/code-style) as recommended by elementary OS.
 * Make commits after every logical unit.
 
 #### Commit Message
 
-The commit message should follow the below format.
+Use clear and simple commit messages so anyone can understand your change on the first read. Follow this format:
 
 ```
-Type(Optional Scope) - Message
-
-Optional Body
+TYPE(SCOPE) - MESSAGE
 ```
 
-The commit type could be Add, Fix or Update.
+How to write it:
+
+* **TYPE** tells what you did:
+  * **Add** – new feature or file
+  * **Fix** – bug fix
+  * **Update** – small improvement or change
+* **SCOPE** is optional and mentions the associated GitHub issue
+* **MESSAGE** explains the change in one clear line
+
+For example, `Fix(#18) - Add missing permissions to flatpak manifest`, or `Add - Hindi translations`.
 
 ## Submitting Changes
 
-* Push your changes, and create a [pull request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork) to the Alohomora repository.
-* Please mention the associated issue and describe the changes/additions to the code base.
+* Push your changes, and create a [pull request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork) to the `develop` branch of the Alohomora repository.
+* If required, please mention the associated issue and describe the changes/additions to the code base.
