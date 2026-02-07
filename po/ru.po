@@ -1,0 +1,276 @@
+# Russian translations for io.github.z0o0p.alohomora package.
+# Copyright (C) 2026 io.github.z0o0p.alohomora'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the io.github.z0o0p.alohomora package.
+# Leo <lenemter@gmail.com>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: io.github.z0o0p.alohomora\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-05 23:33+0300\n"
+"PO-Revision-Date: 2026-01-23 18:55+0300\n"
+"Last-Translator: Leo <lenemter@gmail.com>\n"
+"Language-Team: none\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+
+#: src/Widgets/Window.vala:53 src/Widgets/Window.vala:77
+msgid "Incorrect Key"
+msgstr "Неверный ключ"
+
+#: src/Widgets/Window.vala:54 src/Widgets/Window.vala:78
+msgid "The cipher key entered is wrong. Check and try again"
+msgstr "Введённый ключ не подходит. Попробуйте ещё раз"
+
+#: src/Widgets/Window.vala:62
+msgid "Key Mismatch"
+msgstr "Ключи не совпадают"
+
+#: src/Widgets/Window.vala:63
+msgid "Passwords entered do not match. Check and try again"
+msgstr "Введённые пароли не совпадают. Попробуйте ещё раз"
+
+#: src/Widgets/Window.vala:71
+msgid "Successful Change"
+msgstr "Ключ изменён"
+
+#: src/Widgets/Window.vala:72
+msgid "Cipher key was successfully changed. Existing secrets are unusable now"
+msgstr ""
+"Ключ шифрования был успешно изменён. Имеющиеся секреты больше недоступны"
+
+#: src/Widgets/HeaderBar.vala:27
+msgid "Add New Login [Ctrl+N]"
+msgstr "Добавить новый логин [Ctrl+N]"
+
+#: src/Widgets/HeaderBar.vala:35 src/Widgets/MainScreen.vala:44
+msgid "Search"
+msgstr "Поиск"
+
+#: src/Widgets/HeaderBar.vala:38 src/Widgets/Dialogs/Preferences.vala:18
+msgid "Preferences"
+msgstr "Параметры"
+
+#: src/Widgets/HeaderBar.vala:41 src/Widgets/Dialogs/ChangeCipher.vala:14
+msgid "Change Cipher Key"
+msgstr "Изменить ключ шифрования"
+
+#: src/Widgets/HeaderBar.vala:44
+msgid "Quit"
+msgstr "Выйти"
+
+#: src/Widgets/HeaderBar.vala:56
+msgid "Help"
+msgstr "Помощь"
+
+#: src/Widgets/ValidateScreen.vala:39
+msgid "Welcome"
+msgstr "Добро пожаловать"
+
+#: src/Widgets/ValidateScreen.vala:43
+msgid "Let's Get You Started"
+msgstr "Давайте начнём"
+
+#: src/Widgets/ValidateScreen.vala:43
+msgid "I Need To Decipher Your Passwords First"
+msgstr "Мне нужно расшифровать ваши пароли"
+
+#: src/Widgets/ValidateScreen.vala:47
+msgid "Your new cipher key will be used to encipher all your saved passwords"
+msgstr "Ваш новый ключ шифрования будет использовать для защиты ваших паролей"
+
+#: src/Widgets/ValidateScreen.vala:63
+msgid "Enter Cipher Key:"
+msgstr "Введите ключ шифрования:"
+
+#: src/Widgets/ValidateScreen.vala:68 src/Widgets/ValidateScreen.vala:72
+#: src/Widgets/ValidateScreen.vala:87 src/Widgets/ValidateScreen.vala:91
+msgid "Show Cipher Key"
+msgstr "Показать ключ шифрования"
+
+#: src/Widgets/ValidateScreen.vala:72 src/Widgets/ValidateScreen.vala:91
+msgid "Hide Cipher Key"
+msgstr "Скрыть ключ шифрования"
+
+#: src/Widgets/ValidateScreen.vala:82
+msgid "Re-Enter Cipher Key:"
+msgstr "Введите ещё раз:"
+
+#: src/Widgets/ValidateScreen.vala:111
+msgid "Submit"
+msgstr "Подтвердить"
+
+#: src/Widgets/MainScreen.vala:31
+msgid "No Passwords Found"
+msgstr "Нет паролей"
+
+#: src/Widgets/MainScreen.vala:34
+msgid "Add Password"
+msgstr "Добавить пароль"
+
+#: src/Widgets/MainScreen.vala:34
+msgid "Stores a new password securely"
+msgstr "Безопасно сохранить пароль"
+
+#: src/Widgets/MainScreen.vala:47 src/Widgets/Dialogs/Preferences.vala:99
+msgid "Close"
+msgstr "Закрыть"
+
+#: src/Widgets/MainScreen.vala:134
+msgid "No matches found"
+msgstr "Ничего не найдено"
+
+#: src/Widgets/SecretBox.vala:51
+msgid "Unpin Secret"
+msgstr "Открепить секрет"
+
+#: src/Widgets/SecretBox.vala:51
+msgid "Pin Secret"
+msgstr "Закрепить секрет"
+
+#: src/Widgets/SecretBox.vala:52 src/Widgets/Dialogs/EditSecret.vala:25
+#: src/Widgets/Dialogs/EditSecret.vala:124
+msgid "Edit Secret"
+msgstr "Редактировать секрет"
+
+#: src/Widgets/SecretBox.vala:53
+msgid "Delete Secret"
+msgstr "Удалить секрет"
+
+#: src/Widgets/SecretBox.vala:63
+msgid "More"
+msgstr "Больше"
+
+#: src/Widgets/SecretBox.vala:73
+msgid "Copy Secret"
+msgstr "Скопировать секрет"
+
+#: src/Widgets/Dialogs/NewSecret.vala:19
+msgid "Add New Secret"
+msgstr "Добавить новый секрет"
+
+#: src/Widgets/Dialogs/NewSecret.vala:29 src/Widgets/Dialogs/NewSecret.vala:68
+#: src/Widgets/Dialogs/EditSecret.vala:39
+#: src/Widgets/Dialogs/EditSecret.vala:79
+msgid "Name :"
+msgstr "Имя :"
+
+#: src/Widgets/Dialogs/NewSecret.vala:34
+msgid "Eg. GitHub, AWS API Key, etc."
+msgstr "Например, GitHub, ключ AWS API"
+
+#: src/Widgets/Dialogs/NewSecret.vala:35 src/Widgets/Dialogs/EditSecret.vala:45
+msgid "Username :"
+msgstr "Логин :"
+
+#: src/Widgets/Dialogs/NewSecret.vala:40 src/Widgets/Dialogs/EditSecret.vala:51
+msgid "Password :"
+msgstr "Пароль: "
+
+#: src/Widgets/Dialogs/NewSecret.vala:45 src/Widgets/Dialogs/NewSecret.vala:49
+#: src/Widgets/Dialogs/EditSecret.vala:56
+#: src/Widgets/Dialogs/EditSecret.vala:60
+msgid "Show Password"
+msgstr "Показать пароль"
+
+#: src/Widgets/Dialogs/NewSecret.vala:49 src/Widgets/Dialogs/EditSecret.vala:60
+msgid "Hide Password"
+msgstr "Скрыть пароль"
+
+#: src/Widgets/Dialogs/NewSecret.vala:52 src/Widgets/Dialogs/EditSecret.vala:63
+msgid "Regenerate Password"
+msgstr "Сгенерировать новый пароль"
+
+#: src/Widgets/Dialogs/NewSecret.vala:73
+msgid "Eg. SSH Key, SSL/TLS Certificates, etc."
+msgstr "Например: ключ SSH, SSL/TLS сертификат"
+
+#: src/Widgets/Dialogs/NewSecret.vala:74 src/Widgets/Dialogs/EditSecret.vala:85
+msgid "Note :"
+msgstr "Заметка :"
+
+#: src/Widgets/Dialogs/NewSecret.vala:105
+msgid "Credentials"
+msgstr "Данные для входа"
+
+#: src/Widgets/Dialogs/NewSecret.vala:106
+msgid "Secure Note"
+msgstr "Заметка"
+
+#: src/Widgets/Dialogs/NewSecret.vala:120
+#: src/Widgets/Dialogs/EditSecret.vala:123
+#: src/Widgets/Dialogs/ChangeCipher.vala:64
+msgid "Cancel"
+msgstr "Отменить"
+
+#: src/Widgets/Dialogs/NewSecret.vala:121
+msgid "Add Secret"
+msgstr "Добавить секрет"
+
+#: src/Widgets/Dialogs/ChangeCipher.vala:24
+msgid "CHANGING THE CIPHER KEY WILL MAKE THE EXISTING SECRETS UNUSABLE"
+msgstr "ИЗМЕНЕНИЕ КЛЮЧА ШИФРОВАНИЯ УДАЛИТ ВСЕ ВВЕДЁННЫЕ СЕКРЕТЫ"
+
+#: src/Widgets/Dialogs/ChangeCipher.vala:32
+msgid "Old Cipher Key:"
+msgstr "Текущий ключ:"
+
+#: src/Widgets/Dialogs/ChangeCipher.vala:37
+msgid "Show Old Cipher Key"
+msgstr "Показать текущий ключ"
+
+#: src/Widgets/Dialogs/ChangeCipher.vala:39
+msgid "New Cipher Key:"
+msgstr "Новый ключ:"
+
+#: src/Widgets/Dialogs/ChangeCipher.vala:44
+msgid "Show New Cipher Key"
+msgstr "Показать новый ключ"
+
+#: src/Widgets/Dialogs/ChangeCipher.vala:65
+msgid "Change Key"
+msgstr "Сменить ключ"
+
+#: src/Widgets/Dialogs/Preferences.vala:30
+msgid "General"
+msgstr "Общие"
+
+#: src/Widgets/Dialogs/Preferences.vala:34
+msgid "Sort Secrets By: "
+msgstr "Сортировка секретов: "
+
+#: src/Widgets/Dialogs/Preferences.vala:36
+msgid "Ascending Order"
+msgstr "По возрастанию"
+
+#: src/Widgets/Dialogs/Preferences.vala:36
+msgid "Descending Order"
+msgstr "По убыванию"
+
+#: src/Widgets/Dialogs/Preferences.vala:40
+msgid "Copy New Password After Adding: "
+msgstr "Копировать новые пароли: "
+
+#: src/Widgets/Dialogs/Preferences.vala:51
+msgid "Password Generator"
+msgstr "Генератор паролей"
+
+#: src/Widgets/Dialogs/Preferences.vala:55
+msgid "Include Digits: "
+msgstr "Использовать цифры: "
+
+#: src/Widgets/Dialogs/Preferences.vala:62
+msgid "Include Special Characters: "
+msgstr "Использовать специальные символы: "
+
+#: src/Widgets/Dialogs/Preferences.vala:69
+msgid "Generated Password Length: "
+msgstr "Длина пароля: "
+
+#: src/Widgets/Dialogs/Preferences.vala:100
+msgid "Apply"
+msgstr "Применить"
