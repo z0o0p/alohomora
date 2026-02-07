@@ -33,8 +33,10 @@ public class Alohomora.Preferences: Gtk.Dialog {
 
         var sort_label = new Gtk.Label (_("Sort Secrets By: "));
         sort_label.halign = Gtk.Align.END;
-        sort = new Gtk.DropDown.from_strings ({_("Ascending Order"), _("Descending Order")});
-        sort.selected = ((settings.get_boolean ("sort-ascending")) ? 0 : 1);
+        sort = new Gtk.DropDown.from_strings ({_("Name, Ascending"), _("Name, Descending"), _("Date, Ascending"), _("Date, Descending")});
+        var is_name_sort = (settings.get_string ("sort-parameter") == "name") ? 0 : 1;
+        var is_ascending_sort = (settings.get_boolean ("sort-ascending")) ? 0 : 1;
+        sort.selected = is_name_sort << 1 | is_ascending_sort;
         sort.width_request = 150;
 
         var copy_label = new Gtk.Label (_("Copy New Password After Adding: "));
@@ -102,7 +104,8 @@ public class Alohomora.Preferences: Gtk.Dialog {
 
         response.connect (id => {
             if (id == Gtk.ResponseType.APPLY) {
-                settings.set_boolean ("sort-ascending", (sort.selected == 0));
+                settings.set_boolean ("sort-ascending", ((sort.selected & 1) == 0));
+                settings.set_string ("sort-parameter", (((sort.selected >> 1) & 1) == 0) ? "name" : "date");
                 settings.set_boolean ("copy-new-pass", copy.active);
                 settings.set_int ("gen-pass-length", (int) pass_length.value);
                 settings.set_boolean ("include-special", include_special.active);

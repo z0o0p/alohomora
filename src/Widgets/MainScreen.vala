@@ -108,9 +108,6 @@ public class Alohomora.MainScreen: Gtk.Box {
         while (pin_screen.get_first_child () != null) pin_screen.remove (pin_screen.get_first_child ());
         while (sub_screen.get_first_child () != null) sub_screen.remove (sub_screen.get_first_child ());
         secrets.sort (secret.compare_secrets);
-        if (!new Settings ("io.github.z0o0p.alohomora").get_boolean ("sort-ascending")) {
-            secrets.reverse ();
-        }
         if (secrets.length () != 0) {
             secrets.foreach ((secret_item) => {
                 var attribute = secret_item.get_attributes ();

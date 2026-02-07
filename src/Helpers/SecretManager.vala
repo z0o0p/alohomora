@@ -186,9 +186,28 @@ public class Alohomora.SecretManager: GLib.Object {
     }
 
     public CompareFunc<Secret.Item> compare_secrets = (secret1, secret2) => {
+        var settings = new Settings ("io.github.z0o0p.alohomora");
+        var is_ascending_sort = settings.get_boolean ("sort-ascending");
+        var is_name_sort = (settings.get_string ("sort-parameter") == "name") ? true : false;
         var attribute1 = secret1.get_attributes ();
         var attribute2 = secret2.get_attributes ();
-        return strcmp (attribute1["credential-name"].up (), attribute2["credential-name"].up ());
+
+        if (is_ascending_sort) {
+            if (is_name_sort) {
+                return strcmp (attribute1["credential-name"].up (), attribute2["credential-name"].up ());
+            }
+            else {
+                return strcmp (attribute1["secret-id"].up (), attribute2["secret-id"].up ());
+            }
+        }
+        else {
+            if (is_name_sort) {
+                return strcmp (attribute2["credential-name"].up (), attribute1["credential-name"].up ());
+            }
+            else {
+                return strcmp (attribute2["secret-id"].up (), attribute1["secret-id"].up ());
+            }
+        }
     };
 
     public async void create_cipher_key (string user_name, string cipher_key, string re_cipher_key) {

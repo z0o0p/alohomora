@@ -11,6 +11,11 @@
       <summary>Ascending Order Sorting</summary>
       <description>Whether to display secrets in ascending order or not.</description>
     </key>
+    <key name="sort-parameter" type="s">
+      <default>'name'</default>
+      <summary>Sorting Parameter</summary>
+      <description>Parameter to be considered for sorting.</description>
+    </key>
     <key name="copy-new-pass" type="b">
       <default>false</default>
       <summary>Copy New Password</summary>
