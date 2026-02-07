@@ -7,6 +7,9 @@ public class Alohomora.ValidateScreen: Gtk.Box {
     public Alohomora.SecretManager secret {get; construct;}
 
     private bool is_valid_input;
+    private bool is_matching_key_input;
+    private bool is_secure_key_input;
+
     private bool is_new_user;
     private string user_real_name;
     private Gtk.Box message;
@@ -58,8 +61,23 @@ public class Alohomora.ValidateScreen: Gtk.Box {
             message.append (info);
         }
 
-        var pass_strength_bar = new Gtk.ProgressBar ();
-        pass_strength_bar.opacity = 0;
+        var pass_strength_info_icon = new Gtk.Image.from_icon_name ("window-close-symbolic");
+        var pass_strength_info_label = new Gtk.Label (_("Cipher key must be at least 8 characters"));
+        pass_strength_info_label.hexpand = true;
+        pass_strength_info_label.halign = Gtk.Align.START;
+        var pass_strength_info = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 5);
+        pass_strength_info.opacity = 0;
+        pass_strength_info.append (pass_strength_info_icon);
+        pass_strength_info.append (pass_strength_info_label);
+        var pass_match_info_icon = new Gtk.Image.from_icon_name ("window-close-symbolic");
+        var pass_match_info_label = new Gtk.Label (_("Key and reentered value must match"));
+        pass_match_info_label.hexpand = true;
+        pass_match_info_label.halign = Gtk.Align.START;
+        var pass_match_info = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 5);
+        pass_match_info.opacity = 0;
+        pass_match_info.append (pass_match_info_icon);
+        pass_match_info.append (pass_match_info_label);
+
         var key_label = new Gtk.Label (_("Enter Cipher Key:"));
         key_label.halign = Gtk.Align.START;
         key_entry = new Gtk.Entry ();
@@ -74,10 +92,28 @@ public class Alohomora.ValidateScreen: Gtk.Box {
         key_entry.activate.connect (() => submit_key ());
         key_entry.changed.connect (() => {
             validate_input ();
-            pass_strength_bar.opacity = 1.0;
-            pass_strength_bar.fraction = key_entry.text.length / 8.0;
-            if (is_valid_input) submit.sensitive = true;
-            else submit.sensitive = false;
+            pass_strength_info.opacity = 1;
+            pass_match_info.opacity = 1;
+            if (is_secure_key_input) {
+                pass_strength_info_icon.icon_name = "object-select-symbolic";
+            }
+            else {
+                pass_strength_info_icon.icon_name = "window-close-symbolic";
+            }
+            if (is_matching_key_input) {
+                pass_match_info_icon.icon_name = "object-select-symbolic";
+            }
+            else {
+                pass_match_info_icon.icon_name = "window-close-symbolic";
+            }
+            if (is_valid_input) {
+                submit.sensitive = true;
+                submit.add_css_class ("primary-background");
+            }
+            else {
+                submit.sensitive = false;
+                submit.remove_css_class ("primary-background");
+            }
         });
         var re_key_label = new Gtk.Label (_("Re-Enter Cipher Key:"));
         re_key_label.halign = Gtk.Align.START;
@@ -93,8 +129,20 @@ public class Alohomora.ValidateScreen: Gtk.Box {
         re_key_entry.activate.connect (() => submit_key ());
         re_key_entry.changed.connect (() => {
             validate_input ();
-            if (is_valid_input) submit.sensitive = true;
-            else submit.sensitive = false;
+            if (is_matching_key_input) {
+                pass_match_info_icon.icon_name = "object-select-symbolic";
+            }
+            else {
+                pass_match_info_icon.icon_name = "window-close-symbolic";
+            }
+            if (is_valid_input) {
+                submit.sensitive = true;
+                submit.add_css_class ("primary-background");
+            }
+            else {
+                submit.sensitive = false;
+                submit.remove_css_class ("primary-background");
+            }
         });
 
         cipher = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
@@ -105,7 +153,8 @@ public class Alohomora.ValidateScreen: Gtk.Box {
         if (is_new_user) {
             cipher.append (re_key_label);
             cipher.append (re_key_entry);
-            cipher.append (pass_strength_bar);
+            cipher.append (pass_strength_info);
+            cipher.append (pass_match_info);
         }
 
         submit = new Gtk.Button.with_label (_("Submit"));
@@ -121,7 +170,9 @@ public class Alohomora.ValidateScreen: Gtk.Box {
 
     private void validate_input () {
         is_valid_input = key_entry.text != "";
-        if (is_new_user) is_valid_input = is_valid_input && key_entry.text == re_key_entry.text && (key_entry.text.length / 8.0) >= 1.0;
+        is_secure_key_input = (key_entry.text.length / 8.0) >= 1.0;
+        is_matching_key_input = key_entry.text == re_key_entry.text;
+        if (is_new_user) is_valid_input = is_valid_input && is_matching_key_input && is_secure_key_input;
     }
 
     private void submit_key () {
