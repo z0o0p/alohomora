@@ -7,7 +7,7 @@
 
 Alohomora is a free and open-source password manager designed for elementary OS and built using Vala and Gtk. It manages your passwords in a user-friendly manner while ensuring security.
 
-Alohomora leverages the libsecret-1 library package to store passwords securely into the device keyring.
+Alohomora leverages the `libsecret-1` library package to store passwords securely into the device keyring.
 
 ![](data/screenshots/alohomora-screenshot.png)
 
@@ -23,11 +23,11 @@ You can build and install Alohomora from the source. Ensure that you have the re
 
 ### Required Dependencies
 
-* meson
-* valac 
-* libgtk-4-dev
-* libgranite-7-dev
-* libsecret-1-dev
+* `meson`
+* `valac`
+* `libgtk-4-dev`
+* `libgranite-7-dev`
+* `libsecret-1-dev`
 
 ### Build, Install and Run
 
