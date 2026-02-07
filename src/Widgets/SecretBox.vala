@@ -7,6 +7,7 @@ public class Alohomora.SecretBox : Gtk.Frame {
     public Alohomora.Window window {get; construct;}
     public Alohomora.SecretManager secret {get; construct;}
     public Secret.Item secret_item {get; construct;}
+    public Granite.Toast toast {get; construct;}
 
     private string secret_id;
     private string secret_type;
@@ -16,11 +17,12 @@ public class Alohomora.SecretBox : Gtk.Frame {
     private string user_pass;
     private Gtk.Button copy;
 
-    public SecretBox (Alohomora.Window app_window, Alohomora.SecretManager secret_manager, Secret.Item secretitem) {
+    public SecretBox (Alohomora.Window app_window, Alohomora.SecretManager secret_manager, Secret.Item secretitem, Granite.Toast copytoast) {
         Object (
             window: app_window,
             secret: secret_manager,
-            secret_item: secretitem
+            secret_item: secretitem,
+            toast: copytoast
         );
     }
 
@@ -75,6 +77,7 @@ public class Alohomora.SecretBox : Gtk.Frame {
         copy.clicked.connect (() => {
             var clipboard = Gdk.Display.get_default ().get_clipboard ();
             clipboard.set_text (user_pass);
+            toast.send_notification ();
         });
 
         var data_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);

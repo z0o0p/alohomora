@@ -7,7 +7,8 @@ public class Alohomora.MainScreen: Gtk.Box {
     public Alohomora.Window window {get; construct;}
     public Alohomora.SecretManager secret {get; construct;}
 
-    private Gtk.Box screen;
+    private Gtk.Overlay overlay;
+    private Granite.Toast toast;
     private Gtk.Box pin_screen;
     private Gtk.Box sub_screen;
     private Gtk.Separator separator;
@@ -26,7 +27,7 @@ public class Alohomora.MainScreen: Gtk.Box {
     }
 
     construct {
-        screen = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+        var screen = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
 
         welcome = new Granite.Placeholder (_("No Passwords Found"));
         welcome.hexpand = true;
@@ -68,10 +69,21 @@ public class Alohomora.MainScreen: Gtk.Box {
         screen.append (pin_screen);
         screen.append (sub_screen);
 
+        toast = new Granite.Toast (_("Password was copied"));
+        toast.halign = Gtk.Align.CENTER;
+        toast.valign = Gtk.Align.END;
+
+        overlay = new Gtk.Overlay ();
+        overlay.hexpand = true;
+        overlay.vexpand = true;
+        overlay.add_overlay (screen);
+        overlay.add_overlay (toast);
+        overlay.set_measure_overlay (toast, true);
+
         secret.initialized.connect (() => {
             secrets = secret.get_secrets ();
             refresh_screen ();
-            append (screen);
+            append (overlay);
         });
 
         secret.changed.connect (() => {
@@ -103,10 +115,10 @@ public class Alohomora.MainScreen: Gtk.Box {
             secrets.foreach ((secret_item) => {
                 var attribute = secret_item.get_attributes ();
                 if (attribute["pinned"] == "false" || attribute["pinned"] == null) {
-                    sub_screen.append (new Alohomora.SecretBox (window, secret, secret_item));
+                    sub_screen.append (new Alohomora.SecretBox (window, secret, secret_item, toast));
                 }
                 else {
-                    pin_screen.append (new Alohomora.SecretBox (window, secret, secret_item));
+                    pin_screen.append (new Alohomora.SecretBox (window, secret, secret_item, toast));
                     pin_empty = false;
                 }
             });
@@ -127,7 +139,7 @@ public class Alohomora.MainScreen: Gtk.Box {
             var attribute = secret_item.get_attributes ();
             if (attribute["credential-name"].up ().contains (search_entry.text.up ())) {
                 search_found = true;
-                sub_screen.append (new Alohomora.SecretBox (window, secret, secret_item));
+                sub_screen.append (new Alohomora.SecretBox (window, secret, secret_item, toast));
             }
         });
         if (!search_found) {
