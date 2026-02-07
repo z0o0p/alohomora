@@ -24,7 +24,7 @@ public class Alohomora.HeaderBar: Gtk.Box {
         add_secret = new Gtk.Button.from_icon_name ("add-icon");
         add_secret.add_css_class (Granite.STYLE_CLASS_LARGE_ICONS);
         add_secret.action_name = "add.add-secret";
-        add_secret.tooltip_text = _("Add New Login [Ctrl+N]");
+        add_secret.tooltip_text = _("Add New Login");
         add_secret.sensitive = false;
         add_secret.clicked.connect (() => {
             var dialog = new Alohomora.NewSecret (window, secret);

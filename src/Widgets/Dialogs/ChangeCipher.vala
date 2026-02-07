@@ -15,6 +15,7 @@ public class Alohomora.ChangeCipher: Gtk.Dialog {
             transient_for: app_window,
             deletable: false,
             resizable: false,
+            default_width: 330,
             modal: true,
             secret: secret_manager
         );
@@ -30,14 +31,14 @@ public class Alohomora.ChangeCipher: Gtk.Dialog {
         warning.ellipsize = Pango.EllipsizeMode.END;
         warning.justify = Gtk.Justification.CENTER;
         var old_key_label = new Gtk.Label (_("Old Cipher Key:"));
-        old_key_label.halign = Gtk.Align.START;
+        old_key_label.halign = Gtk.Align.END;
         old_key = new Gtk.Entry ();
         old_key.visibility = false;
         old_key.secondary_icon_name = "image-red-eye-symbolic";
         old_key.secondary_icon_tooltip_text = _("Show Old Cipher Key");
         old_key.icon_press.connect (() => old_key.visibility = !old_key.visibility);
         var new_key_label = new Gtk.Label (_("New Cipher Key:"));
-        new_key_label.halign = Gtk.Align.START;
+        new_key_label.halign = Gtk.Align.END;
         new_key = new Gtk.Entry();
         new_key.visibility = false;
         new_key.secondary_icon_name = "image-red-eye-symbolic";

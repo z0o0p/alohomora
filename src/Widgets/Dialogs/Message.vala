@@ -14,6 +14,7 @@ public class Alohomora.Message: Gtk.Dialog {
             transient_for: app_window,
             deletable: false,
             resizable: false,
+            default_width: 330,
             modal: true,
             dialog_title: title,
             dialog_subtitle: subtitle,

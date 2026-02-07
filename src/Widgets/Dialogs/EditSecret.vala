@@ -26,6 +26,7 @@ public class Alohomora.EditSecret: Gtk.Dialog {
             transient_for: app_window,
             deletable: false,
             resizable: false,
+            default_width: 330,
             modal: true,
             secret: secret_manager,
             secret_item: secretitem

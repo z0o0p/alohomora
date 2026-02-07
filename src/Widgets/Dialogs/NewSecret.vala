@@ -20,6 +20,7 @@ public class Alohomora.NewSecret: Gtk.Dialog {
             transient_for: app_window,
             deletable: false,
             resizable: false,
+            default_width: 330,
             modal: true,
             secret: secret_manager
         );
@@ -104,10 +105,12 @@ public class Alohomora.NewSecret: Gtk.Dialog {
         stack = new Gtk.Stack ();
         stack.add_titled (creds_grid, "Credentials", _("Credentials"));
         stack.add_titled (note_grid, "Other", _("Secure Note"));
+        stack.grab_focus ();
         stack.set_transition_type (Gtk.StackTransitionType.SLIDE_LEFT_RIGHT);
         stack.notify["visible-child"].connect (update_form_state);
         var stack_switcher = new Gtk.StackSwitcher ();
         stack_switcher.stack = stack;
+        stack_switcher.can_focus = false;
 
         var dialog_content = get_content_area ();
         dialog_content.margin_top = 15;
@@ -119,7 +122,6 @@ public class Alohomora.NewSecret: Gtk.Dialog {
 
         add_button (_("Cancel"), Gtk.ResponseType.CLOSE);
         add = add_button (_("Add Secret"), Gtk.ResponseType.APPLY);
-        add.add_css_class ("primary-background");
         add.sensitive = false;
 
         response.connect (id => {
@@ -151,6 +153,13 @@ public class Alohomora.NewSecret: Gtk.Dialog {
         }
         else if (stack.visible_child_name == "Other") {
             add.sensitive = note_name_entry.is_valid;
+        }
+
+        if (add.sensitive) {
+            add.add_css_class ("primary-background");
+        }
+        else {
+            add.remove_css_class ("primary-background");
         }
     }
 }
